@@ -13,11 +13,17 @@
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+@import 'breakpoint';
 /*
 ====================================
 Default Styling
 ====================================
 */
+
+html {
+	font-size: 62.5%;
+	margin-top: -32px;
+}
 
 img {
 	max-width: 100%;
@@ -25,16 +31,21 @@ img {
 
 body {
 	color: #333;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.4rem;
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1250px;
 	margin: 0 auto;
+	@include breakpoint(standard) {
+		margin: 0 5%;
+	}
 }
 
 .content {
-	float: left;
-	width: 65%;
+	// float: left;
+	// width: 65%;
 	margin-right: 5%;
 }
 
@@ -42,7 +53,74 @@ body {
 	width: 100%;
 }
 
+.button-white {
+	padding:10px 15px;
+	background: #fff;
+	color: red;
+}
 
+/*
+====================================
+HOME PAGE Styling
+====================================
+*/
+
+.hero {
+	height:500px;
+	margin-top: 45px; //height of header
+	padding: 10% 0;
+	.hero-content {
+		width: 60%;
+		background: rgba(28,160,113,0.7);
+		padding: 2.5% 7% 3%;
+		h2 {
+			color: #fff;
+	    	font-size: 4.8rem;
+	    	font-weight: 700;
+	    	margin-bottom: 20px;
+		}
+		h3 > div {
+			color: #fff;
+			font-size: 25px;
+			font-weight: 500;
+			strong {
+				font-weight: 700;
+				font-style: italic;
+				text-transform: lowercase;
+			}
+		}
+		a {
+			display: block;
+		    width: 120px;
+		    margin-top: 20px;
+		    border-radius: 5px;
+		    padding: 15px 15px;
+		    background: #fff;
+		    /* color: red; */
+		    color: #464646;
+		    font-weight: 800;
+		    font-size: 1.4rem;
+		    /* margin-top: 32px; */
+		    text-transform: uppercase;
+		}
+	}
+}
+
+.four-columns ul {
+	display:flex;
+	justify-content:space-between;
+}
+
+.three-columns {
+	background:  #F4F3F2;
+	height:50vh;
+	width:100%;
+}
+/*
+====================================
+END: HOME PAGE Styling
+====================================
+*/
 
 
 

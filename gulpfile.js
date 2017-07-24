@@ -4,7 +4,7 @@ var gulp   = require('gulp'),
 		autoprefixer = require('gulp-autoprefixer'),
 		concat = require('gulp-concat'),
 		imageMin = require('gulp-imagemin'),
-		minifyCSS = require('gulp-minify-css'),
+		minifyCSS = require('gulp-clean-css'),
 		notify = require('gulp-notify'),
 		plumber = require('gulp-plumber'),
 		sass = require('gulp-sass'),
@@ -56,4 +56,9 @@ gulp.task('watch', function() {
 	gulp.watch('./**/*.php', reload);
 });
 
-gulp.task('default', ['styles', 'scripts', 'images', 'bs', 'watch']);
+gulp.task('default', ['styles', 'scripts', 'watch']); //'images',  'bs'
+
+
+
+
+

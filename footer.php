@@ -1,7 +1,16 @@
 <footer>
-  <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
-  </div>
+	<div class="container">
+	  <h1>
+	    <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
+	      <?php bloginfo( 'name' ); ?>
+	    </a>
+	  </h1>
+
+	  <div>
+	  	<p>&copy; 2017 The Centre for Family Medicine Memory Clinic <?php echo date('Y'); ?></p>
+	  	<a href="/privacy-policy-information/">privacy policy information</a>
+	  </div>
+	</div> <!-- /.container -->
 </footer>
 
 <script>

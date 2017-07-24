@@ -1,0 +1,65 @@
+
+//BREAKPOINT MIXINS
+
+@mixin breakpoint($point ) {
+  @if $point == monitor {
+    @media (max-width: 1400px) { @content; }
+    // @include breakpoint(monitor)
+  }
+  @else if $point == standard {
+    @media (max-width: 1250px) { @content; }
+    // @include breakpoint(standard)
+  }
+  @else if $point == standardNarrow {
+    @media (max-width: 1080px) { @content; }
+    // @include breakpoint(standardNarrow)
+  }
+  @else if $point == tablet {
+    @media (max-width: 960px) { @content; }
+    // @include breakpoint(tablet)
+  }
+  @else if $point == tabletsmall {
+    @media (max-width: 870px) { @content; }
+    // @include breakpoint(tabletsmall)
+  }
+  @else if $point == tabletsmallest {
+    @media (max-width: 790px) { @content; }
+    // @include breakpoint(tabletsmallest)
+  }
+  @else if $point == ("709") {
+    @media (max-width: 709px) { @content; }
+    // @include breakpoint("709")
+  }
+  @else if $point == "640"{
+    @media (max-width: 640px)  { @content; }
+    // @include breakpoint("640")
+  }
+  @else if $point == "620"{
+    @media (max-width: 620px)  { @content; }
+    // @include breakpoint("620")
+  }
+  @else if $point == "560"{
+    @media (max-width: 560px)  { @content; }
+    // @include breakpoint("560")
+  }
+  @else if $point == "530"{
+    @media (max-width: 530px)  { @content; }
+    // @include breakpoint("530")
+  }
+  @else if $point == "515"{
+    @media (max-width: 515px)  { @content; }
+    // @include breakpoint("515")
+  }
+  @else if $point == phone {
+    @media (max-width: 490px)  { @content; }
+    // @include breakpoint(phone)
+  }
+  @else if $point == phonesmall {
+    @media (max-width: 400px)  { @content; }
+    // @include breakpoint(phonesmall)
+  }
+  @else if $point == phonesmallest {
+    @media (max-width: 360px)  { @content; }
+    // @include breakpoint(phonesmallest)
+  }
+ }

@@ -21,9 +21,18 @@ function theme_setup() {
 	/* This theme uses wp_nav_menu() in one location.
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
-	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
-	) );
+	function register_my_menus() {
+	  register_nav_menus(
+	    array(
+	      'toolbar-menu' => __( 'Toolbar Menu' ),
+	      'breadcrumb-menu' => __( 'Breadcrumb Menu' ),
+	      'loggedin-menu' => __( 'Logged In Menu' ),
+	      'loggedout-menu' => __( 'Logged Out Menu' ),
+	      'footer-menu' => __( 'Footer Menu' )
+	    )
+	  );
+	}
+	add_action( 'init', 'register_my_menus' );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments

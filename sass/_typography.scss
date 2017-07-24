@@ -1,3 +1,13 @@
+//FONTS:
+
+// font-family: 'Raleway', sans-serif;
+
+// ANTIALIASING
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 a {
 	color: #BA209B;
 	text-decoration: none;
@@ -52,6 +62,10 @@ ul li, ol li {
 	padding: 3px;
 }
 
+li {
+	list-style:none;
+}
+
 /*PRE*/
 
 pre {
@@ -95,3 +109,10 @@ img {
 	float: left;
 	clear: both;
 }
+
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+

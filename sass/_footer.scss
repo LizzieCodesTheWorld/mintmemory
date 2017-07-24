@@ -1,3 +1,23 @@
 footer {
 	clear: both;
+	background: #44413F;
+	font-weight: 500;
+	font-size: 1.4rem;
+	padding:20px 0;
+	a {
+		font-weight: 700;
+		font-size: 1.8rem;
+		color:#fff;
+		transition:0.3s;
+		&:hover {
+			 color:#D3CCCB;
+		}
+	}
+	p {
+		color: #fff!important;
+	}
+	.container {
+		display: flex;
+		justify-content:space-between;
+	}
 }

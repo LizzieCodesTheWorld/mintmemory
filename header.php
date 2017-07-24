@@ -8,6 +8,8 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
   <?php // Load our CSS ?>
+  <script src="https://use.fontawesome.com/7a056a494e.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
   <?php wp_head(); ?>
@@ -28,6 +30,7 @@
       'container' => false,
       'theme_location' => 'primary'
     )); ?>
+
+    <a href="" class="login-button">login <i class="fa fa-key"></i> </a>
   </div> <!-- /.container -->
 </header><!--/.header-->
-
