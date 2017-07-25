@@ -60,21 +60,24 @@
     	  <div class="container">
     		<div>
     			<img src="<?php the_field('patients_image'); ?>" alt="">
-    			<h4><?php the_field('patients_title'); ?></h4>
-    			<p><?php the_field('patients_content'); ?></p>
-    			<a href=""></a>
+    			<div>
+                    <h4><?php the_field('patients_title'); ?></h4>
+                    <p><?php the_field('patients_content'); ?></p>
+                </div>
     		</div>
     		<div>
     			<img src="<?php the_field('clinicians_image'); ?>" alt="">
-    			<h4><?php the_field('clinicians_title'); ?></h4>
-    			<p><?php the_field('clinicians_content'); ?></p>
-    			<a href=""></a>
+    			<div>
+                    <h4><?php the_field('clinicians_title'); ?></h4>
+                    <p><?php the_field('clinicians_content'); ?></p>
+                </div>
     		</div>
     		<div>
     			<img src="<?php the_field('find_image'); ?>" alt="">
-    			<h4><?php the_field('find_title'); ?></h4>
-    			<p><?php the_field('find_content'); ?></p>
-    			<a href=""></a>
+    			<div>
+                    <h4><?php the_field('find_title'); ?></h4>
+                    <p><?php the_field('find_content'); ?></p>
+                </div>
     		</div>
     	  </div>
     	</section>

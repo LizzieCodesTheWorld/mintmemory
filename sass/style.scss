@@ -46,7 +46,7 @@ body {
 .content {
 	// float: left;
 	// width: 65%;
-	margin-right: 5%;
+	// margin-right: 5%;
 }
 
 .full {
@@ -73,6 +73,7 @@ HOME PAGE Styling
 		width: 60%;
 		background: rgba(28,160,113,0.7);
 		padding: 2.5% 7% 3%;
+		max-width: 800px;
 		h2 {
 			color: #fff;
 	    	font-size: 4.8rem;
@@ -106,15 +107,38 @@ HOME PAGE Styling
 	}
 }
 
-.four-columns ul {
+.four-columns {
+	margin: 50px 0;
+	ul {
 	display:flex;
 	justify-content:space-between;
+	li {
+		margin: 0 10px;
+	}
+	}
 }
 
 .three-columns {
 	background:  #F4F3F2;
 	height:50vh;
 	width:100%;
+	padding:50px 0;
+	.container {
+		display:flex;
+		justify-content:space-between;
+		> div {
+			border: 1px solid #E6E6E6;
+			box-shadow: 0 0 2px 1px lightgrey;
+			margin: 0 10px;
+			div {
+				padding:15px;
+				background: #fff;
+				h1 {
+
+				}
+			}
+		}
+	}
 }
 /*
 ====================================
