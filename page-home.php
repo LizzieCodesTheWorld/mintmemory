@@ -3,7 +3,7 @@
 <?php // Start the loop ?>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<div class="hero" style="background-image: url(<?php the_post_thumbnail_url(); ?>);background-size:cover; background-position:center;">
+<div class="home-hero" style="background-image: url(<?php the_field('hero_image');?>);background-size: cover; background-position: center;">
 	<div class="hero-content">
 		<h2><?php the_field('title'); ?></h2>
 		<h3><?php the_field('sub_title'); ?></h3>

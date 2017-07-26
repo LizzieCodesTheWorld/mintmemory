@@ -4,17 +4,22 @@ footer {
 	font-weight: 500;
 	font-size: 1.4rem;
 	padding:20px 0;
-	a {
-		font-weight: 700;
-		font-size: 1.8rem;
-		color:#fff;
-		transition:0.3s;
-		&:hover {
-			 color:#D3CCCB;
+	div {
+		text-align: right;
+		a {
+			font-weight: 700;
+			font-size: 1.8rem;
+			color:#fff;
+			transition:0.3s;
+			text-transform: capitalize;
+			&:hover {
+				 color:#D3CCCB;
+			}
 		}
-	}
-	p {
-		color: #fff!important;
+		p {
+			color: #fff!important;
+			margin-bottom: 10px;
+		}
 	}
 	.container {
 		display: flex;

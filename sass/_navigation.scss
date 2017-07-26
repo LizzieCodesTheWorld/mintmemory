@@ -82,14 +82,11 @@ header {
 		font-weight: 800;
 		font-size: 1.4rem;
 		text-transform: uppercase;
-		padding: 10px 15px;
+		padding: 10px 25px;
 		transition:0.3s;
+		border-radius: 3px;
 		&:hover {
 			background: #0B8C60;
 		}
 	}
-}
-
-.main {
-	height:100vh;
 }

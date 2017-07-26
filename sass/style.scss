@@ -65,10 +65,10 @@ HOME PAGE Styling
 ====================================
 */
 
-.hero {
+.home-hero {
 	height:500px;
 	margin-top: 45px; //height of header
-	padding: 10% 0;
+	padding: 6% 0;
 	.hero-content {
 		width: 60%;
 		background: rgba(28,160,113,0.7);
@@ -91,10 +91,10 @@ HOME PAGE Styling
 			}
 		}
 		a {
-			display: block;
-		    width: 120px;
+			display: inline-block;
+		    // width: 120px;
 		    margin-top: 20px;
-		    border-radius: 5px;
+		    border-radius: 3px;
 		    padding: 15px 15px;
 		    background: #fff;
 		    /* color: red; */
@@ -110,17 +110,29 @@ HOME PAGE Styling
 .four-columns {
 	margin: 50px 0;
 	ul {
-	display:flex;
-	justify-content:space-between;
-	li {
-		margin: 0 10px;
-	}
+		display:flex;
+		justify-content:space-between;
+		li {
+		// margin: 0 10px;
+		width:22%;
+			img {
+				width:50%;
+				height:auto;
+				margin: 0 auto 20px;
+				display:block;
+			}
+			h2 {
+				text-align: center;
+				width:80%;
+				margin:0 auto 20px;
+				height:80px;
+			}
+		}
 	}
 }
 
 .three-columns {
 	background:  #F4F3F2;
-	height:50vh;
 	width:100%;
 	padding:50px 0;
 	.container {
@@ -129,12 +141,24 @@ HOME PAGE Styling
 		> div {
 			border: 1px solid #E6E6E6;
 			box-shadow: 0 0 2px 1px lightgrey;
-			margin: 0 10px;
+			// margin: 0 10px;
+			background: #fff;
+			width:30%;
 			div {
 				padding:15px;
-				background: #fff;
 				h1 {
 
+				}
+				a {
+					display: inline-block;
+					// width: 120px;
+					border-radius: 3px;
+					padding: 15px 15px;
+					font-weight: 800;
+					font-size: 1.4rem;
+					text-transform: uppercase;
+					background: #27b489;
+					color: #fff;
 				}
 			}
 		}
@@ -147,7 +171,55 @@ END: HOME PAGE Styling
 */
 
 
+/*
+====================================
+FULL PAGE TEMPLATE Styling
+====================================
+*/
+
+.hero {
+	background: url('images/template-bg2.jpg');
+	background-size: cover;
+	margin-top: 45px;
+	.hero-content {
+		padding: 50px 0;
+		color:white;
+		max-width:1250px;
+		margin:0 auto;
+		h2 {
+			font-size: 48px;
+			margin-bottom: 0;
+		}
+	}
+}
 
 
+/*
+====================================
+END: FULL PAGE TEMPLATE Styling
+====================================
+*/
+
+
+/*
+====================================
+FUNDING PARTNERS Styling
+====================================
+*/
+
+.funding-partners ul{
+	display:flex;
+	justify-content:space-between;
+	li {
+		width: 23%;
+	}
+}
+
+
+/*
+====================================
+END: FUNDING PARTNERS Styling
+====================================
+*/
 
 

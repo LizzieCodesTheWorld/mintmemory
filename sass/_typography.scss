@@ -58,8 +58,8 @@ dd {
 
 /*lists*/
 
-ul li, ol li {
-	padding: 3px;
+ul {
+	padding-left: 0;
 }
 
 li {
@@ -113,6 +113,24 @@ img {
 
 h1, h2, h3, h4, h5, h6, p {
 	margin: 0;
+}
+
+h1 {
+
+}
+
+h2 {
+	font-size: 2.1rem;
+	margin-bottom: 20px;
+}
+
+h4 {
+	font-size: 2.1rem;
+	margin-bottom: 20px;
+}
+
+p {
+	margin-bottom: 20px;
 }
 
 
