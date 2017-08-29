@@ -275,3 +275,18 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+
+add_action( 'widgets_init', 'child_register_sidebar' );
+
+function child_register_sidebar(){
+    register_sidebar(array(
+        'name' => 'Login',
+        'id' => 'login',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+    ));
+}
+?>

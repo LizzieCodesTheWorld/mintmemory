@@ -43,10 +43,6 @@ body {
 	}
 }
 
-.content {
-
-}
-
 .full {
 	width: 100%;
 }
@@ -57,9 +53,40 @@ body {
 	color: red;
 }
 
+#nf-field-9, .button-green, input[type=submit], input[type=button]  {
+	background: #27B489;
+	color: #fff;
+	font-weight: 800;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	padding: 10px 25px;
+	transition:0.3s;
+	border-radius: 3px;
+	border:none;
+	&:hover {
+		background: #0B8C60;
+	}
+}
+
 .none {
 	display:none;
 }
+
+input {
+	padding:10px;
+}
+
+// label {
+// 	display:none!important; //NEED TO CHANGE
+// }
+
+.main {
+	margin-top: 76px;
+}
+
+// textarea {
+// 	border: none;
+// }
 
 /*
 ====================================
@@ -284,3 +311,210 @@ END: RESEARCH PAGE Styling
 ====================================
 */
 
+/*
+==================================
+CONTACT US Styling
+====================================
+*/
+.contact-details h2{
+	margin-bottom: 0;
+}
+
+.email {
+	margin-top: 20px;
+}
+
+.contact-info .container {
+	display:flex;
+	margin: 50px auto;
+	.map {
+		width:60%;
+	}
+	.contact-details {
+		width:40%;
+	}
+}
+
+.inquiries {
+	padding: 50px 0;
+	background: #f4f3f2;
+}
+
+#nf-field-9 {
+	float: right;
+}
+
+/*
+====================================
+END: CONTACT US Styling
+====================================
+*/
+
+
+
+/*
+==================================
+LATEST MEDIA COVERAGE PAGE Styling
+====================================
+*/
+
+.news-items .container {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	margin-bottom: 50px;
+	p {
+		margin: 0;
+	}
+	> a {
+		width:48%;
+	}
+}
+
+.more {
+	background: #F4F3F2;
+	padding:50px 0;
+	h1 {
+		text-transform: capitalize;
+	}
+	.news-item {
+		display:flex;
+		justify-content:space-between;
+		padding:50px 0;
+		border-bottom: 1px solid #e0dfdf;
+		p {
+			margin: 0;
+		}
+		&:last-child {
+			border-bottom: none;
+		}
+		div:first-child {
+			width:25%;
+			img {
+				height:auto;
+				}
+			}
+		div:last-child {
+			width:73%;
+		}
+	}
+}
+
+
+/*
+====================================
+END: LATEST MEDIA COVERAGE 
+====================================
+*/
+
+
+/*
+==================================
+ABOUT US
+====================================
+*/
+
+.top-content-section {
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+	margin: 50px 0;
+	img {
+		margin: 0 50px 0 0;
+	}
+}
+
+.text-section {
+	background: #F4F3F2;
+	padding:50px;
+}
+.image-section {
+	padding:50px 0;
+	text-align: center;
+	p {
+		width:80%;
+		margin: 40px auto 0;
+	}
+}
+/*
+====================================
+END: ABOUT US 
+====================================
+*/
+
+
+
+/*
+==================================
+LOGIN
+====================================
+*/
+
+.main.login {
+	background: #F4F3F2;
+}
+#gform_login_widget-2, .registration-form {
+    width: 45%;
+    box-shadow: 0px 0px 15px lightgrey;
+    margin: 10% auto;
+    padding:6% 5%;
+    background: white;
+    a {
+    	text-align: center;
+    	display:block;
+    }
+    .widgettitle, h3.gform_title {
+    	font-size: 42px!important;
+    	color:#464646;
+    }
+
+    .gform_wrapper ul.gform_fields li.gfield {
+    	padding-right: 0!important;
+    }
+
+    input[type=text], input[type=email] {
+    	border: 1px solid lightgrey;
+    	border-radius: 3px;
+    	height:50px;
+    	width:100%;
+    	padding-left: 30px!important;
+    }
+
+    input[type=submit], input[type=button], input[type=password] {
+    	width:100%!important;
+    	height:50px;
+    }
+     input[type=submit], input[type=button] {
+    	width:100%!important;
+    	height:50px;
+    }
+}
+
+#gform_fields_1 li {
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	label {
+		width:40%;
+		margin-bottom: 0;
+		text-align: right;
+	}
+	.ginput_container{
+		width:60%;
+		select, input {
+			height:50px;
+			padding-left: 30px;
+			width:100%;
+		}
+	}
+}
+
+/*
+====================================
+END: LOGIN 
+====================================
+*/
+
+.logo {
+	width:250px;
+}
