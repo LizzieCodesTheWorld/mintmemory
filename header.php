@@ -31,6 +31,6 @@
       'theme_location' => 'primary'
     )); ?>
 
-    <a href="" class="login-button">login <i class="fa fa-key"></i> </a>
+    <a href="/login/" class="login-button">login <i class="fa fa-key"></i> </a>
   </div> <!-- /.container -->
 </header><!--/.header-->

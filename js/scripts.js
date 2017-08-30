@@ -4,7 +4,7 @@ $(function(){
 
 	// DROPDOWN MENU
 	$('.menu-item-has-children').click(function(){
-		event.preventDefault();
+		// event.preventDefault();
 		$(this).toggleClass('open');
 		$(this).children('.sub-menu').slideToggle();
 	});

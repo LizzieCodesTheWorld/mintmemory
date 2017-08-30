@@ -23,6 +23,7 @@ Default Styling
 html {
 	font-size: 62.5%;
 	margin-top: -32px;
+	height: 100%;
 }
 
 img {
@@ -31,6 +32,7 @@ img {
 
 body {
 	color: #333;
+	height: 100%;
 	font-family: 'Raleway', sans-serif;
 	font-size: 1.4rem;
 }
@@ -81,7 +83,8 @@ input {
 // }
 
 .main {
-	margin-top: 76px;
+	height: calc(100% - 76px);
+	padding-top: 76px;
 }
 
 // textarea {
