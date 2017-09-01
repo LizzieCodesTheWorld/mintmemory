@@ -26,8 +26,6 @@
                 $map = get_field('google_map'); 
 
                 //inquiries section
-    			$title = get_field('inquiries_section_title');
-                $description = get_field('inquiries_section_description');
                 $contact = get_field('contact_form'); 
     			?>
 
@@ -49,8 +47,6 @@
 
     	<section class="inquiries">
     	  <div class="container">
-            <h1><?php echo $title; ?></h1>
-            <h2><?php echo $description; ?></h2>
     		<?php echo $contact; ?>
     	  </div>
     	</section>

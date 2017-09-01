@@ -32,7 +32,7 @@
                               <div class="news-item">
                                   <div><?php the_post_thumbnail('full'); ?></div>
                                   <div>
-                                      <p><span><?php echo $date; ?> </span><span> / <?php echo $source; ?></span></p>
+                                      <p><?php echo $date; ?><strong> / <?php echo $source; ?></strong></p>
                                       <h2><?php the_title(); ?></h2>
                                   </div>
                               </div>
@@ -74,7 +74,7 @@
                                 <div><?php the_post_thumbnail('full');; ?>
                                 </div>
                                 <div>
-                                    <p><?php echo $date; ?> <span>/ <?php echo $source; ?></span></p>
+                                    <p><?php echo $date; ?> <strong>/ <?php echo $source; ?></strong></p>
                                     <h2><?php the_title(); ?></h2>
                                 </div>
                             </div>

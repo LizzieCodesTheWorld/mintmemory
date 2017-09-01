@@ -3,10 +3,10 @@
 
     	<div class="hero" style="background-image: url(<?php the_field('banner_image');?>);background-size: cover; background-position: center;">
 			<div class="container hero-content">
-				<?php if(is_page('about-us')): ?>
+				<?php if(is_page('about-us') || is_page('research')): ?>
 					<?php the_content(); ?>
 				<?php else : ?>
-					<?php the_title(); ?>
+					<h1><?php the_title(); ?></h1>
 				<?php endif; ?>
 			</div>
 		</div>

@@ -6,17 +6,13 @@
 
 get_header();  ?>
 
-<div class="hero">
-	<div class="hero-content">
-		<h2><?php the_title(); ?></h2>
-	</div>
-</div>
+<?php get_template_part('hero'); ?>
 
 <div class="main">
   <div class="container">
 
-	<?php the_content(); ?>
-
+	<?php the_field('main_content'); ?>
+	
 	<section class="funding-partners">
 
 	  <div class="container">
