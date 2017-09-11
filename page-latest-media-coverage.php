@@ -2,7 +2,7 @@
 
 <?php get_template_part('hero'); ?>
 
-<div class="main">
+<div class="main no-padding">
     <div class="content">
     	<section class="news-items">
     	    <div class="container">

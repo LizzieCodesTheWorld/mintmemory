@@ -24,16 +24,15 @@ function theme_setup() {
 	function register_my_menus() {
 	  register_nav_menus(
 	    array(
-	      'toolbar-menu' => __( 'Toolbar Menu' ),
-	      'breadcrumb-menu' => __( 'Breadcrumb Menu' ),
-	      'loggedin-menu' => __( 'Logged In Menu' ),
 	      'loggedout-menu' => __( 'Logged Out Menu' ),
-	      'footer-menu' => __( 'Footer Menu' )
+	      'loggedintrainee-menu' => __( 'Logged In Trainee Menu' ),
+	      'loggedinclinician-menu' => __( 'Logged In Clinician Menu' )
 	    )
 	  );
 	}
 	add_action( 'init', 'register_my_menus' );
 
+	
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.

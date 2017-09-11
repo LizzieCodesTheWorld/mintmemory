@@ -1,15 +1,12 @@
 <?php get_header();  ?>
 
+<?php get_template_part('hero'); ?>
+
+
 <?php // Start the loop ?>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<div class="hero" style="background-image: url(<?php the_field('banner_image');?>);background-size: cover; background-position: center;">
-	<div class="hero-content">
-		<h1><?php the_title(); ?></h1>
-	</div>
-</div>
-
-<div class="main">
+<div class="main no-padding">
 
     <div class="content">
 
