@@ -13,15 +13,6 @@
 
 <div class="main">
 
-<?php 
-
-$currentUser = get_current_user_id(); 
-$all_meta_for_user = get_user_meta( $currentUser );
-print_r( $all_meta_for_user );
-?>
-
-
-
     <div class="content">
 
     	<section class="four-columns">

@@ -95,7 +95,7 @@ header {
 	}
 }
 
-li.locked {
+li.locked, li.unlocked {
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
@@ -104,5 +104,10 @@ li.locked {
 
 li.locked:after {
 	content:'\f023';
+	font-family: FontAwesome;
+}
+
+li.unlocked:after {
+	content:'\f09c';
 	font-family: FontAwesome;
 }

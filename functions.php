@@ -288,4 +288,5 @@ function child_register_sidebar(){
         'after_title' => '</h4>',
     ));
 }
+
 ?>

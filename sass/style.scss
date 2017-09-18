@@ -24,6 +24,13 @@ html {
 	font-size: 62.5%;
 	// margin-top: -32px;
 	height: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 img {
@@ -32,7 +39,9 @@ img {
 
 body {
 	color: #333;
-	height: 100%;
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 96px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 1.8rem; //design = 1.4
 }
@@ -49,7 +58,7 @@ body {
 	}
 }
 
-.content .container, .hero-content.container {
+.content .container, .hero-content.container, .container.narrow {
 	max-width: 1000px;
 }
 
@@ -160,8 +169,9 @@ HOME PAGE Styling
 	ul {
 		display:flex;
 		justify-content:space-between;
+		padding-left: 0;
 		li {
-		// margin: 0 10px;
+		list-style:none;
 		width:22%;
 			img {
 				width:50%;
@@ -595,23 +605,32 @@ LOGIN
 
 #gform_login_widget-2 li {
 	display:flex;
-	justify-content:space-between;
+	justify-content:flex-end;
 	align-items:center;
 	label {
-		width:40%;
+		width:30%;
 		margin-bottom: 0;
+		padding-right: 20px;
 		text-align: right;
 	}
 	.ginput_container{
-		width:60%;
+		width:70%;
 		select, input {
 			height:50px;
-			padding-left: 30px;
 			width:100%;
 		}
 	}
 }
 
+#gform_login_widget-2 #field_3 {
+	.ginput_container_checkbox {
+		width: 100%;
+	}
+	label {
+		padding: 0 0 0 20px;
+		text-align: left;	
+	}
+}
 /*
 ====================================
 END: LOGIN 
@@ -673,4 +692,32 @@ END: WHAT TO EXPECT
 ====================================
 */
 
+/*
+====================================
+MY ACCOUNT
+====================================
+*/
+
+.account-info {
+	display:flex;
+	justify-content:space-between;
+	// width:60%;
+	// margin:0 auto;
+	h2 {
+		text-transform: capitalize;
+	}
+	hr {
+		margin-bottom: 30px;
+	}
+}
+
+.resources-links h2{
+	margin-top: 30px;
+}
+
+/*
+==================================
+END: MY ACCOUNT
+====================================
+*/
 

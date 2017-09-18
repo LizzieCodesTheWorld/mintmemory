@@ -26,19 +26,22 @@
       </a>
     </h1>
 
- <!--    <?php 
-      $userId = get_current_user_id();
-      $userType = get_the_author_meta('user_type', $user->ID); 
-      print_r($usertype)
+  <?php 
+     $user_id = get_current_user_id();
+     $key = 'User Type';
+     $type = get_user_meta(get_current_user_id(), $key = 'User Type'); 
+  ?>
 
-    ?>
- -->
-
-    <?php if(is_user_logged_in()) : ?>
+    <?php if(is_user_logged_in() && $type = 'Trainee') : ?>
         <?php wp_nav_menu( array(
           'container' => false,
-          'theme_location' => 'loggedin-menu'
+          'theme_location' => 'loggedintrainee-menu'
         )); ?> 
+    <?php elseif(is_user_logged_in() && $type = 'Clinician') : ?>
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'loggedinclinician-menu'
+      )); ?>
     <?php else : ?>
       <?php wp_nav_menu( array(
         'container' => false,

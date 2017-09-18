@@ -18,11 +18,9 @@
 
 	  </pre> -->
 	<div class="container">
-	  <h1>
 	    <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-	      <?php bloginfo( 'name' ); ?>
-	    </a>
-	  </h1>
+	        <img src="<?php bloginfo('template_url'); ?>/images/MINTLogo_RightWhite.png" alt="home" class="logo">
+      </a>
 
 	  <div>
 	  	<p>&copy; 2017 The Centre for Family Medicine Memory Clinic <?php echo date('Y'); ?></p>

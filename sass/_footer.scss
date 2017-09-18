@@ -4,6 +4,10 @@ footer {
 	font-weight: 500;
 	font-size: 1.4rem;
 	padding:20px 0;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	div {
 		text-align: right;
 		a {
@@ -24,5 +28,13 @@ footer {
 	.container {
 		display: flex;
 		justify-content:space-between;
+		align-items: center;
 	}
+}
+
+.bottom-footer {
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
 }
