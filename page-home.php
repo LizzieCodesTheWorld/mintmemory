@@ -62,21 +62,21 @@
     			<img src="<?php the_field('patients_image'); ?>" alt="">
     			<div>
                     <h4><?php the_field('patients_title'); ?></h4>
-                    <p><?php the_field('patients_content'); ?></p>
+                    <?php the_field('patients_content', false, false); ?> 
                 </div>
     		</div>
     		<div>
     			<img src="<?php the_field('clinicians_image'); ?>" alt="">
     			<div>
                     <h4><?php the_field('clinicians_title'); ?></h4>
-                    <p><?php the_field('clinicians_content'); ?></p>
+                    <?php the_field('clinicians_content', false, false); ?>
                 </div>
     		</div>
     		<div>
     			<img src="<?php the_field('find_image'); ?>" alt="">
     			<div>
                     <h4><?php the_field('find_title'); ?></h4>
-                    <p><?php the_field('find_content'); ?></p>
+                   <?php the_field('find_content', false, false); ?>
                 </div>
     		</div>
     	  </div>

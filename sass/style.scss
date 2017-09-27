@@ -95,6 +95,11 @@ input {
 	padding:10px;
 }
 
+select {
+	height: 32px;
+	border-radius:0!important;
+}
+
 // label {
 // 	display:none!important; //NEED TO CHANGE
 // }
@@ -196,6 +201,10 @@ HOME PAGE Styling
 	.container {
 		display:flex;
 		justify-content:space-between;
+		img {
+			min-height: 200px;
+			object-fit: cover;
+		}
 		> div {
 			border: 1px solid #E6E6E6;
 			box-shadow: 0 0 2px 1px lightgrey;
@@ -702,13 +711,25 @@ MY ACCOUNT
 .account-info {
 	display:flex;
 	justify-content:space-between;
-	// width:60%;
-	// margin:0 auto;
+	margin-bottom: 50px;
 	h2 {
 		text-transform: capitalize;
 	}
 	hr {
-		margin-bottom: 30px;
+		margin: 100px 0 30px;
+	}
+}
+
+.current-account-details {
+	width:45%;
+	margin-top: 50px;
+}
+
+.update-account-details {
+	padding: 50px;
+	box-shadow: 0 0 2px 1px lightgrey;
+	h2 {
+		margin-bottom: 40px;
 	}
 }
 

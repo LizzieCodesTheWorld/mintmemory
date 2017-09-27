@@ -2,11 +2,11 @@
 
 <?php get_template_part('hero'); ?>
 
-<!-- <?php 
+<<?php 
    $user_id = get_current_user_id();
    $key = 'User Type';
-   $type = get_user_meta(get_current_user_id(), $key); 
-?> -->
+   $type = get_user_meta($user_id, $key); 
+?>
       <div class="main">
           <div class="content">
 

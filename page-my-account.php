@@ -8,13 +8,15 @@
          $user_id = get_current_user_id();
          
         // GET TYPE AND NAME
-         $nickname =  get_user_meta(get_current_user_id(), $key = "nickname");
-         $type = get_user_meta(get_current_user_id(), $key = 'User Type');
+         $firstname =  get_user_meta($user_id, $key = "first_name");
+         $lastname =  get_user_meta($user_id, $key = "last_name");
+         $type = get_user_meta($user_id, $key = "User Type");
  
 
          // GET EMAIL
          $user_info = get_userdata($user_id);
          $email = $user_info->user_email;
+
       ?> 
 
     <div class="main">
@@ -22,18 +24,19 @@
             <div class="content">
                 <section class="account-info">
                     <div class="current-account-details"> 
-                        <h2><?php echo $nickname[0]; ?></h2>
-                        <p><?php echo $type[0]; ?></p>
-                        <h3>Email <br><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></h3>
+                        <h2>Current Account details</h2>
+                        <p><strong>Name: </strong><?php echo $firstname[0]; ?> <?php echo $lastname[0]; ?></p>
+                        <p><strong>User Type: </strong><?php echo $type[0]; ?></p>
+                        <p><strong>Email: </strong><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+                        <hr>
+                        <div class="resources-links">
+                            <?php the_field('resources_links'); ?>
+                        </div>
                     </div>
                     <div class="update-account-details">    
                         <h2>Update your account details here:</h2>  
                         <?php the_field('update_info_form'); ?>
                     </div>
-                </section>
-                <hr>
-                <section class="resources-links">
-                    <?php the_field('resources_links'); ?>
                 </section>
             </div> <!-- /,content -->
         </div>

@@ -276,8 +276,7 @@ function get_post_parent($post) {
 }
 
 
-add_action( 'widgets_init', 'child_register_sidebar' );
-
+//REGISTER SIDEBAR
 function child_register_sidebar(){
     register_sidebar(array(
         'name' => 'Login',
@@ -287,6 +286,16 @@ function child_register_sidebar(){
         'before_title' => '<h4 class="widgettitle">',
         'after_title' => '</h4>',
     ));
+}
+add_action( 'widgets_init', 'child_register_sidebar' );
+
+//PREVENT NON ADMIN USERS SEEING WP-ADMIN BAR
+add_action('after_setup_theme', 'remove_admin_bar');
+ 
+function remove_admin_bar() {
+if (!current_user_can('administrator') && !is_admin()) {
+  show_admin_bar(false);
+}
 }
 
 ?>
