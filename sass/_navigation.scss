@@ -2,6 +2,18 @@
 	width:250px;
 }
 
+.fa-bars {
+	display: none;
+	font-size: 4rem;
+	@include breakpoint(standard) {
+		display:block;
+	}
+}
+
+.fa-times {
+	font-size: 4rem;
+}
+
 ul.menu {
 	margin: 0;
 	padding: 0;
@@ -20,16 +32,46 @@ ul.menu {
 
 ul.menu  {
 	display: flex;
-	> li.menu-item-has-children:after {
+	@include breakpoint(standard) {
+		display:none;
+		flex-direction:column;
+		position:absolute;
+		width:300px;
+		right:5%;
+		top: 90px;
+		background: white; 
+		border:1px solid #ccc;
+		border-radius:3px;
+	}
+	@include breakpoint(phone) {
+		right:0;
+		width:100%;
+	}
+
+	> li.menu-item-has-children > a:after {
 			content: ' \f078';
+			font-family: FontAwesome;
+	}
+	> li.menu-item-has-children.open > a:after {
+			content: ' \f077';
 			font-family: FontAwesome;
 	}
 	> li {
 		position: relative;
 		border-bottom: solid 3px white;
 		transition:0.3s;
+		@include breakpoint(standard) {
+			padding: 10px 0; 
+			border-bottom:1px solid #ccc;
+			&:last-child {
+				border-bottom: none;
+			}
+		}
 		&:hover {
 			border-bottom: solid 3px #8AC985;
+			@include breakpoint(standard) {
+				border-bottom:1px solid #ccc;
+			}
 		}
 
 		// SUBMENU
@@ -44,6 +86,11 @@ ul.menu  {
 		margin-top: 20px;
 		background:  #FFF;
 		box-shadow: 0 0 2px 1px lightgrey;
+		@include breakpoint(standard) {
+			position:static;
+			box-shadow: 0 0 0;
+			margin-top: 0;
+		}
 		> li {
 			border-bottom: 1px solid #E6E6E6;
 			padding: 10px 0;
@@ -89,6 +136,9 @@ header {
 		padding: 10px 25px;
 		transition:0.3s;
 		border-radius: 3px;
+		@include breakpoint(standard) {
+			display:none;
+		}
 		&:hover {
 			background: #0B8C60;
 		}

@@ -16,6 +16,12 @@ $(function(){
 		$(this).find('.fa-minus').toggleClass('none');
 	});
 
+	$('.fa-bars').click(function(){
+		$('ul.menu').slideToggle();
+		$(this).toggleClass('fa-bars');
+		$(this).toggleClass('fa-times');
+	});
+
 
 
 

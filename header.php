@@ -32,29 +32,46 @@
      $type = get_user_meta(get_current_user_id(), $key = 'User Type'); 
   ?>
 
-    <?php if(is_user_logged_in() && $type = 'Trainee') : ?>
+
+<?php if(is_user_logged_in()) : ?>
+
+    <?php if($type[0] = 'trainee') : ?>
+      <!-- <h2>trainee</h2> -->
         <?php wp_nav_menu( array(
           'container' => false,
-          'theme_location' => 'loggedintrainee-menu'
-        )); ?> 
-    <?php elseif(is_user_logged_in() && $type = 'Clinician') : ?>
+          'theme_location' => 'loggedintrainee-menu')); 
+        ?> 
+    <?php else : ?>
+      <!-- <h2>clinician</h2> -->
       <?php wp_nav_menu( array(
         'container' => false,
         'theme_location' => 'loggedinclinician-menu'
       )); ?>
-    <?php else : ?>
-      <?php wp_nav_menu( array(
-        'container' => false,
-        'theme_location' => 'loggedout-menu'
-      )); ?>
     <?php endif; ?> 
 
+<?php else : ?>
 
-    <?php if(is_user_logged_in()) : ?>
-       <a href=" <?php echo wp_logout_url( '/login/' ); ?> " class="login-button">logout <i class="fa fa-key"></i> </a>
-    <?php else : ?>
-      <a href="/login/" class="login-button">login <i class="fa fa-key"></i> </a>
-    <?php endif; ?>
+  <?php wp_nav_menu( array(
+    'container' => false,
+    'theme_location' => 'loggedout-menu'
+  )); ?>
+
+<?php endif; ?> 
+      
+
+<?php if(is_user_logged_in()) : ?>
+   <a href=" <?php echo wp_logout_url( '/login/' ); ?> " class="login-button">logout <i class="fa fa-key"></i> </a>
+<?php else : ?>
+  <a href="/login/" class="login-button">login <i class="fa fa-key"></i> </a>
+<?php endif; ?>
+
+<i class="fa fa-bars"></i>
+
+<!-- <h1>logged in</h1>
+<h2><?php print_r($type); ?></h2> -->
 
   </div> <!-- /.container -->
 </header><!--/.header-->
+
+
+

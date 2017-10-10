@@ -8,12 +8,12 @@
 */
 
 @import 'normalize';
+@import 'breakpoint';
 @import 'typography';
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
-@import 'breakpoint';
 /*
 ====================================
 Default Styling
@@ -37,6 +37,12 @@ img {
 	max-width: 100%;
 }
 
+hr {
+	background: #ccc;
+	border:none;
+	height:1px;
+}
+
 body {
 	color: #333;
 	min-height: 100%;
@@ -48,18 +54,31 @@ body {
 
 .logged-in {
 	margin-top: -32px;
+	@include breakpoint(wpadminsmall) {
+		margin-top: -46px;
+	}
 }
 
 .container {
 	max-width: 1250px;
 	margin: 0 auto;
 	@include breakpoint(standard) {
-		margin: 0 5%;
+		margin: 0 auto;
+		padding:0 5%;
+	}
+	@include breakpoint(phone) {
+		margin: 0 auto;
+		padding:0 2.5%;
 	}
 }
 
-.content .container, .hero-content.container, .container.narrow {
-	max-width: 1000px;
+// .content .container, .container.narrow {
+// 	max-width: 1000px;
+// }
+.content {
+	@include breakpoint(standard) {
+		margin: 0 0 100px;
+	}
 }
 
 .full {
@@ -105,7 +124,10 @@ select {
 // }
 
 .main {
-	padding: 50px 0 50px;
+	padding: 50px 0;
+	@include breakpoint(standard) {
+		padding: 30px 0;
+	}
 }
 
 .main.no-padding {
@@ -120,6 +142,18 @@ select {
 // textarea {
 // 	border: none;
 // }
+
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  // @include word-wrap()
+}
 
 /*
 ====================================
@@ -202,7 +236,7 @@ HOME PAGE Styling
 		display:flex;
 		justify-content:space-between;
 		img {
-			min-height: 200px;
+			min-height: 250px;
 			object-fit: cover;
 		}
 		> div {
@@ -282,21 +316,47 @@ FUNDING PARTNERS Styling
 	display:flex;
 	justify-content:space-between;
 	padding-left: 0;
+	flex-wrap:wrap;
+	@include breakpoint(tabletsmall) {
+		justify-content:flex-start;
+	}
+	@include breakpoint(phonesmall){
+		margin-top: 0;
+		margin-bottom: 50px;
+	}
 	li {
-		width: 23%;
+		width: calc(25% - 20px);
 		list-style: none;
+		margin: 10px;
+		@include breakpoint(tabletsmall) {
+			width: calc(50% - 20px);
+		}
+		@include breakpoint(phonesmall){
+			width:100%;
+		}
 	}
 }
 
 .funding-content {
-	margin: 50px auto;
+	margin: 0px auto 50px;
+	@include breakpoint(tabletsmall){
+		margin-bottom: 30px;
+	}
 	.paragraphs {
 		display:flex;
+		@include breakpoint("640") {
+			display:block;
+		}
 		img {
 			height:100%;
 			width:40%;
 			margin-left: 5%;
 			margin-bottom: 20px;
+			@include breakpoint("640") {
+				margin-left: 0;
+				display:block;
+				width:100%;
+			}
 		}
 	}
 }
@@ -324,15 +384,31 @@ RESEARCH PAGE Styling
 	justify-content:space-between;
 	align-items:center;
 	margin: 50px 0;
+	@include breakpoint(tabletsmallest) {
+		flex-direction:column;
+		align-items: center;
+		margin: 20px 0;
+	}
+	&:first-child {
+		margin-top: 0;
+	}
 	&:nth-child(odd) {
 		flex-direction: row-reverse;
+		@include breakpoint(tabletsmallest) {
+			flex-direction:column;
+			align-items: center;
+		}
 		img {
 			margin: 0 0 0 50px;
+			@include breakpoint(tabletsmallest) {
+				margin: 0 0;
+			}
 		}
 	}
 	img {
 		margin: 0 50px 0 0;
 		width:35%;
+		min-width:250px;
 	}
 }
 
@@ -355,7 +431,7 @@ RESEARCH PAGE Styling
 	}
 	h2 {
 		margin: 0;
-	}
+	}	
 }
 
 .accordion-item:first-child .accordion-title {
@@ -365,6 +441,10 @@ RESEARCH PAGE Styling
 
 .accordion-item {
 	cursor: pointer;
+}
+
+.accordion-item ul li a{
+	@include word-wrap();
 }
 
 /*
@@ -389,18 +469,38 @@ CONTACT US Styling
 
 .contact-info .container {
 	display:flex;
-	margin: 0 auto 50px;
+	// margin: 0 auto 50px;
+	@include breakpoint(tabletsmall) {
+		flex-direction: column;
+	}
 	.map {
 		width:60%;
+		@include breakpoint(tabletsmall) {
+			width:100%;
+			margin-bottom: 20px;
+		}
+		@include breakpoint(phone) {
+			order:2;
+			margin-top: 20px;
+		}
 	}
 	.contact-details {
 		width:40%;
+		@include breakpoint(tabletsmall) {
+			order: 1;
+			width:100%;
+		}
 	}
 }
 
 .inquiries {
 	padding: 50px 0;
 	background: #f4f3f2;
+	margin-top: 50px;
+	@include breakpoint(tabletsmall) {
+		margin-top: 20px;
+		padding-top: 20px;
+	}
 	.gform_heading {
 		margin-bottom: 50px!important;
 	}
@@ -418,6 +518,9 @@ CONTACT US Styling
 	textarea, input {
 		border: 1px solid lightgrey;
 		border-radius: 3px;
+	}
+	input[type="submit"] {
+		height:initial;
 	}
 }
 
@@ -458,6 +561,9 @@ LATEST MEDIA COVERAGE PAGE Styling
 	}
 	> a {
 		width:48%;
+		@include breakpoint("709") {
+			width:100%;
+		}
 	}
 }
 
@@ -470,11 +576,22 @@ LATEST MEDIA COVERAGE PAGE Styling
 	a:last-child > div {
 		border-bottom:none;
 	}
+	img {
+		min-width:150px;
+	}
+	h2 {
+		@include breakpoint("560") {
+			margin-bottom: 0;
+		}
+	}
 	.news-item {
 		display:flex;
 		justify-content:space-between;
 		padding:50px 0;
 		border-bottom: 1px solid #e0dfdf;
+		@include breakpoint("560") {
+			flex-direction:column;
+		}
 		p {
 			margin: 0;
 		}
@@ -509,14 +626,21 @@ ABOUT US
 	justify-content:space-between;
 	align-items:center;
 	margin: 50px 0;
+	@include breakpoint(tabletsmallest) {
+		margin: 30px 0;
+		flex-direction:column;
+	}
 	img {
 		margin: 0 50px 0 0;
+		@include breakpoint(tabletsmallest) {
+			margin: 0 auto 30px;
+		}
 	}
 }
 
 .text-section {
 	background: #F4F3F2;
-	padding:50px;
+	padding:50px 0;
 }
 .image-section {
 	padding:50px 0;
@@ -525,6 +649,9 @@ ABOUT US
 		width:80%;
 		margin: 40px auto 0;
 		font-size: 14px;
+		@include breakpoint(tabletsmallest) {
+			width:100%;
+		}
 	}
 }
 /*
@@ -553,6 +680,16 @@ LOGIN
 	margin: 10% auto;
 	padding:6% 5%;
 	background: white;
+	@include breakpoint(standard) {
+		width:80%;
+	}
+	@include breakpoint(tabletsmallest) {
+		width:100%;
+	}
+	#field_1_25 {
+		margin: 30px 0!important;
+		width:100%;
+	}
 	label {
 		text-align: right;
 	}
@@ -577,11 +714,14 @@ LOGIN
 
 //login
 #gform_login_widget-2 {
-    width: 45%;
+    width: 550px;
     box-shadow: 0px 0px 15px lightgrey;
     margin: 10% auto;
     padding:6% 5%;
     background: white;
+    @include breakpoint("560"){
+    	width:100%;
+    }
     a {
     	text-align: center;
     	display:block;
@@ -656,6 +796,8 @@ END: LOGIN
 			font-size: 2.6rem;
 			text-decoration: underline;
 			color:#333;
+			@include word-wrap();
+			display:block;
 		} 
 		p:last-child {
 			font-size: 2rem;
@@ -687,10 +829,22 @@ WHAT TO EXPECT
 		display:flex;
 		// flex-wrap: wrap;
 		margin-bottom: 100px;
+		@include breakpoint(tablet) {
+			margin-bottom: 30px;
+		}
+		@include breakpoint("709") {
+			flex-direction:column;
+		}
 		img {
 			width:30%;
+			max-width:300px;
 			height:100%;
 			margin-right: 5%;
+			@include breakpoint("709") {
+				width:300px;
+				height:100%;
+				margin:0 auto 20px;
+			}
 		}
 	}
 }
@@ -710,31 +864,49 @@ MY ACCOUNT
 
 .account-info {
 	display:flex;
+	flex-wrap:wrap;
 	justify-content:space-between;
 	margin-bottom: 50px;
 	h2 {
 		text-transform: capitalize;
 	}
 	hr {
-		margin: 100px 0 30px;
+		margin: 30px 0;
 	}
 }
 
 .current-account-details {
 	width:45%;
-	margin-top: 50px;
-}
-
-.update-account-details {
-	padding: 50px;
-	box-shadow: 0 0 2px 1px lightgrey;
-	h2 {
-		margin-bottom: 40px;
+	margin-top: 30px;
+	@include breakpoint(tabletsmall) {
+		width:100%;
+		margin-bottom: 30px;
 	}
 }
 
-.resources-links h2{
-	margin-top: 30px;
+.update-account-details {
+	padding: 30px;
+	box-shadow: 0 0 2px 1px lightgrey;
+	width:55%;
+	@include breakpoint(tabletsmall) {
+		width:100%;
+	}
+	h2 {
+		margin-bottom: 40px;
+	}
+	li {
+		padding-right: 0!important;
+	}
+	#field_3_5 {
+		margin-right: 0;
+	}
+}
+
+.resources-links {
+	width:100%;
+	h2{
+		margin-top: 30px;
+	}
 }
 
 /*
@@ -742,4 +914,91 @@ MY ACCOUNT
 END: MY ACCOUNT
 ====================================
 */
+
+/*
+====================================
+404
+====================================
+*/
+
+.error404 .main{
+	padding-top: 20%;
+	@include breakpoint("620") {
+		padding-top: 50%;
+		h1 {
+			font-size: 3.4rem;
+		}
+	}
+}
+
+/*
+====================================
+END: 404
+====================================
+*/
+
+/*
+====================================
+LOCATIONS
+====================================
+*/
+
+#wpsl-wrap {
+	background: #f4f3f3;
+	// padding:20px;
+	margin-top: 50px;
+	border: 1px solid #44413f;
+	border-radius:3px;
+	margin-bottom: 70px!important;
+}
+
+.wpsl-input {
+	display:flex;
+	align-items:center;
+	margin-bottom: 0!important;
+	> div > label {
+		width:120px;
+	}
+}
+
+.wpsl-search {
+	padding:0!important;
+	margin-bottom: 0!important;
+}
+
+#wpsl-search-wrap {
+	padding: 20px!important;
+	border-bottom: 1px solid grey!important;
+}
+
+#wpsl-gmap {
+	border-left:1px solid grey;
+	margin: 0!important;
+	height:100%;
+}
+
+#wpsl-wrap #wpsl-result-list li {
+	padding: 10px 10px 10px 20px!important;
+}
+
+#wpsl-search-btn {
+	background: #27b489!important;
+	color: #fff!important;
+	font-weight: 800!important;
+	font-size: 1.4rem!important;
+	text-transform: uppercase!important;
+	padding: 10px 25px!important;
+	-webkit-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+	border-radius: 3px!important;
+	border: none!important;
+}
+
+/*
+====================================
+END: LOCATIONS
+====================================
+*/
+
 

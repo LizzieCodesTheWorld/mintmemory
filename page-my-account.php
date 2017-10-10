@@ -23,19 +23,20 @@
         <div class="container narrow">
             <div class="content">
                 <section class="account-info">
-                    <div class="current-account-details"> 
-                        <h2>Current Account details</h2>
-                        <p><strong>Name: </strong><?php echo $firstname[0]; ?> <?php echo $lastname[0]; ?></p>
-                        <p><strong>User Type: </strong><?php echo $type[0]; ?></p>
-                        <p><strong>Email: </strong><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
-                        <hr>
+                        <div class="current-account-details"> 
+                          <h2>Current Account details</h2>
+                          <p><strong>Name: </strong><?php echo $firstname[0]; ?> <?php echo $lastname[0]; ?></p>
+                          <p><strong>User Type: </strong><?php echo $type[0]; ?></p>
+                          <p><strong>Email: </strong><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+                        </div>
+                        <div class="update-account-details">    
+                            <h2>Update your account details here:</h2>  
+                            <?php the_field('update_info_form'); ?>
+                        </div>
                         <div class="resources-links">
+                        <hr>
                             <?php the_field('resources_links'); ?>
                         </div>
-                    </div>
-                    <div class="update-account-details">    
-                        <h2>Update your account details here:</h2>  
-                        <?php the_field('update_info_form'); ?>
                     </div>
                 </section>
             </div> <!-- /,content -->

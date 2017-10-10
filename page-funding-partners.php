@@ -11,8 +11,6 @@ get_header();  ?>
 <div class="main bottom">
   <div class="container">
 
-  <div class="funding-content"><?php the_content(); ?></div>
-
 	<section class="funding-content">
 
 	  <div class="container">

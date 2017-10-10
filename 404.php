@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
-<div class="main">
+<div class="main content">
   <div class="container">
 
-    <h1>Not Found</h1>
-    <p>Apologies, but the page you requested could not be found. Perhaps searching will help.</p>
-    <?php get_search_form(); ?>
+    <h1>Oops! We can't seem to find the page you're looking for</h1>
+    <p>error 404</p>
+    <!-- <?php get_search_form(); ?> -->
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->

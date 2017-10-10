@@ -23,7 +23,7 @@
       </a>
 
 	  <div>
-	  	<p>&copy; 2017 The Centre for Family Medicine Memory Clinic <?php echo date('Y'); ?></p>
+	  	<p>&copy; <?php echo date('Y'); ?> The Centre for Family Medicine Memory Clinic </p>
 	  	<a href="/privacy-policy-information/">privacy policy information</a>
 	  </div>
 	</div> <!-- /.container -->

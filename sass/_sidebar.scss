@@ -9,3 +9,8 @@
 		}
 	}
 }
+
+.widget_recent_entries li {
+	display: flex;
+	flex-direction: column-reverse;
+}

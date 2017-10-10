@@ -26,6 +26,14 @@
     @media (max-width: 790px) { @content; }
     // @include breakpoint(tabletsmallest)
   }
+  @else if $point == wpadminsmall {
+    @media (max-width: 782px) { @content; }
+    // @include breakpoint(wpadminsmall)
+  }
+  @else if $point == tabletsmallest {
+    @media (max-width: 790px) { @content; }
+    // @include breakpoint(tabletsmallest)
+  }
   @else if $point == ("709") {
     @media (max-width: 709px) { @content; }
     // @include breakpoint("709")
