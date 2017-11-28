@@ -299,5 +299,18 @@ if (!current_user_can('administrator') && !is_admin()) {
 }
 
 
+function add_login_to_nav( $loggon, $args ) {
+
+	$logout = wp_logout_url( "/login/" );
+
+	if(is_user_logged_in()) {
+	    $loggon .=  '<a href="' . $logout . '" class="login-button">logout <i class="fa fa-sign-in"></i> </a>';
+	    // $loggon .= 'hello';
+	} else {
+	    $loggon .= '<a href="/login/" class="login-button">login <i class="fa fa-sign-in"></i> </a>';
+	}
+    return $loggon;
+}
+add_filter( 'wp_nav_menu_items', 'add_login_to_nav', 10, 2 );
 
 ?>

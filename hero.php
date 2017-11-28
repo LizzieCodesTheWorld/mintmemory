@@ -1,6 +1,4 @@
-<?php // Start the loop ?>
-    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
+<?php if(get_field('banner_image')) :?>
     	<div class="hero" style="background-image: url(<?php the_field('banner_image');?>);background-size: cover; background-position: center;">
 			<div class="container hero-content">
 				<?php if(is_page('about-us') || is_page('our-research')): ?>
@@ -10,5 +8,4 @@
 				<?php endif; ?>
 			</div>
 		</div>
-
-<?php endwhile; // end the loop?>
+<?php endif; ?>

@@ -24,7 +24,7 @@
 
 	  <div>
 	  	<p>&copy; <?php echo date('Y'); ?> The Centre for Family Medicine Memory Clinic </p>
-	  	<a href="/privacy-policy-information/">privacy policy information</a>
+	  	<a href="/privacy-policy-information/">Terms of Use / Privacy policy information</a>
 	  </div>
 	</div> <!-- /.container -->
 </footer>

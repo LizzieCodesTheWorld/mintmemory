@@ -1,5 +1,6 @@
 .logo {
 	width:250px;
+	margin-top: 10px;
 }
 
 .fa-bars {
@@ -12,6 +13,10 @@
 
 .fa-times {
 	font-size: 4rem;
+}
+
+.fa-sign-in {
+	color: #F1D644;
 }
 
 ul.menu {
@@ -32,6 +37,7 @@ ul.menu {
 
 ul.menu  {
 	display: flex;
+	align-items:center;
 	@include breakpoint(standard) {
 		display:none;
 		flex-direction:column;
@@ -47,30 +53,46 @@ ul.menu  {
 		right:0;
 		width:100%;
 	}
-
+	li.menu-open {
+		border-bottom: 3px solid #8AC985;
+	}
 	> li.menu-item-has-children > a:after {
 			content: ' \f078';
 			font-family: FontAwesome;
 	}
-	> li.menu-item-has-children.open > a:after {
+	> li.menu-item-has-children.menu-open > a:after {
 			content: ' \f077';
 			font-family: FontAwesome;
+	}
+	> li:last-of-type {
+		border-bottom: none;
+		&:hover {
+			border-bottom:none;
+		}
 	}
 	> li {
 		position: relative;
 		border-bottom: solid 3px white;
 		transition:0.3s;
+		font-family: 'Raleway', sans-serif;
+		&:hover {
+			border-bottom:3px solid #8AC985;
+		}
 		@include breakpoint(standard) {
 			padding: 10px 0; 
 			border-bottom:1px solid #ccc;
+			// normal hover
+			&:hover {
+				border-left:2px solid #8AC985;
+				border-bottom:1px solid #ccc;
+			}
+			// last menu item hover
 			&:last-child {
 				border-bottom: none;
-			}
-		}
-		&:hover {
-			border-bottom: solid 3px #8AC985;
-			@include breakpoint(standard) {
-				border-bottom:1px solid #ccc;
+				&:hover {
+					border-left:2px solid #8AC985;
+					border-bottom:none;
+				}
 			}
 		}
 
@@ -92,23 +114,28 @@ ul.menu  {
 			margin-top: 0;
 		}
 		> li {
+			font-family: 'Assistant', sans-serif;
 			border-bottom: 1px solid #E6E6E6;
 			padding: 10px 0;
 			margin: 0 10px;		
 			&:last-child {
 				border-bottom: none;
-				}	
+				}
 			a {
-				text-transform: capitalize!important;
+				text-transform: initial!important;
+					&:hover {
+						color: #0b8c60;
+					}	
 				}
 			}
 		}
-		li.open:after {
+		li.menu-open:after {
 			content: '\f077'!important;
 			font-family: FontAwesome!important;
 		}
 	}
 }
+
 
 header .container {
 	display:flex;
@@ -128,6 +155,7 @@ header {
 	background: white;
 	z-index: 3;
 	a.login-button {
+		font-family: 'Raleway', sans-serif;
 		background: #27B489;
 		color: #fff;
 		font-weight: 800;
@@ -137,7 +165,9 @@ header {
 		transition:0.3s;
 		border-radius: 3px;
 		@include breakpoint(standard) {
-			display:none;
+			display:block;
+			border-radius: 0;
+			padding: 14px 25px;
 		}
 		&:hover {
 			background: #0B8C60;

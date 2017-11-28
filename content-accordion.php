@@ -20,8 +20,8 @@
                   <div> <!-- open and close -->
                     <!-- <img src="<?php bloginfo('stylesheet_directory'); ?>/images/show-icon.png" alt="Show Icon" class="accordionShow">
                     <img src="<?php bloginfo('stylesheet_directory'); ?>/images/hide-icon.png" alt="Hide Icon" class="accordionHide"> -->
-                      <i class="fa fa-plus"></i>
-                      <i class="fa fa-minus none"></i>
+                      <i class="fa fa-chevron-down"></i>
+                      <i class="fa fa-chevron-up none"></i>
                   </div>
               </div>
               <div class="accordion-content none" id="accordion_content_<?php echo $i; ?>">

@@ -7,40 +7,12 @@
    $key = 'User Type';
    $type = get_user_meta($user_id, $key); 
 ?>
-      <div class="main">
+      <div class="main no-padding">
           <div class="content">
 
     <?php if(is_user_logged_in() && $type = 'Trainee') : ?>
-      
-            <section class="alternating-content">
-                <div class="container">
 
-                    <?php if( have_rows('research_sections') ): ?>
-
-                    <?php while( have_rows('research_sections') ): the_row(); 
-
-                        // vars
-                        $image = get_sub_field('image');
-                        $content = get_sub_field('content');
-
-                        ?>
-
-                        <div class="content-section">
-
-                            <img src="<?php echo $image; ?>" alt="" />
-                            <h2><?php echo $title; ?></h2>
-                            <?php echo $content; ?>
-
-                        </div>
-
-                      <?php endwhile; // end the loop?>
-
-                      <?php endif; ?>
-                      
-                  </div> <!-- /.container -->
-                      <?php get_template_part('content-accordion'); ?>
-
-              </section> <!-- ./alternating-content -->
+              <?php get_template_part('content-accordion'); ?>
       
     <?php else : ?>
       

@@ -7,41 +7,15 @@
    $key = 'User Type';
    $type = get_user_meta(get_current_user_id(), $key); 
 ?> -->
-      <div class="main">
-          <div class="content">
+<div class="main no-padding">
 
     <?php if(is_user_logged_in() && $type = 'Clinician') : ?>
-      
-            <section class="alternating-content">
-                <div class="container">
 
-                    <?php if( have_rows('research_sections') ): ?>
+      <section class="forms">
+         <?php get_template_part('form-accordion'); ?>
+      </section>
+          <?php get_template_part('content-accordion'); ?>
 
-                    <?php while( have_rows('research_sections') ): the_row(); 
-
-                        // vars
-                        $image = get_sub_field('image');
-                        $content = get_sub_field('content');
-
-                        ?>
-
-                        <div class="content-section">
-
-                            <img src="<?php echo $image; ?>" alt="" />
-                            <h2><?php echo $title; ?></h2>
-                            <?php echo $content; ?>
-
-                        </div>
-
-                      <?php endwhile; // end the loop?>
-
-                      <?php endif; ?>
-                      
-                  </div> <!-- /.container -->
-                      <?php get_template_part('content-accordion'); ?>
-
-              </section> <!-- ./alternating-content -->
-      
     <?php else : ?>
       
         <div class="container">
@@ -52,8 +26,7 @@
 
     <?php endif; ?> 
 
-          </div> <!-- /,content -->
-      </div> <!-- /.main -->
+</div> <!-- /.main -->
 
 
 <?php get_footer(); ?>

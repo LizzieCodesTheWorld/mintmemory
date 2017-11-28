@@ -10,6 +10,7 @@
   <?php // Load our CSS ?>
   <script src="https://use.fontawesome.com/7a056a494e.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Assistant:400,600,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
   <?php wp_head(); ?>
@@ -59,11 +60,11 @@
 <?php endif; ?> 
       
 
-<?php if(is_user_logged_in()) : ?>
+<!-- <?php if(is_user_logged_in()) : ?>
    <a href=" <?php echo wp_logout_url( '/login/' ); ?> " class="login-button">logout <i class="fa fa-key"></i> </a>
 <?php else : ?>
   <a href="/login/" class="login-button">login <i class="fa fa-key"></i> </a>
-<?php endif; ?>
+<?php endif; ?> -->
 
 <i class="fa fa-bars"></i>
 
