@@ -2,14 +2,16 @@
 
 <?php get_template_part('hero'); ?>
 
-<!-- <?php 
+<?php 
    $user_id = get_current_user_id();
    $key = 'User Type';
-   $type = get_user_meta(get_current_user_id(), $key); 
-?> -->
+   $type = get_user_meta($user_id, $key); 
+   $logged_in = is_user_logged_in();
+?>
 <div class="main no-padding">
 
-    <?php if(is_user_logged_in() && $type = 'Clinician') : ?>
+
+    <?php if($logged_in && $type == 'clinician') : ?>
 
       <section class="forms">
          <?php get_template_part('form-accordion'); ?>
@@ -20,7 +22,7 @@
       
         <div class="container">
 
-            <h1>You do not have access to these resources - please register and login</h1>
+            <h2>Sorry you do not have access to these resources - please <a href="/login/">login / register </a></h2>
               
         </div> <!-- /.container -->
 

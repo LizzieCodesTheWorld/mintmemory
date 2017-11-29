@@ -2,30 +2,31 @@
 
 <?php get_template_part('hero'); ?>
 
-<<?php 
+<?php 
    $user_id = get_current_user_id();
    $key = 'User Type';
    $type = get_user_meta($user_id, $key); 
+   $logged_in = is_user_logged_in();
 ?>
-      <div class="main no-padding">
-          <div class="content">
+  <div class="main no-padding">
 
-    <?php if(is_user_logged_in() && $type = 'Trainee') : ?>
 
-              <?php get_template_part('content-accordion'); ?>
-      
+    <?php if($logged_in && $type = 'trainee') : ?>
+      <?php the_field('video'); ?>
+      <hr>
+      <?php the_field('disclaimer'); ?>
+      <?php get_template_part('content-accordion'); ?>
     <?php else : ?>
       
         <div class="container">
 
-            <h1>You do not have access to these resources - please register and login</h1>
+            <h2>Sorry you do not have access to these resources - please <a href="/login/">login / register </a></h2>
               
         </div> <!-- /.container -->
 
     <?php endif; ?> 
 
-          </div> <!-- /,content -->
-      </div> <!-- /.main -->
+</div> <!-- /.main -->
 
 
 <?php get_footer(); ?>

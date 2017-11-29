@@ -35,7 +35,13 @@
                         </div>
                         <div class="resources-links">
                         <hr>
-                            <?php the_field('resources_links'); ?>
+                          <h2>Resources</h2>
+                              <a href="/how-to-refer/">How to Refer</a>
+                              <?php if($type == 'clinician'): ?>
+                                <a href="/clinicians/clinician-resources/">Clinician Resources</a>
+                              <?php else: ?>
+                                <a href="/clinicians/trainee-resources/">Trainee Resources</a>
+                              <?php endif; ?>
                         </div>
                     </div>
                 </section>

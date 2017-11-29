@@ -958,6 +958,10 @@ MY ACCOUNT
 	h2{
 		margin-top: 30px;
 	}
+	a {
+		display: block;
+		line-height:3rem;
+	}
 }
 
 /*
@@ -1049,6 +1053,85 @@ LOCATIONS
 /*
 ====================================
 END: LOCATIONS
+====================================
+*/
+
+/*
+====================================
+SINGLE BLOG PAGE
+====================================
+*/
+
+
+.single-post {
+	.main .container {
+			display:flex!important;
+			justify-content: space-between;
+		}
+	.content {
+		width:70%;
+		img, iframe {
+			width:100%;
+			height:auto;
+		}
+		iframe {
+			min-height: 400px;
+		}
+	}
+	aside {
+		width:25%;
+		height:100%;
+		.back-link {
+			text-decoration: underline;
+			margin-top: 30px;
+			display:block;
+		}
+	}
+	.sidebar {
+		background: #F4F3F2;
+		padding:10%;
+		.widget-title {
+			margin-bottom: 20px;
+			font-size: 2.4rem;
+		}
+		.acf-rpw-li {
+			display:flex;
+			flex-direction: column;
+			// date
+			.acf-rpw-time {
+				order:0;
+				font-size: 1.6rem;
+				margin-top: 20px;
+			}
+			// source
+			.acf-rpw-before {
+				order: 1;
+				font-weight: 600;
+				font-size: 1.6rem;
+			}
+			// title
+			h3 {
+				order:2;
+				margin: 10px 0 20px;
+				a {
+					color: #333;
+				}
+			}
+			// hr
+			.acf-rpw-after {
+				order: 3;
+			}
+			&:last-child {
+				.acf-rpw-after {
+					display:none;
+				}
+			}
+		}
+	}
+}
+/*
+====================================
+END: SINGLE BLOG PAGE
 ====================================
 */
 
