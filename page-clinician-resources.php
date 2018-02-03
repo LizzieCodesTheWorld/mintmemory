@@ -11,7 +11,7 @@
 <div class="main no-padding">
 
 
-    <?php if($logged_in && $type == 'clinician') : ?>
+    <?php if($logged_in && $type[0] == 'Clinician') : ?>
 
       <section class="forms">
          <?php get_template_part('form-accordion'); ?>

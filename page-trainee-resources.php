@@ -8,13 +8,18 @@
    $type = get_user_meta($user_id, $key); 
    $logged_in = is_user_logged_in();
 ?>
-  <div class="main no-padding">
+  <div class="main no-padding trainee-resources">
 
-
-    <?php if($logged_in && $type = 'trainee') : ?>
-      <?php the_field('video'); ?>
+    <?php if($logged_in && $type[0] == 'Trainee') : ?>
+      <div class="container">
+        <?php get_template_part('content', 'slider'); ?>
+      </div>
       <hr>
-      <?php the_field('disclaimer'); ?>
+      <div class="disclaimer">
+        <div class="container">
+          <?php the_field('disclaimer'); ?>
+        </div>
+      </div>
       <?php get_template_part('content-accordion'); ?>
     <?php else : ?>
       

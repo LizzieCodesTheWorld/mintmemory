@@ -37,7 +37,7 @@
                         <hr>
                           <h2>Resources</h2>
                               <a href="/how-to-refer/">How to Refer</a>
-                              <?php if($type == 'clinician'): ?>
+                              <?php if($type[0] == 'Clinician'): ?>
                                 <a href="/clinicians/clinician-resources/">Clinician Resources</a>
                               <?php else: ?>
                                 <a href="/clinicians/trainee-resources/">Trainee Resources</a>

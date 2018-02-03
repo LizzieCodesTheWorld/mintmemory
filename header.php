@@ -36,7 +36,7 @@
 
 <?php if(is_user_logged_in()) : ?>
 
-    <?php if($type[0] = 'trainee') : ?>
+    <?php if($type[0] == 'Trainee') : ?>
       <!-- <h2>trainee</h2> -->
         <?php wp_nav_menu( array(
           'container' => false,

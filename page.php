@@ -27,13 +27,13 @@
 
 	        			<li class="resource">
 
-	        				<strong><?php echo $source; ?></strong>
+	        				<p><?php echo $source; ?></p>
 
 	        				<?php if( $link ): ?>
 	        					<a href="<?php echo $link; ?>">
 	        				<?php endif; ?>
 
-	        					<?php echo $link; ?>
+	        					<?php echo $link_text; ?>
 
 	        				<?php if( $link ): ?>
 	        					</a>
@@ -48,6 +48,13 @@
 	        		</ul>
 
 	        	<?php endif; ?>
+			
+			<?php elseif(is_page('how-to-refer')) : ?>
+				
+				<div class="referral-content">
+					<div><?php the_content(); ?> </div>
+					<div><?php the_post_thumbnail(''); ?></div>
+				</div>
 
 	        <?php else: ?>
 

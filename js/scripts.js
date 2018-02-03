@@ -3,12 +3,13 @@ $(function(){
 	console.log("It's working");
 
 	// DROPDOWN MENU
-	$('.menu-item-has-children').click(function(){
+	$('.menu-item-has-children > a').click(function(event){
+		// prevent top nav links 
 		event.preventDefault();
-		$('.menu-open').children('.sub-menu').slideToggle(200);
-		$('.menu-open').toggleClass('menu-open');
-		$(this).toggleClass('menu-open');
-		$(this).children('.sub-menu').slideToggle(200);
+
+		// close open menus
+		$(this).parent().siblings('.menu-item-has-children').find('.sub-menu').hide();
+		$(this).siblings('.sub-menu').slideToggle(200);
 	});
 
 	// ACCORDION
@@ -24,7 +25,37 @@ $(function(){
 		$(this).toggleClass('fa-times');
 	});
 
+	// BX SLIDER
+      $('.bxslider').bxSlider({
+      	pager: false,
+      	nextText: 'Next Video >',
+      	prevText: '< Previous Video',
+      	infiniteLoop: false,
+      	hideControlOnEnd: true,
+      	video: true
+      });
 
+     slider = $('.carousel').bxSlider({
+     		pager: false,
+ 	    	infiniteLoop: true,
+ 	    	// hideControlOnEnd: true,
+ 	    	mode: 'fade',
+ 	    	controls: false
+     	    	// speed: 500
+     	    	// ticker: true
+     });
+                 slider.startAuto();
+	// var slider = 
+ //    $('.carousel').bxSlider({
+ //    	pager: false,
+ //    	infiniteLoop: true,
+ //    	hideControlOnEnd: true,
+ //    	mode: 'fade',
+ //    	controls: false,
+ //    	speed: 100,
+ //    	ticker: true
+ //    });
 
+    slider.startAuto();
 
 });

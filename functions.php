@@ -70,14 +70,20 @@ function hackeryou_scripts() {
     null, // version number
     true //load in footer
   );
+//bxslider
+  wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), null, true );
 
   wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins' ), //dependencies
+    array( 'jquery', 'plugins', 'bxslider' ), //dependencies
     null, // version number
     true //load in footer
   );
+
+  // STYLES
+
+  wp_enqueue_style('bxslider-style', get_template_directory_uri() . './jquery.bxslider.min.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts' );

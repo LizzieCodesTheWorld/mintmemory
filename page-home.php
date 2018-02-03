@@ -3,15 +3,32 @@
 <?php // Start the loop ?>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<div class="home-hero" style="background-image: url(<?php the_field('hero_image');?>);background-size: cover; background-position: center;">
-	<div class="container">
-		<div class="hero-content">
-            <h2><?php the_field('title'); ?></h2>
-            <h3><?php the_field('sub_title'); ?></h3>
-            <a href="<?php the_field('hero_button_url'); ?>" class="button-white"><?php the_field('hero_button_text'); ?></a>
-        </div>
-	</div>
+<!--< div class="carousel">
+
+        <?php if( have_rows('hero_images') ): ?>
+
+            <?php while( have_rows('hero_images') ): the_row(); 
+
+                // vars
+                $image = get_sub_field('hero_image');
+
+                ?>
+
+                <div class="home-hero" style="background-image: url(<?php echo $image; ?>);background-size: cover; background-position: center;">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h2><?php the_field('title'); ?></h2>
+                            <h3><?php the_field('sub_title'); ?></h3>
+                            <a href="<?php the_field('hero_button_url'); ?>" class="button-white"><?php the_field('hero_button_text'); ?></a>
+                        </div>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
+
+        <?php endif; ?>
 </div>
+ -->
 
 <div class="main no-padding">
 
@@ -60,25 +77,40 @@
 
     	<section class="grey three-columns">
     	  <div class="container">
-    		<div>
+    		<div class="box">
     			<img src="<?php the_field('patients_image'); ?>" alt="">
-    			<div>
-                    <h4><?php the_field('patients_title'); ?></h4>
-                    <?php the_field('patients_content', false, false); ?> 
+    			<div class="box__text-content">
+                    <div>
+                        <h4><?php the_field('patients_title'); ?></h4>
+                        <?php the_field('patients_content', false, false); ?> 
+                    </div>
+                    <div>
+                        <a href="<?php the_field('patients_button_link'); ?>"><?php the_field('patients_button_text'); ?></a>
+                    </div>
                 </div>
     		</div>
-    		<div>
+    		<div class="box">
     			<img src="<?php the_field('clinicians_image'); ?>" alt="">
-    			<div>
-                    <h4><?php the_field('clinicians_title'); ?></h4>
-                    <?php the_field('clinicians_content', false, false); ?>
+    			<div class="box__text-content">
+                    <div>
+                        <h4><?php the_field('clinicians_title'); ?></h4>
+                        <?php the_field('clinicians_content', false, false); ?>
+                    </div>
+                    <div>
+                        <a href="<?php the_field('clinicians_button_link'); ?>"><?php the_field('clinicians_button_text'); ?></a>
+                    </div>
                 </div>
     		</div>
-    		<div>
+    		<div class="box">
     			<img src="<?php the_field('find_image'); ?>" alt="">
-    			<div>
-                    <h4><?php the_field('find_title'); ?></h4>
-                   <?php the_field('find_content', false, false); ?>
+    			<div class="box__text-content">
+                    <div>
+                        <h4><?php the_field('find_title'); ?></h4>
+                        <?php the_field('find_content', false, false); ?>
+                    </div>
+                    <div>
+                        <a href="<?php the_field('find_button_link'); ?>"><?php the_field('find_button_text'); ?></a>
+                    </div>
                 </div>
     		</div>
     	  </div>
