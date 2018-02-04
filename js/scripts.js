@@ -31,8 +31,7 @@ $(function(){
       	nextText: 'Next Video >',
       	prevText: '< Previous Video',
       	infiniteLoop: false,
-      	hideControlOnEnd: true,
-      	video: true
+      	hideControlOnEnd: true
       });
 
      slider = $('.carousel').bxSlider({
@@ -44,18 +43,19 @@ $(function(){
      	    	// speed: 500
      	    	// ticker: true
      });
-                 slider.startAuto();
-	// var slider = 
- //    $('.carousel').bxSlider({
- //    	pager: false,
- //    	infiniteLoop: true,
- //    	hideControlOnEnd: true,
- //    	mode: 'fade',
- //    	controls: false,
- //    	speed: 100,
- //    	ticker: true
- //    });
+     
+ //     slider.startAuto();
+	// // var slider = 
+ // //    $('.carousel').bxSlider({
+ // //    	pager: false,
+ // //    	infiniteLoop: true,
+ // //    	hideControlOnEnd: true,
+ // //    	mode: 'fade',
+ // //    	controls: false,
+ // //    	speed: 100,
+ // //    	ticker: true
+ // //    });
 
-    slider.startAuto();
+ //    slider.startAuto();
 
 });
