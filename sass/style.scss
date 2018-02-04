@@ -37,6 +37,12 @@ html {
 
 img {
 	max-width: 100%;
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 
 hr {
@@ -408,8 +414,14 @@ RESEARCH PAGE Styling
 ====================================
 */
 
+// ie 11: 
+	//@791 PX paragraphs in decsriptions take up max width of page
+		// issue with flex-direction column in media query
+	// images are being resized incorrectly in same area
+
 .content-section {
 	display: flex;
+	flex-shrink: 1;
 	justify-content:space-between;
 	align-items:center;
 	margin: 50px 0;
@@ -421,7 +433,7 @@ RESEARCH PAGE Styling
 	&:first-child {
 		margin-top: 0;
 	}
-	&:nth-child(odd) {
+	&:nth-child(even) {
 		flex-direction: row-reverse;
 		@include breakpoint(tabletsmallest) {
 			flex-direction:column;
@@ -435,6 +447,7 @@ RESEARCH PAGE Styling
 		}
 	}
 	img {
+		flex-shrink: 0;
 		margin: 0 50px 0 0;
 		width:35%;
 		min-width:250px;
@@ -472,7 +485,7 @@ RESEARCH PAGE Styling
 	cursor: pointer;
 }
 
-.accordion-item ul li a{
+.accordion-item ol li a{
 	@include word-wrap();
 }
 

@@ -17,15 +17,13 @@
 
         			?>
 
-        			<div class="content-section">
-
+                    <div class="content-section">
         				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
         				<div>
                             <h2><?php echo $title; ?></h2>
                             <?php echo $content; ?>
                         </div>
-
-        			</div>
+                    </div>
 
                 <?php endwhile; // end the loop?>
 
