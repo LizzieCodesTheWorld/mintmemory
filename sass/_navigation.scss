@@ -59,10 +59,8 @@ ul.menu  {
 	> li.menu-item-has-children > a:after {
 			content: ' \f078';
 			font-family: FontAwesome;
-	}
-	> li.menu-item-has-children.menu-open > a:after {
-			content: ' \f077';
-			font-family: FontAwesome;
+			transition: 0.3s all cubic-bezier(1, 0.25, 0.25, 0.8);
+			transform: rotate(135deg);
 	}
 	> li:last-of-type {
 		border-bottom: none;

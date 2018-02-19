@@ -10,8 +10,16 @@ $(function(){
 		// close open menus
 		$(this).parent().siblings('.menu-item-has-children').find('.sub-menu').hide();
 		$(this).siblings('.sub-menu').slideToggle(200);
+
 	});
 
+	//flip chevron animation
+	// $('.menu-item-has-children > a > i').click(function(event){
+
+	// $(this).toggleClass('icon-rotate-90');
+	
+	// });
+	
 	// ACCORDION
 	$('.accordion-title').click(function(){
 		$(this).siblings().slideToggle('none');
