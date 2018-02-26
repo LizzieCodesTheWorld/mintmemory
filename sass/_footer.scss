@@ -4,12 +4,11 @@ footer {
 	font-weight: 500;
 	font-size: 1.4rem;
 	padding:10px 0;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
 	div {
 		text-align: right;
+		@include breakpoint("560") {
+			margin-left: 25%;
+		}
 		a {
 			font-weight: 700;
 			font-size: 1.8rem;
@@ -25,10 +24,19 @@ footer {
 			margin-bottom: 10px;
 		}
 	}
+	.logo {
+		@include breakpoint("560") {
+			width:200px;
+		}
+	}
 	.container {
 		display: flex;
 		justify-content:space-between;
 		align-items: center;
+		@include breakpoint("560") {
+			flex-direction: column-reverse;
+			align-items: flex-end;
+		}
 	}
 }
 

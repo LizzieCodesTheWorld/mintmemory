@@ -22,7 +22,9 @@
       
           <?php wp_nav_menu( array(
                 'container' => false,
-                'theme_location' => 'loggedin-menu'
+                'theme_location' => 'loggedin-menu',
+                'link_before' => '<div id="chevron" class="chevron down">' , 
+                'link_after' => '</div>'
               )); ?>
 
       <!-- if regular page -->
@@ -46,7 +48,9 @@
       <?php else: ?>
           <?php wp_nav_menu( array(
             'container' => false,
-            'theme_location' => 'loggedout-menu'
+            'theme_location' => 'loggedout-menu',
+            'link_before' => '<div id="chevron" class="chevron down">' , 
+            'link_after' => '</div>'
           )); ?>
           <a href="<?php echo get_page_link(169); ?>" class="loginOut">
               <img src="<?php the_field('lock_closed', 'option'); ?>" alt="">
@@ -60,7 +64,15 @@
 <!-- MOBILE LOGGED IN -->
     <nav class="mobileNav mobileShow">
       <div class="topNav mobileTopNav">
-        <i class="fa fa-bars click"><span> Menu</span></i>
+        <!-- <i class="fa fa-bars click"><span> Menu</span></i> -->
+
+        <div id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         <?php if( is_user_logged_in() ): ?>
 
             
@@ -96,14 +108,18 @@
             <div class="mobileMenuItems none"> 
                <?php wp_nav_menu( array(
                      'container' => false,
-                     'theme_location' => 'loggedin-menu'
+                     'theme_location' => 'loggedin-menu',
+                     'link_before' => '<div id="chevron" class="chevron down">' , 
+                     'link_after' => '</div>'
                    )); ?>
             </div>
        <?php else: ?>
             <div class="mobileMenuItems none"> 
                <?php wp_nav_menu( array(
                  'container' => false,
-                 'theme_location' => 'loggedout-menu'
+                 'theme_location' => 'loggedout-menu',
+                 'link_before' => '<div id="chevron" class="chevron down">' , 
+                 'link_after' => '</div>'
                )); ?>
             </div>
        <?php endif; ?> <!-- end of is_user_logged_in -->

@@ -2,7 +2,6 @@
 
 <?php get_template_part('hero'); ?>
 
-<?php the_content(); ?>
 <div class="main">
     <div class="content">
         <section class="top">

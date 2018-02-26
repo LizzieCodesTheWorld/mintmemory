@@ -2,7 +2,7 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 <div class="hero" style="background: #27b489;">
 	<div class="container hero-content">
-		<?php if(is_page('our-research')): ?>
+		<?php if(is_page('our-research') || is_page('about-us')): ?>
 			<?php echo the_content(); ?>
 		<?php else : ?>
 			<h1><?php the_title(); ?></h1>

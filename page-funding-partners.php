@@ -13,8 +13,6 @@ get_header();  ?>
 
 	<section class="funding-content">
 
-	  <div class="container">
-
 		<?php if( have_rows('funding_content') ): ?>
 
 			<?php while( have_rows('funding_content') ): the_row(); 

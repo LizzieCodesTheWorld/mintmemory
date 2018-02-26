@@ -40,13 +40,15 @@
       <!-- <h2>trainee</h2> -->
         <?php wp_nav_menu( array(
           'container' => false,
-          'theme_location' => 'loggedintrainee-menu')); 
-        ?> 
+          'theme_location' => 'loggedintrainee-menu',
+          'link_after' => '<div id="chevron" class="chevron down"></div>'
+        )); ?> 
     <?php else : ?>
       <!-- <h2>clinician</h2> -->
       <?php wp_nav_menu( array(
         'container' => false,
-        'theme_location' => 'loggedinclinician-menu'
+        'theme_location' => 'loggedinclinician-menu',
+        'link_after' => '<div id="chevron" class="chevron down"></div>'
       )); ?>
     <?php endif; ?> 
 
@@ -54,7 +56,8 @@
 
   <?php wp_nav_menu( array(
     'container' => false,
-    'theme_location' => 'loggedout-menu'
+    'theme_location' => 'loggedout-menu',
+    'link_after' => '<div id="chevron" class="chevron down"></div>'
   )); ?>
 
 <?php endif; ?> 
@@ -66,7 +69,16 @@
   <a href="/login/" class="login-button">login <i class="fa fa-key"></i> </a>
 <?php endif; ?> -->
 
-<i class="fa fa-bars"></i>
+<!-- <i class="fa fa-bars"></i> -->
+
+
+<div id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
 
 <!-- <h1>logged in</h1>
 <h2><?php print_r($type); ?></h2> -->

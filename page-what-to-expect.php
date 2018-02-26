@@ -9,8 +9,6 @@ get_header();  ?>
 
 	<section class="expect-content content">
 
-	  <div class="container">
-
 		<?php if( have_rows('content_sections') ): ?>
 
 			<?php while( have_rows('content_sections') ): the_row(); 

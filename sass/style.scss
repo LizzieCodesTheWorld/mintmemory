@@ -49,9 +49,8 @@ body {
 	color: #333;
 	min-height: 100%;
 	position: relative;
-	padding-bottom: 96px;
+	// padding-bottom: 96px;
 	font-family: 'Assistant', sans-serif;
-	font-size: 1.8rem; //design = 1.4
 }
 
 label, button, h1,h2, h3,h4, h5, h6, input {
@@ -68,7 +67,7 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 .container {
 	max-width: 1250px;
 	margin: 0 auto;
-	@include breakpoint(standard) {
+	@include breakpoint(mediumMonitor) {
 		margin: 0 auto;
 		padding:0 5%;
 	}
@@ -83,7 +82,7 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 // }
 .content {
 	@include breakpoint(standard) {
-		margin: 0 0 100px;
+		// margin: 0 0 100px;
 	}
 }
 
@@ -315,6 +314,9 @@ FULL PAGE TEMPLATE Styling
 	margin-top: 86px;
 	// height:250px;
 	padding: 50px 0;
+	@include breakpoint("560") {
+		padding: 30px 0;
+	}
 	.hero-content {
 		color:white;
 		// max-width:1250px;
@@ -322,12 +324,15 @@ FULL PAGE TEMPLATE Styling
 		h1 {
 			font-size: 48px;
 			// margin-bottom: 20px;
-			@include breakpoint("620") {
+			@include breakpoint(standard) {
 				font-size: 36px;
 			}
+			@include breakpoint("560") {
+				font-size: 2.8rem;
+			}
 		}
-		p {
-			font-size: 22px;
+		.source {
+			margin-bottom: 0;
 		}
 	}
 }
@@ -393,7 +398,8 @@ FUNDING PARTNERS Styling
 				margin-left: 0;
 				display:block;
 				width: 50%;
-				margin: 0 auto;
+				margin: 20px auto;
+				max-width: 200px;
 			}
 		}
 	}
@@ -456,8 +462,14 @@ RESEARCH PAGE Styling
 .accordion-container {
 	background: #f4f3f2;
 	padding: 50px 0;
+	@include breakpoint(phone) {
+		padding:30px 0;
+	}
 	h1 {
 		margin-bottom: 30px;
+		@include breakpoint(phone) {
+			margin-bottom: 10px;
+		}
 	}
 }
 
@@ -747,25 +759,39 @@ ABOUT US
 	@include breakpoint(tabletsmallest) {
 		margin: 30px 0;
 		flex-direction:column;
+
 	}
 	img {
 		margin: 0 50px 0 0;
+		width:30%;
 		@include breakpoint(tabletsmallest) {
 			margin: 0 auto 30px;
+			width:70%;
 		}
 	}
+}
+
+// ABOUT US HERO SPECIFIC Styling
+.page-id-371 .hero strong {
+	font-size: 2.8rem;
 }
 
 .text-section {
 	background: #F4F3F2;
 	padding:50px 0;
+	@include breakpoint("560") {
+		padding: 30px 0;
+	}
 }
 .image-section {
 	padding:50px 0;
 	text-align: center;
+	@include breakpoint("560") {
+		padding: 30px 0;
+	}
 	p {
 		width:80%;
-		margin: 40px auto 0;
+		margin: 20px auto 0;
 		font-size: 14px;
 		@include breakpoint(tabletsmallest) {
 			width:100%;
@@ -925,6 +951,12 @@ END: LOGIN
 			&:hover {
 				text-decoration: underline;
 			}
+			@include breakpoint("560") {
+				font-size: 2.4rem;
+			}
+			@include breakpoint(phonesmall) {
+				font-size: 2.2rem;
+			}
 		} 
 		p:last-child {
 			font-size: 2rem;
@@ -973,7 +1005,7 @@ WHAT TO EXPECT
 			height:100%;
 			margin-right: 5%;
 			@include breakpoint("709") {
-				width:300px;
+				min-width:200px;
 				height:100%;
 				margin:0 auto 20px;
 			}
@@ -1148,9 +1180,14 @@ SINGLE BLOG PAGE
 	.main .container {
 			display:flex!important;
 			justify-content: space-between;
+			flex-wrap:wrap;
 		}
 	.content {
 		width:70%;
+		@include breakpoint(tabletsmall) {
+			width:100%;
+			margin-bottom: 30px;
+		}	
 		img, iframe {
 			width:100%;
 			height:auto;
@@ -1162,17 +1199,23 @@ SINGLE BLOG PAGE
 	aside {
 		width:25%;
 		height:100%;
+		@include breakpoint(tabletsmall) {
+			width:100%;
+		}	
 		.back-link {
 			text-decoration: underline;
 			margin-top: 30px;
 			display:block;
+			font-weight: 700;
 		}
 	}
 	.sidebar {
 		background: #F4F3F2;
 		padding:10%;
+		@include breakpoint(tabletsmall) {
+			padding:5%;
+		}
 		.widget-title {
-			margin-bottom: 20px;
 			font-size: 2.4rem;
 		}
 		.acf-rpw-li {
@@ -1236,7 +1279,7 @@ HOW TO REFER
 		}
 	}
 	div:last-child {
-		width:40;
+		width:40%;
 		@include breakpoint("709") {
 			width:100%;
 			margin-bottom: 30px;
