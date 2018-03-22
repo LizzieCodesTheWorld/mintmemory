@@ -817,39 +817,97 @@ LOGIN
 	padding: 50px 0;
 }
 
-//registration form
+// Registration form.
 .registration-form {
-	width: 60%;
+	background: white;
 	box-shadow: 0px 0px 15px lightgrey;
 	margin: 10% auto;
-	padding:6% 5%;
-	background: white;
+	padding:6% 3%;
+	width: 60%;
+
 	@include breakpoint(standard) {
 		width:80%;
 	}
 	@include breakpoint(tabletsmallest) {
 		width:100%;
 	}
+
+	ul {
+		text-align: right;
+	}
+
+	.gform_wrapper ul.gform_fields li.gfield {
+		padding-right: 0;
+	}
+
+	// Name.
+	#field_1_14 {
+		margin: 10px 0 0;
+
+		label {
+			width: 28%;
+		}
+	}
+
+	.gform_wrapper ul.gform_fields:not(.top_label) .gfield_label {
+		width: 48%;
+	}
+
+	.gform_wrapper .left_label select.large,
+	.gform_wrapper .left_label input.large {
+		width: 50%;
+	}
+
 	#field_1_25 {
 		margin: 30px 0!important;
 		width:100%;
 	}
+
+	li {
+		line-height: 2.4;
+	}
+
+	#field_1_21,
+	#field_1_23 {
+		line-height: 1.2;
+	}
+
+	.gform_wrapper ul.gform_fields:not(.top_label) .gfield_label {
+		margin-bottom: 0;
+	}
+
 	label {
 		text-align: right;
+		text-transform: uppercase;
 	}
+
 	.widgettitle, h3.gform_title {
-		font-size: 42px!important;
 		color:#464646;
+		font-size: 42px!important;
 	}
 	select, input {
-		height:40px;
 		background: white;
-		border:1px solid lightgrey;
 		border-radius:3px;
+		border:1px solid lightgrey;
+		height:40px;
+	}
+	input {
+		margin: 10px 0;
 	}
 	.gform_wrapper .field_description_below .gfield_description {
 		padding-top: 0!important;
 	}
+
+	// Terms + Conditions checkbox.
+	.gform_wrapper .gfield_checkbox li input[type=checkbox] {
+		height: inherit;
+		vertical-align: top;
+	}
+
+	.gform_wrapper form ul.left_label li ul.gfield_checkbox li {
+		margin-top: 10px;
+	}
+
 	.gform_page_footer {
 		display:flex;
 		justify-content: flex-end;
