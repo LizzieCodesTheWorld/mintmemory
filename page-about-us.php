@@ -8,10 +8,12 @@
     	    <div class="container">
                 <div class="top-content-section">
                     <?php
-                    $image = get_field('top_section_image'); 
+                    $image = get_field('top_section_image');
                     $content = get_field('top_section_content');
                     ?>
-                    <img src="<?php echo $image; ?>" alt="" />
+                    <div class="image-wrapper">
+                        <img src="<?php echo $image; ?>" alt="" />
+                    </div>
                     <?php echo $content; ?>
                 </div>
             </div>
@@ -19,7 +21,7 @@
         <section class="text-section">
             <div class="container">
                  <?php
-                    $content = get_field('text_content'); 
+                    $content = get_field('text_content');
                     ?>
                     <?php echo $content; ?>
             </div>
@@ -27,7 +29,7 @@
         <section class="image-section">
             <div class="container">
                  <?php
-                    $image = get_field('full_width_image'); 
+                    $image = get_field('full_width_image');
                     $content = get_field('image_section_content');
                     ?>
                     <img src="<?php echo $image; ?>" alt="" />
