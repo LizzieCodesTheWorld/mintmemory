@@ -54,8 +54,8 @@
 			<?php elseif(is_page('how-to-refer')) : ?>
 
 				<div class="referral-content">
-					<div><?php the_content(); ?> </div>
-					<div><?php the_post_thumbnail(''); ?></div>
+					<div class="resources-feat-img alignright"><?php the_post_thumbnail(''); ?></div>
+					<div><?php the_content(); ?></div>
 				</div>
 
 	        <?php else: ?>

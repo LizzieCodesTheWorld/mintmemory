@@ -1405,27 +1405,36 @@ HOW TO REFER
 */
 
 .referral-content {
-	display:flex;
-	justify-content:space-between;
-	@include breakpoint("709") {
-		flex-direction:column-reverse;
-	}
+
 	div:first-child {
-		width:55%;
 		@include breakpoint("709") {
 			width:100%;
 		}
 	}
 	div:last-child {
-		width:40%;
 		@include breakpoint("709") {
-			width:100%;
+			width: 100%;
 			margin-bottom: 30px;
 		}
 	}
 	img {
 		width:100%;
 		height:auto;
+	}
+
+	.resources-feat-img {
+		float: right;
+		max-width: 500px;
+	}
+
+	.alignright {
+		display: inline;
+		float: right;
+		margin: 0 0 0 24px;
+
+		@include breakpoint("709") {
+			margin: 0 0 16px 24px;
+		}
 	}
 }
 /*
