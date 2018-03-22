@@ -198,9 +198,9 @@ HOME PAGE Styling
 		max-width: 800px;
 		h2 {
 			color: #fff;
-	    	font-size: 4.8rem;
-	    	font-weight: 700;
-	    	margin-bottom: 20px;
+			font-size: 4.8rem;
+			font-weight: 700;
+			margin-bottom: 20px;
 		}
 		h3 > div {
 			color: #fff;
@@ -212,17 +212,17 @@ HOME PAGE Styling
 		}
 		a {
 			display: inline-block;
-		    // width: 120px;
-		    margin-top: 20px;
-		    border-radius: 3px;
-		    padding: 15px 15px;
-		    background: #fff;
-		    /* color: red; */
-		    color: #464646;
-		    font-weight: 800;
-		    font-size: 1.4rem;
-		    /* margin-top: 32px; */
-		    text-transform: uppercase;
+			// width: 120px;
+			margin-top: 20px;
+			border-radius: 3px;
+			padding: 15px 15px;
+			background: #fff;
+			/* color: red; */
+			color: #464646;
+			font-weight: 800;
+			font-size: 1.4rem;
+			/* margin-top: 32px; */
+			text-transform: uppercase;
 		}
 	}
 }
@@ -822,7 +822,7 @@ LOGIN
 	background: white;
 	box-shadow: 0px 0px 15px lightgrey;
 	margin: 10% auto;
-	padding:6% 3%;
+	padding: 6% 3%;
 	width: 60%;
 
 	@include breakpoint(standard) {
@@ -832,58 +832,91 @@ LOGIN
 		width:100%;
 	}
 
-	ul {
-		text-align: right;
-	}
+	// Page 1.
+	#gform_page_1_1 {
 
-	.gform_wrapper ul.gform_fields li.gfield {
-		padding-right: 0;
-	}
-
-	// Name.
-	#field_1_14 {
-		margin: 10px 0 0;
-
-		label {
-			width: 28%;
+		li:not(:first-of-type) {
+			line-height: 3;
 		}
-	}
 
-	.gform_wrapper ul.gform_fields:not(.top_label) .gfield_label {
-		width: 48%;
-	}
+		.gfield_description {
+			line-height: 1.2;
+		}
 
-	.gform_wrapper .left_label select.large,
-	.gform_wrapper .left_label input.large {
-		width: 50%;
-	}
+		// Password.
+		#field_1_14 {
+			margin: 10px 0 0;
+
+			input {
+				width: 70%;
+			}
+		}
+	} // #gform_page_1_1
+
+	// Page 2.
+	#gform_page_1_2 {
+
+		// Name.
+		#field_1_14 {
+			margin: 10px 0 0;
+
+			label {
+				margin-top: 8px;
+				width: 28%;
+			}
+		}
+
+		.field_sublabel_below .ginput_complex.ginput_container label {
+			line-height: 1.2;
+			margin: 0!important;
+		}
+
+		ul {
+			text-align: right;
+		}
+
+		li {
+			line-height: 2.4;
+		}
+
+		#field_1_21,
+		#field_1_23 {
+			line-height: 1.2;
+			label {
+				margin-top: 8px;
+			}
+		}
+
+		ul.gform_fields:not(.top_label) .gfield_label {
+			width: 48%;
+		}
+
+		.left_label select.large,
+		.left_label input.large {
+			width: 50%;
+		}
+
+		ul.gform_fields li.gfield {
+			padding-right: 0;
+		}
+	} // #gform_page_1_2
 
 	#field_1_25 {
 		margin: 30px 0!important;
 		width:100%;
 	}
 
-	li {
-		line-height: 2.4;
-	}
-
-	#field_1_21,
-	#field_1_23 {
-		line-height: 1.2;
-	}
-
 	.gform_wrapper ul.gform_fields:not(.top_label) .gfield_label {
 		margin-bottom: 0;
-	}
-
-	label {
-		text-align: right;
-		text-transform: uppercase;
 	}
 
 	.widgettitle, h3.gform_title {
 		color:#464646;
 		font-size: 42px!important;
+	}
+	label {
+		text-align: right;
+		text-transform: uppercase;
 	}
 	select, input {
 		background: white;
@@ -914,49 +947,49 @@ LOGIN
 	}
 }
 
-//login
+// Login.
 #gform_login_widget-2 {
-    width: 550px;
-    box-shadow: 0px 0px 15px lightgrey;
-    margin: 10% auto;
-    padding:6% 5%;
-    background: white;
-    @include breakpoint("560"){
-    	width:100%;
-    }
-    a {
-    	text-align: center;
-    	display:block;
-    }
-    .widgettitle, h3.gform_title {
-    	font-size: 42px!important;
-    	color:#464646;
-    }
+	background: white;
+	box-shadow: 0px 0px 15px lightgrey;
+	margin: 10% auto;
+	padding:6% 5%;
+	width: 550px;
+	@include breakpoint("560"){
+		width:100%;
+	}
+	a {
+		text-align: center;
+		display:block;
+	}
+	.widgettitle, h3.gform_title {
+		font-size: 42px!important;
+		color:#464646;
+	}
 
-    .gform_wrapper ul.gform_fields li.gfield {
-    	padding-right: 0!important;
-    }
+	.gform_wrapper ul.gform_fields li.gfield {
+		padding-right: 0!important;
+	}
 
-    input[type=text], input[type=email], input[type=password] {
-    	border: 1px solid lightgrey;
-    	border-radius: 3px;
-    	height:50px;
-    	width:100%;
-    	padding-left: 12px!important;
-    }
+	input[type=text], input[type=email], input[type=password] {
+		border: 1px solid lightgrey;
+		border-radius: 3px;
+		height:50px;
+		width:100%;
+		padding-left: 12px!important;
+	}
 
-    input[type=submit], input[type=button], input[type=password] {
-    	width:100%!important;
-    	height:50px;
-    }
-     input[type=submit], input[type=button] {
-    	width:100%!important;
-    	height:50px;
-    }
-    nav a{
-    	text-align: left;
-    	font-size: 16px;
-    }
+	input[type=submit], input[type=button], input[type=password] {
+		width:100%!important;
+		height:50px;
+	}
+	 input[type=submit], input[type=button] {
+		width:100%!important;
+		height:50px;
+	}
+	nav a{
+		text-align: left;
+		font-size: 16px;
+	}
 }
 
 #gform_login_widget-2 li {
