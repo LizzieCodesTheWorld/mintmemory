@@ -77,9 +77,6 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 	}
 }
 
-// .content .container, .container.narrow {
-// 	max-width: 1000px;
-// }
 .content {
 	@include breakpoint(standard) {
 		// margin: 0 0 100px;
@@ -102,16 +99,22 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 	color: red;
 }
 
-#gform_next_button_1_12, #gform_previous_button_1, #gform_submit_button_1, .button-green, input[type=submit], input[type=button]  {
+#gform_next_button_1_12,
+#gform_previous_button_1,
+#gform_submit_button_1,
+.button-green,
+input[type=submit],
+input[type=button]  {
 	background: #27B489;
-	color: #fff;
-	font-weight: 800;
-	font-size: 1.4rem;
-	text-transform: uppercase;
-	padding: 10px 25px;
-	transition:0.3s;
 	border-radius: 3px;
 	border:none;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 800;
+	padding: 10px 25px;
+	text-transform: uppercase;
+	transition:0.3s;
+
 	&:hover {
 		background: #0B8C60;
 	}
@@ -130,10 +133,6 @@ select {
 	border-radius:0!important;
 }
 
-// label {
-// 	display:none!important; //NEED TO CHANGE
-// }
-
 .main {
 	padding: 50px 0;
 	@include breakpoint(standard) {
@@ -148,15 +147,6 @@ select {
 .main.no-hero {
 	margin-top: 100px;
 }
-
-// .main.bottom {
-// 	padding: 50px 0 50px;
-// }
-
-
-// textarea {
-// 	border: none;
-// }
 
 @mixin word-wrap() {
   overflow-wrap: break-word;
@@ -694,6 +684,9 @@ LATEST MEDIA COVERAGE PAGE Styling
 	.news-item div:last-child {
 		margin: 20px 0 50px;
 	}
+	a {
+		color: #464646;
+	}
 	p {
 		margin: 0;
 	}
@@ -725,6 +718,9 @@ LATEST MEDIA COVERAGE PAGE Styling
 		@include breakpoint("560") {
 			margin-bottom: 0;
 		}
+	}
+	a {
+		color: #464646;
 	}
 	.news-item {
 		display:flex;
