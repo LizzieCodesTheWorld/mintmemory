@@ -47,7 +47,7 @@ hr {
 
 body {
 	color: #333;
-	min-height: 100%;
+	// min-height: 100%;
 	position: relative;
 	// padding-bottom: 96px;
 	font-family: 'Assistant', sans-serif;
@@ -65,8 +65,9 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 }
 
 .container {
-	max-width: 1250px;
 	margin: 0 auto;
+	max-width: 1250px;
+
 	@include breakpoint(mediumMonitor) {
 		margin: 0 auto;
 		padding:0 5%;
@@ -130,18 +131,20 @@ input {
 
 select {
 	height: 32px;
-	border-radius:0!important;
+	border-radius: 0!important;
 }
 
 .main {
+	min-height: calc(100vh - 350px);
 	padding: 50px 0;
+
 	@include breakpoint(standard) {
 		padding: 30px 0;
 	}
 }
 
 .main.no-padding {
-	padding:50px 0 0;
+	padding: 50px 0 0;
 }
 
 .main.no-hero {
