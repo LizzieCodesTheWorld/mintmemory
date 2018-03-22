@@ -1055,6 +1055,18 @@ END: LOGIN
 
 .resources {
 	padding-left: 0;
+
+	.resources-feat-img {
+		float: right;
+		@include breakpoint(tabletsmallest) {
+			float: none;
+		}
+		img {
+			height: auto;
+			width: 550px;
+		}
+	}
+
 	.resource {
 		list-style: none;
 		margin-bottom: 50px;
