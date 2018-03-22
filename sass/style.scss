@@ -884,7 +884,7 @@ LOGIN
     	border-radius: 3px;
     	height:50px;
     	width:100%;
-    	padding-left: 20px!important;
+    	padding-left: 12px!important;
     }
 
     input[type=submit], input[type=button], input[type=password] {
@@ -903,18 +903,17 @@ LOGIN
 
 #gform_login_widget-2 li {
 	display:flex;
-	justify-content:flex-end;
 	align-items:center;
+	justify-content: space-between;
+
 	label {
-		width:30%;
 		margin-bottom: 0;
-		padding-right: 20px;
 		text-align: right;
 		text-transform: uppercase;
 		font-size: 14px;
 	}
 	.ginput_container{
-		width:70%;
+		width:80%;
 		select, input {
 			height:50px;
 			width:100%;
@@ -923,11 +922,17 @@ LOGIN
 }
 
 #gform_login_widget-2 #field_3 {
+	justify-content: flex-start;
+
 	.ginput_container_checkbox {
-		width: 100%;
+		width: inherit;
+
+		input {
+			height: inherit;
+			margin-top: 0;
+		}
 	}
 	label {
-		padding: 0 0 0 20px;
 		text-align: left;
 	}
 }
