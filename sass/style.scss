@@ -652,6 +652,18 @@ CONTACT US Styling
 	input[type="submit"] {
 		height:initial;
 	}
+
+	label:not(:nth-of-type(4)) {
+		margin-top: 8px;
+	}
+
+	#field_2_6 {
+		float: right;
+	}
+
+	.gform_footer.left_label {
+		text-align: right;
+	}
 }
 
 #gform_confirmation_message_2 {
@@ -835,8 +847,12 @@ LOGIN
 	// Page 1.
 	#gform_page_1_1 {
 
-		li:not(:first-of-type) {
+		ul li:not(:first-of-type) {
 			line-height: 3;
+		}
+
+		#field_1_25 li {
+			line-height: 1.2;
 		}
 
 		.gfield_description {
@@ -855,6 +871,10 @@ LOGIN
 
 	// Page 2.
 	#gform_page_1_2 {
+
+		a {
+			font-size: 18px;
+		}
 
 		// Name.
 		#field_1_14 {
@@ -875,8 +895,12 @@ LOGIN
 			text-align: right;
 		}
 
-		li {
+		li:not(:first-of-type) {
 			line-height: 2.4;
+		}
+
+		.gfield_html {
+			line-height: 1.2;
 		}
 
 		#field_1_21,
