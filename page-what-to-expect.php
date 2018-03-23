@@ -11,7 +11,7 @@ get_header();  ?>
 
 		<?php if( have_rows('content_sections') ): ?>
 
-			<?php while( have_rows('content_sections') ): the_row(); 
+			<?php while( have_rows('content_sections') ): the_row();
 
 				// vars
 				$image = get_sub_field('icon');
@@ -19,7 +19,9 @@ get_header();  ?>
 				?>
 
 				<div class="paragraphs">
-					<img src="<?php echo $image; ?>" alt="" />
+					<div class="image-wrapper">
+						<img src="<?php echo $image; ?>" alt="" />
+					</div>
 					<div><?php echo $content; ?></div>
 				</div>
 				</li>

@@ -386,13 +386,12 @@ FUNDING PARTNERS Styling
 			height:100%;
 			margin-bottom: 20px;
 			margin-left: 5%;
-			width:45%;
+			min-width: 200px;
 			@include breakpoint("640") {
 				display:block;
 				margin-left: 0;
 				margin: 20px auto;
 				max-width: 200px;
-				width: 50%;
 			}
 		}
 	}
@@ -1129,7 +1128,6 @@ WHAT TO EXPECT
 .expect-content {
 	.paragraphs {
 		display:flex;
-		// flex-wrap: wrap;
 		margin-bottom: 100px;
 		@include breakpoint(tablet) {
 			margin-bottom: 30px;
@@ -1137,15 +1135,18 @@ WHAT TO EXPECT
 		@include breakpoint("709") {
 			flex-direction:column;
 		}
+
+		.image-wrapper {
+			margin-right: 3%;
+		}
 		img {
-			width:30%;
-			max-width:300px;
-			height:100%;
-			margin-right: 5%;
+			// width:30%;
+			max-width: 300px;
+			// height:100%;
 			@include breakpoint("709") {
-				min-width:200px;
-				height:100%;
-				margin:0 auto 20px;
+				min-width: 200px;
+				// height:100%;
+				margin: 0 auto 20px;
 			}
 		}
 	}
