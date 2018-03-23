@@ -1,14 +1,13 @@
 $(function(){
-
 	console.log("It's working");
 
 	// DROPDOWN MENU
 	$('.menu-item-has-children > a').click(function(event){
-		// prevent top nav links 
+		// Prevent top nav links.
 		event.preventDefault();
-		$(this).children('.chevron.down').toggleClass('up'); 
+		$(this).children('.chevron.down').toggleClass('up');
 
-		// close open menus
+		// Close open menus.
 		$(this).parent().siblings('.menu-item-has-children').find('.sub-menu').hide();
 		$(this).siblings('.sub-menu').slideToggle(200);
 	});
@@ -38,9 +37,9 @@ $(function(){
      	    	// speed: 500
      	    	// ticker: true
      });
-     
+
  //     slider.startAuto();
-	// // var slider = 
+	// // var slider =
  // //    $('.carousel').bxSlider({
  // //    	pager: false,
  // //    	infiniteLoop: true,
@@ -53,12 +52,17 @@ $(function(){
 
  //    slider.startAuto();
 
- // MOBILE MENU
-$('#hamburger').click(function(){
-	$(this).toggleClass('open');
-	$('ul.menu').slideToggle(200);
-});
+	 // MOBILE MENU
+	$('#hamburger').click(function(){
+		$(this).toggleClass('open');
+		$('ul.menu').slideToggle(200);
+	});
 
-
-
+	$(window).resize(function(){
+		if ($(window).width() >= 1250) {
+			$('ul.menu').css('display', 'flex');
+		} else {
+			$('ul.menu').css('display', 'none');
+		}
+	});
 });
