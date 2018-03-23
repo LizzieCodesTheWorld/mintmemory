@@ -19,6 +19,16 @@ $(function(){
 		$(this).find('.fa-chevron-up').toggleClass('none');
 	});
 
+	// ACCORDION ID link expansion.
+	$( 'a[href^="#accordion_"]' ).on( 'click', function(){
+		// Take last digit from internal link.
+		var lastDigit = this.toString().split('').pop();
+		// Build corresponding link in resources list.
+		var link = '#accordion-content-' + lastDigit;
+		// Remove class to display footnotes from corresponding section.
+		$( link ).removeClass('none');
+	});
+
 	// BX SLIDER
       $('.bxslider').bxSlider({
       	pager: false,

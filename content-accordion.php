@@ -11,7 +11,7 @@
 					<div class="accordion">
 						<?php while ( have_rows( 'accordion_items' ) ) : the_row();
 
-							// Variables.
+							// Vars.
 							$title = get_sub_field( 'title' );
 							$content = get_sub_field( 'content' );
 						?>
@@ -24,7 +24,7 @@
 											<i class="fa fa-chevron-up none"></i>
 									</div>
 							</div>
-							<div class="accordion-content none" id="accordion_content_<?php echo esc_attr( $i ); ?>">
+							<div class="accordion-content none" id="accordion-content-<?php echo esc_attr( $i ); ?>">
 									<?php the_sub_field( 'content' ); ?>
 							</div>
 					</div> <!-- /.accordionItem -->

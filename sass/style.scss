@@ -463,7 +463,7 @@ RESEARCH PAGE Styling
 	background: #f4f3f2;
 	padding: 50px 0;
 	@include breakpoint(phone) {
-		padding:30px 0;
+		padding: 30px 0;
 	}
 	h1 {
 		margin-bottom: 30px;
@@ -474,16 +474,27 @@ RESEARCH PAGE Styling
 }
 
 .accordion-title {
+	align-items: center;
+	border-top: 1px solid #e0dfdf;
 	display:flex;
 	justify-content:space-between;
-	align-items: center;
 	padding:20px 0;
-	border-top: 1px solid #e0dfdf;
 	.fa {
 		font-size: 20px;
 	}
 	h2 {
 		margin: 0;
+	}
+}
+
+div[id^='accordion_'] {
+
+	&:before {
+		content: '';
+		display: block;
+		height: 100px;
+		margin-top: -100px;
+		visibility: hidden;
 	}
 }
 
