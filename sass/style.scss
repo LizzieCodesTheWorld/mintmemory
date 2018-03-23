@@ -516,6 +516,12 @@ CLINICIAN RESOURCES (LOGGED IN) Styling
 	margin-bottom: 50px;
 }
 
+.accordion-content {
+	ul{
+		margin-left: 40px;
+		margin-top: 0;
+	}
+}
 .sub-accordion .accordion-item:first-child .accordion-title{
 	padding-top: 0;
 }
