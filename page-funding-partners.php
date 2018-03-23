@@ -24,11 +24,11 @@ get_header();  ?>
 
 				<div class="paragraphs">
 					<?php echo $content; ?>
-					<!-- <?php if($image): ?> -->
+
 					<div class="image-wrapper">
 						<img src="<?php echo $image; ?>" alt="" />
 					</div>
-					<!-- <?php endif; ?> -->
+
 				</div>
 				</li>
 
