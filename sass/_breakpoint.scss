@@ -6,6 +6,10 @@
     @media (max-width: 1400px) { @content; }
     // @include breakpoint(monitor)
   }
+  @else if $point == mediumMonitor {
+    @media (max-width: 1366px) { @content; }
+    // @include breakpoint(mediumMonitor)
+  }
   @else if $point == standard {
     @media (max-width: 1250px) { @content; }
     // @include breakpoint(standard)
@@ -29,10 +33,6 @@
   @else if $point == wpadminsmall {
     @media (max-width: 782px) { @content; }
     // @include breakpoint(wpadminsmall)
-  }
-  @else if $point == tabletsmallest {
-    @media (max-width: 790px) { @content; }
-    // @include breakpoint(tabletsmallest)
   }
   @else if $point == ("709") {
     @media (max-width: 709px) { @content; }

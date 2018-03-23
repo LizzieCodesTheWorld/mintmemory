@@ -6,6 +6,7 @@ $(function(){
 	$('.menu-item-has-children > a').click(function(event){
 		// prevent top nav links 
 		event.preventDefault();
+		$(this).children('.chevron.down').toggleClass('up'); 
 
 		// close open menus
 		$(this).parent().siblings('.menu-item-has-children').find('.sub-menu').hide();
@@ -25,12 +26,6 @@ $(function(){
 		$(this).siblings().slideToggle('none');
 		$(this).find('.fa-chevron-down').toggleClass('none');
 		$(this).find('.fa-chevron-up').toggleClass('none');
-	});
-
-	$('.fa-bars').click(function(){
-		$('ul.menu').slideToggle(200);
-		$(this).toggleClass('fa-bars');
-		$(this).toggleClass('fa-times');
 	});
 
 	// BX SLIDER
@@ -65,5 +60,13 @@ $(function(){
  // //    });
 
  //    slider.startAuto();
+
+ // MOBILE MENU
+$('#hamburger').click(function(){
+	$(this).toggleClass('open');
+	$('ul.menu').slideToggle(200);
+});
+
+
 
 });
