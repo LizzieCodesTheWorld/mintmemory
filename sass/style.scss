@@ -642,7 +642,11 @@ CONTACT US Styling
 		border-radius: 3px;
 	}
 	input[type="submit"] {
-		height:initial;
+		height: initial;
+	}
+
+	.gform_button {
+		min-width: 100px;
 	}
 
 	label:not(:nth-of-type(4)) {
@@ -1140,12 +1144,9 @@ WHAT TO EXPECT
 			margin-right: 3%;
 		}
 		img {
-			// width:30%;
 			max-width: 300px;
-			// height:100%;
 			@include breakpoint("709") {
 				min-width: 200px;
-				// height:100%;
 				margin: 0 auto 20px;
 			}
 		}
