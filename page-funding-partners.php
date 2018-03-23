@@ -15,7 +15,7 @@ get_header();  ?>
 
 		<?php if( have_rows('funding_content') ): ?>
 
-			<?php while( have_rows('funding_content') ): the_row(); 
+			<?php while( have_rows('funding_content') ): the_row();
 
 				// vars
 				$image = get_sub_field('image');
@@ -25,7 +25,9 @@ get_header();  ?>
 				<div class="paragraphs">
 					<?php echo $content; ?>
 					<!-- <?php if($image): ?> -->
+					<div class="image-wrapper">
 						<img src="<?php echo $image; ?>" alt="" />
+					</div>
 					<!-- <?php endif; ?> -->
 				</div>
 				</li>
