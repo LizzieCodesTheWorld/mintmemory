@@ -37,12 +37,6 @@ html {
 
 img {
 	max-width: 100%;
-	user-drag: none; 
-	user-select: none;
-	-moz-user-select: none;
-	-webkit-user-drag: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
 }
 
 hr {
@@ -200,42 +194,18 @@ HOME PAGE Styling
 	.hero-content {
 		width: 60%;
 		background: rgba(28,160,113,0.7);
-		padding: 2.5% 7% 0%;
+		padding: 2.5% 7% 3%;
 		max-width: 800px;
-		@include breakpoint("640") {
-			position:absolute;
-			left:0px;
-			top:0px;
-			bottom:0px;
-			text-align:center;
-			width:auto;
-			padding:95px 10px;
-		}
-		@include breakpoint("360") {
-			
-		}
 		h2 {
 			color: #fff;
 	    	font-size: 4.8rem;
 	    	font-weight: 700;
 	    	margin-bottom: 20px;
-	    	@include breakpoint(tablet) {
-	    		font-size: 3.9rem;
-	    	}
-	    	@include breakpoint(phonesmallest) {
-	    		font-size:2.9rem;
-	    	}
 		}
 		h3 > div {
 			color: #fff;
 			font-size: 25px;
 			font-weight: 500;
-			@include breakpoint(tabletsmallest) {
-				font-size: 22px
-			}
-			@include breakpoint(phonesmallest) {
-				font-size: 20px;
-			}
 			strong {
 				font-weight: 700;
 			}
@@ -243,7 +213,7 @@ HOME PAGE Styling
 		a {
 			display: inline-block;
 		    // width: 120px;
-		    margin: 10px 0px;
+		    margin-top: 20px;
 		    border-radius: 3px;
 		    padding: 15px 15px;
 		    background: #fff;
@@ -261,17 +231,12 @@ HOME PAGE Styling
 	margin: 50px 0;
 	ul {
 		display:flex;
-		align-items: flex-start;
 		justify-content:space-between;
 		padding-left: 0;
 		li {
 		list-style:none;
 		width:22%;
-		min-width:293px;
-		@include breakpoint(monitor) {
-			margin: 0 10px;
-			min-width:220px;
-		}
+		min-width:297px;
 		&:nth-child(2) h2{
 			margin: -20px auto 40px;
 		}
@@ -299,11 +264,6 @@ HOME PAGE Styling
 	.container {
 		display:flex;
 		justify-content:space-between;
-		position: relative;
-		@include breakpoint("709") {
-			flex-direction: column;
-			align-items: center;
-		}
 		img {
 			min-height: 250px;
 			object-fit: cover;
@@ -314,24 +274,13 @@ HOME PAGE Styling
 			// margin: 0 10px;
 			background: #fff;
 			width:30%;
-			@include breakpoint(tabletsmallest) {
-				width:32%;
-			}
-			@include breakpoint("709") {
-				width:85%;
-				margin-bottom:30px;
-				position: relative;
-			}
 			&__text-content {
 				padding:30px;
-				padding-bottom:75px;
 				min-height:255px;
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
 				a {
-					position:absolute;
-					bottom: 15px;
 					display: inline-block;
 					// width: 120px;
 					border-radius: 3px;
@@ -474,14 +423,8 @@ RESEARCH PAGE Styling
 ====================================
 */
 
-// ie 11: 
-	//@791 PX paragraphs in decsriptions take up max width of page
-		// issue with flex-direction column in media query
-	// images are being resized incorrectly in same area
-
 .content-section {
 	display: flex;
-	flex-shrink: 1;
 	justify-content:space-between;
 	align-items:center;
 	margin: 50px 0;
@@ -496,7 +439,7 @@ RESEARCH PAGE Styling
 	&:first-child {
 		margin-top: 0;
 	}
-	&:nth-child(even) {
+	&:nth-child(odd) {
 		flex-direction: row-reverse;
 		@include breakpoint(tabletsmallest) {
 			flex-direction:column;
@@ -510,7 +453,6 @@ RESEARCH PAGE Styling
 		}
 	}
 	img {
-		flex-shrink: 0;
 		margin: 0 50px 0 0;
 		width:35%;
 		min-width:250px;
@@ -554,7 +496,7 @@ RESEARCH PAGE Styling
 	cursor: pointer;
 }
 
-.accordion-item ol li a{
+.accordion-item ul li a{
 	@include word-wrap();
 }
 
