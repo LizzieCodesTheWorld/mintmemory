@@ -16,7 +16,9 @@
 
 	        		<ul class="resources">
 
-	        		<?php while( have_rows('resources') ): the_row(); 
+						<div class="resources-feat-img"><?php the_post_thumbnail('medium_large'); ?></div>
+
+	        		<?php while( have_rows('resources') ): the_row();
 
 	        			// vars
 	        			$source = get_sub_field('source');
@@ -48,17 +50,17 @@
 	        		</ul>
 
 	        	<?php endif; ?>
-			
+
 			<?php elseif(is_page('how-to-refer')) : ?>
-				
+
 				<div class="referral-content">
-					<div><?php the_content(); ?> </div>
-					<div><?php the_post_thumbnail(''); ?></div>
+					<div class="resources-feat-img alignright"><?php the_post_thumbnail(''); ?></div>
+					<div><?php the_content(); ?></div>
 				</div>
 
 	        <?php else: ?>
 
-	        	<?php the_content(); ?> 
+	        	<?php the_content(); ?>
 
 	    	<?php endif; ?>
 

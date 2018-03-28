@@ -47,7 +47,7 @@ hr {
 
 body {
 	color: #333;
-	min-height: 100%;
+	// min-height: 100%;
 	position: relative;
 	// padding-bottom: 96px;
 	font-family: 'Assistant', sans-serif;
@@ -65,8 +65,9 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 }
 
 .container {
-	max-width: 1250px;
 	margin: 0 auto;
+	max-width: 1250px;
+
 	@include breakpoint(mediumMonitor) {
 		margin: 0 auto;
 		padding:0 5%;
@@ -77,10 +78,15 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 	}
 }
 
-// .content .container, .container.narrow {
-// 	max-width: 1000px;
-// }
 .content {
+
+	p {
+	a {
+		text-decoration: underline;
+	}
+
+	}
+
 	@include breakpoint(standard) {
 		// margin: 0 0 100px;
 	}
@@ -102,16 +108,22 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 	color: red;
 }
 
-#gform_next_button_1_12, #gform_previous_button_1, #gform_submit_button_1, .button-green, input[type=submit], input[type=button]  {
+#gform_next_button_1_12,
+#gform_previous_button_1,
+#gform_submit_button_1,
+.button-green,
+input[type=submit],
+input[type=button]  {
 	background: #27B489;
-	color: #fff;
-	font-weight: 800;
-	font-size: 1.4rem;
-	text-transform: uppercase;
-	padding: 10px 25px;
-	transition:0.3s;
 	border-radius: 3px;
 	border:none;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: 800;
+	padding: 10px 25px;
+	text-transform: uppercase;
+	transition:0.3s;
+
 	&:hover {
 		background: #0B8C60;
 	}
@@ -127,36 +139,25 @@ input {
 
 select {
 	height: 32px;
-	border-radius:0!important;
+	border-radius: 0!important;
 }
 
-// label {
-// 	display:none!important; //NEED TO CHANGE
-// }
-
 .main {
+	min-height: calc(100vh - 350px);
 	padding: 50px 0;
+
 	@include breakpoint(standard) {
 		padding: 30px 0;
 	}
 }
 
 .main.no-padding {
-	padding:50px 0 0;
+	padding: 50px 0 0;
 }
 
 .main.no-hero {
 	margin-top: 100px;
 }
-
-// .main.bottom {
-// 	padding: 50px 0 50px;
-// }
-
-
-// textarea {
-// 	border: none;
-// }
 
 @mixin word-wrap() {
   overflow-wrap: break-word;
@@ -171,7 +172,7 @@ select {
 }
 
 #wpadminbar {
-	@media (max-width: 600px)  { 
+	@media (max-width: 600px)  {
 		position:fixed!important;
 	};
 }
@@ -198,9 +199,9 @@ HOME PAGE Styling
 		max-width: 800px;
 		h2 {
 			color: #fff;
-	    	font-size: 4.8rem;
-	    	font-weight: 700;
-	    	margin-bottom: 20px;
+			font-size: 4.8rem;
+			font-weight: 700;
+			margin-bottom: 20px;
 		}
 		h3 > div {
 			color: #fff;
@@ -212,17 +213,17 @@ HOME PAGE Styling
 		}
 		a {
 			display: inline-block;
-		    // width: 120px;
-		    margin-top: 20px;
-		    border-radius: 3px;
-		    padding: 15px 15px;
-		    background: #fff;
-		    /* color: red; */
-		    color: #464646;
-		    font-weight: 800;
-		    font-size: 1.4rem;
-		    /* margin-top: 32px; */
-		    text-transform: uppercase;
+			// width: 120px;
+			margin-top: 20px;
+			border-radius: 3px;
+			padding: 15px 15px;
+			background: #fff;
+			/* color: red; */
+			color: #464646;
+			font-weight: 800;
+			font-size: 1.4rem;
+			/* margin-top: 32px; */
+			text-transform: uppercase;
 		}
 	}
 }
@@ -389,15 +390,14 @@ FUNDING PARTNERS Styling
 		p {
 			align-self: center;
 		}
-		img {
+		.image-wrapper {
 			height:100%;
-			width:40%;
-			margin-left: 5%;
 			margin-bottom: 20px;
+			margin-left: 5%;
+			min-width: 200px;
 			@include breakpoint("640") {
-				margin-left: 0;
 				display:block;
-				width: 50%;
+				margin-left: 0;
 				margin: 20px auto;
 				max-width: 200px;
 			}
@@ -463,7 +463,7 @@ RESEARCH PAGE Styling
 	background: #f4f3f2;
 	padding: 50px 0;
 	@include breakpoint(phone) {
-		padding:30px 0;
+		padding: 30px 0;
 	}
 	h1 {
 		margin-bottom: 30px;
@@ -474,17 +474,28 @@ RESEARCH PAGE Styling
 }
 
 .accordion-title {
+	align-items: center;
+	border-top: 1px solid #e0dfdf;
 	display:flex;
 	justify-content:space-between;
-	align-items: center;
 	padding:20px 0;
-	border-top: 1px solid #e0dfdf;
 	.fa {
 		font-size: 20px;
 	}
 	h2 {
 		margin: 0;
-	}	
+	}
+}
+
+div[id^='accordion_'] {
+
+	&:before {
+		content: '';
+		display: block;
+		height: 100px;
+		margin-top: -100px;
+		visibility: hidden;
+	}
 }
 
 .accordion-item:first-child .accordion-title {
@@ -516,6 +527,12 @@ CLINICIAN RESOURCES (LOGGED IN) Styling
 	margin-bottom: 50px;
 }
 
+.accordion-content {
+	ul{
+		margin-left: 40px;
+		margin-top: 0;
+	}
+}
 .sub-accordion .accordion-item:first-child .accordion-title{
 	padding-top: 0;
 }
@@ -650,7 +667,23 @@ CONTACT US Styling
 		border-radius: 3px;
 	}
 	input[type="submit"] {
-		height:initial;
+		height: initial;
+	}
+
+	.gform_button {
+		min-width: 100px;
+	}
+
+	label:not(:nth-of-type(4)) {
+		margin-top: 8px;
+	}
+
+	#field_2_6 {
+		float: right;
+	}
+
+	.gform_footer.left_label {
+		text-align: right;
 	}
 }
 
@@ -682,12 +715,16 @@ LATEST MEDIA COVERAGE PAGE Styling
 	.news-item div:last-child {
 		margin: 20px 0 50px;
 	}
+	a {
+		color: #464646;
+	}
 	p {
 		margin: 0;
 	}
+
 	img {
 		object-fit: cover;
-		height:300px;
+		height: 300px;
 	}
 	> a {
 		width:48%;
@@ -713,6 +750,9 @@ LATEST MEDIA COVERAGE PAGE Styling
 		@include breakpoint("560") {
 			margin-bottom: 0;
 		}
+	}
+	a {
+		color: #464646;
 	}
 	.news-item {
 		display:flex;
@@ -740,7 +780,7 @@ LATEST MEDIA COVERAGE PAGE Styling
 
 /*
 ====================================
-END: LATEST MEDIA COVERAGE 
+END: LATEST MEDIA COVERAGE
 ====================================
 */
 
@@ -756,18 +796,24 @@ ABOUT US
 	justify-content:space-between;
 	align-items:center;
 	margin: 50px 0;
+
 	@include breakpoint(tabletsmallest) {
 		margin: 30px 0;
 		flex-direction:column;
-
 	}
-	img {
+	.image-wrapper {
+		font-size: 0;
 		margin: 0 50px 0 0;
-		width:30%;
+		width: 30%;
+
 		@include breakpoint(tabletsmallest) {
 			margin: 0 auto 30px;
-			width:70%;
+			width: 70%;
 		}
+	}
+
+	p {
+		max-width: 70%;
 	}
 }
 
@@ -800,7 +846,7 @@ ABOUT US
 }
 /*
 ====================================
-END: ABOUT US 
+END: ABOUT US
 ====================================
 */
 
@@ -817,104 +863,206 @@ LOGIN
 	padding: 50px 0;
 }
 
-//registration form 
+// Registration form.
 .registration-form {
-	width: 60%;
+	background: white;
 	box-shadow: 0px 0px 15px lightgrey;
 	margin: 10% auto;
-	padding:6% 5%;
-	background: white;
+	padding: 6% 3%;
+	width: 60%;
+
 	@include breakpoint(standard) {
 		width:80%;
 	}
 	@include breakpoint(tabletsmallest) {
 		width:100%;
 	}
+
+	// Page 1.
+	#gform_page_1_1 {
+
+		ul li:not(:first-of-type) {
+			line-height: 3;
+		}
+
+		#field_1_25 li {
+			line-height: 1.2;
+		}
+
+		.gfield_description {
+			line-height: 1.2;
+		}
+
+		// Password.
+		#field_1_14 {
+			margin: 10px 0 0;
+
+			input {
+				width: 70%;
+			}
+		}
+	} // #gform_page_1_1
+
+	// Page 2.
+	#gform_page_1_2 {
+
+		a {
+			font-size: 18px;
+		}
+
+		// Name.
+		#field_1_14 {
+			margin: 10px 0 0;
+
+			label {
+				margin-top: 8px;
+				width: 28%;
+			}
+		}
+
+		.field_sublabel_below .ginput_complex.ginput_container label {
+			line-height: 1.2;
+			margin: 0!important;
+		}
+
+		ul {
+			text-align: right;
+		}
+
+		li:not(:first-of-type) {
+			line-height: 2.4;
+		}
+
+		.gfield_html {
+			line-height: 1.2;
+		}
+
+		#field_1_21,
+		#field_1_23 {
+			line-height: 1.2;
+			label {
+				margin-top: 8px;
+			}
+		}
+
+		ul.gform_fields:not(.top_label) .gfield_label {
+			width: 48%;
+		}
+
+		.left_label select.large,
+		.left_label input.large {
+			width: 50%;
+		}
+
+		ul.gform_fields li.gfield {
+			padding-right: 0;
+		}
+	} // #gform_page_1_2
+
 	#field_1_25 {
 		margin: 30px 0!important;
 		width:100%;
 	}
+
+	.gform_wrapper ul.gform_fields:not(.top_label) .gfield_label {
+		margin-bottom: 0;
+	}
+
+	.widgettitle, h3.gform_title {
+		color:#464646;
+		font-size: 42px!important;
+	}
 	label {
 		text-align: right;
-	}
-	.widgettitle, h3.gform_title {
-		font-size: 42px!important;
-		color:#464646;
+		text-transform: uppercase;
 	}
 	select, input {
-		height:40px;
 		background: white;
-		border:1px solid lightgrey;
 		border-radius:3px;
+		border:1px solid lightgrey;
+		height:40px;
+	}
+	input {
+		margin: 10px 0;
 	}
 	.gform_wrapper .field_description_below .gfield_description {
 		padding-top: 0!important;
 	}
+
+	// Terms + Conditions checkbox.
+	.gform_wrapper .gfield_checkbox li input[type=checkbox] {
+		height: inherit;
+		vertical-align: top;
+	}
+
+	.gform_wrapper form ul.left_label li ul.gfield_checkbox li {
+		margin-top: 10px;
+	}
+
 	.gform_page_footer {
 		display:flex;
 		justify-content: flex-end;
 	}
 }
 
-//login
+// Login.
 #gform_login_widget-2 {
-    width: 550px;
-    box-shadow: 0px 0px 15px lightgrey;
-    margin: 10% auto;
-    padding:6% 5%;
-    background: white;
-    @include breakpoint("560"){
-    	width:100%;
-    }
-    a {
-    	text-align: center;
-    	display:block;
-    }
-    .widgettitle, h3.gform_title {
-    	font-size: 42px!important;
-    	color:#464646;
-    }
+	background: white;
+	box-shadow: 0px 0px 15px lightgrey;
+	margin: 10% auto;
+	padding:6% 5%;
+	width: 550px;
+	@include breakpoint("560"){
+		width:100%;
+	}
+	a {
+		text-align: center;
+		display:block;
+	}
+	.widgettitle, h3.gform_title {
+		font-size: 42px!important;
+		color:#464646;
+	}
 
-    .gform_wrapper ul.gform_fields li.gfield {
-    	padding-right: 0!important;
-    }
+	.gform_wrapper ul.gform_fields li.gfield {
+		padding-right: 0!important;
+	}
 
-    input[type=text], input[type=email], input[type=password] {
-    	border: 1px solid lightgrey;
-    	border-radius: 3px;
-    	height:50px;
-    	width:100%;
-    	padding-left: 20px!important;
-    }
+	input[type=text], input[type=email], input[type=password] {
+		border: 1px solid lightgrey;
+		border-radius: 3px;
+		height:50px;
+		width:100%;
+		padding-left: 12px!important;
+	}
 
-    input[type=submit], input[type=button], input[type=password] {
-    	width:100%!important;
-    	height:50px;
-    }
-     input[type=submit], input[type=button] {
-    	width:100%!important;
-    	height:50px;
-    }
-    nav a{
-    	text-align: left;
-    	font-size: 16px;
-    }
+	input[type=submit], input[type=button], input[type=password] {
+		width:100%!important;
+		height:50px;
+	}
+	 input[type=submit], input[type=button] {
+		width:100%!important;
+		height:50px;
+	}
+	nav a{
+		text-align: left;
+		font-size: 16px;
+	}
 }
 
 #gform_login_widget-2 li {
 	display:flex;
-	justify-content:flex-end;
 	align-items:center;
+	justify-content: space-between;
+
 	label {
-		width:30%;
 		margin-bottom: 0;
-		padding-right: 20px;
 		text-align: right;
 		text-transform: uppercase;
 		font-size: 14px;
 	}
 	.ginput_container{
-		width:70%;
+		width:80%;
 		select, input {
 			height:50px;
 			width:100%;
@@ -923,22 +1071,40 @@ LOGIN
 }
 
 #gform_login_widget-2 #field_3 {
+	justify-content: flex-start;
+
 	.ginput_container_checkbox {
-		width: 100%;
+		width: inherit;
+
+		input {
+			height: inherit;
+			margin-top: 0;
+		}
 	}
 	label {
-		padding: 0 0 0 20px;
-		text-align: left;	
+		text-align: left;
 	}
 }
 /*
 ====================================
-END: LOGIN 
+END: LOGIN
 ====================================
 */
 
 .resources {
 	padding-left: 0;
+
+	.resources-feat-img {
+		float: right;
+		@include breakpoint(tabletsmallest) {
+			float: none;
+		}
+		img {
+			height: auto;
+			width: 550px;
+		}
+	}
+
 	.resource {
 		list-style: none;
 		margin-bottom: 50px;
@@ -957,7 +1123,7 @@ END: LOGIN
 			@include breakpoint(phonesmall) {
 				font-size: 2.2rem;
 			}
-		} 
+		}
 		p:last-child {
 			font-size: 2rem;
 		}
@@ -970,7 +1136,7 @@ END: LOGIN
 }
 /*
 ====================================
-RESOURCES 
+RESOURCES
 ====================================
 */
 
@@ -978,20 +1144,19 @@ RESOURCES
 
 /*
 ====================================
-END: RESOURCES 
+END: RESOURCES
 ====================================
 */
 
 /*
 ====================================
-WHAT TO EXPECT 
+WHAT TO EXPECT
 ====================================
 */
 
 .expect-content {
 	.paragraphs {
 		display:flex;
-		// flex-wrap: wrap;
 		margin-bottom: 100px;
 		@include breakpoint(tablet) {
 			margin-bottom: 30px;
@@ -999,15 +1164,15 @@ WHAT TO EXPECT
 		@include breakpoint("709") {
 			flex-direction:column;
 		}
+
+		.image-wrapper {
+			margin-right: 3%;
+		}
 		img {
-			width:30%;
-			max-width:300px;
-			height:100%;
-			margin-right: 5%;
+			max-width: 300px;
 			@include breakpoint("709") {
-				min-width:200px;
-				height:100%;
-				margin:0 auto 20px;
+				min-width: 200px;
+				margin: 0 auto 20px;
 			}
 		}
 	}
@@ -1016,7 +1181,7 @@ WHAT TO EXPECT
 
 /*
 ====================================
-END: WHAT TO EXPECT 
+END: WHAT TO EXPECT
 ====================================
 */
 
@@ -1090,12 +1255,22 @@ END: MY ACCOUNT
 */
 
 .error404 .main{
+	min-height: calc(100vh - 115px);
 	padding-top: 20%;
+
 	@include breakpoint("620") {
 		padding-top: 50%;
 		h1 {
 			font-size: 3.4rem;
 		}
+	}
+
+	h1 {
+		margin-bottom: 14px;
+	}
+
+	.container {
+		max-width: 600px;
 	}
 }
 
@@ -1187,9 +1362,9 @@ SINGLE BLOG PAGE
 		@include breakpoint(tabletsmall) {
 			width:100%;
 			margin-bottom: 30px;
-		}	
+		}
 		img, iframe {
-			width:100%;
+			max-width:100%;
 			height:auto;
 		}
 		iframe {
@@ -1201,7 +1376,7 @@ SINGLE BLOG PAGE
 		height:100%;
 		@include breakpoint(tabletsmall) {
 			width:100%;
-		}	
+		}
 		.back-link {
 			text-decoration: underline;
 			margin-top: 30px;
@@ -1267,27 +1442,36 @@ HOW TO REFER
 */
 
 .referral-content {
-	display:flex;
-	justify-content:space-between;
-	@include breakpoint("709") {
-		flex-direction:column-reverse;
-	}
+
 	div:first-child {
-		width:55%;
 		@include breakpoint("709") {
 			width:100%;
 		}
 	}
 	div:last-child {
-		width:40%;
 		@include breakpoint("709") {
-			width:100%;
+			width: 100%;
 			margin-bottom: 30px;
 		}
 	}
 	img {
 		width:100%;
 		height:auto;
+	}
+
+	.resources-feat-img {
+		float: right;
+		max-width: 500px;
+	}
+
+	.alignright {
+		display: inline;
+		float: right;
+		margin: 0 0 0 24px;
+
+		@include breakpoint("709") {
+			margin: 0 0 16px 24px;
+		}
 	}
 }
 /*
