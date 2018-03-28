@@ -45,7 +45,7 @@ ul.menu  {
 		width:300px;
 		right:5%;
 		top: 75px;
-		background: white; 
+		background: white;
 		border:1px solid #ccc;
 		border-radius:3px;
 	}
@@ -59,13 +59,6 @@ ul.menu  {
 	li.menu-open {
 		border-bottom: 3px solid #8AC985;
 	}
-	// > li.menu-item-has-children > a:after {
-	// 		content: '<div id="chevron" class="chevron down"></div>';
-	// }
-	// > li.menu-item-has-children.menu-open > a:after {
-	// 		content: ' \f077';
-	// 		font-family: FontAwesome;
-	// }
 	> li:last-of-type {
 		border-bottom: none;
 		&:hover {
@@ -81,7 +74,7 @@ ul.menu  {
 			border-bottom:3px solid #8AC985;
 		}
 		@include breakpoint(standard) {
-			padding: 10px 0; 
+			padding: 10px 0;
 			border-bottom:1px solid #ccc;
 			// normal hover
 			&:hover {
@@ -118,7 +111,7 @@ ul.menu  {
 			font-family: 'Assistant', sans-serif;
 			border-bottom: 1px solid #E6E6E6;
 			padding: 10px 0;
-			margin: 0 10px;		
+			margin: 0 10px;
 			&:last-child {
 				border-bottom: none;
 				}
@@ -126,7 +119,7 @@ ul.menu  {
 				text-transform: initial!important;
 					&:hover {
 						color: #0b8c60;
-					}	
+					}
 				}
 			}
 		}
@@ -208,13 +201,13 @@ li.unlocked:after {
 	  transition: .1s all cubic-bezier(1, 0.25, 0.25, .8);
 	  will-change: transform;
 	  &.down {
-	    	transform: rotate(135deg);  
+	    	transform: rotate(135deg);
 	    	transform-origin: 50% 20%;
 		}
 	  &.up {
-	    	transform: rotate(-45deg); 
-	    	transform-origin: 50% 20%; 
-		} 
+	    	transform: rotate(-45deg);
+	    	transform-origin: 50% 20%;
+		}
 	}
 }
 
