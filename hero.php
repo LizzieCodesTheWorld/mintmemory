@@ -7,7 +7,9 @@
 		<?php else : ?>
 			<h1><?php the_title(); ?></h1>
 			<?php if(get_field('source')) : ?>
-				<?php echo get_the_date( 'l F j, Y' ); ?> / <strong><?php the_field('source'); ?></strong>
+				<p>
+					<?php echo get_the_date( 'l F j, Y' ); ?> / <strong><?php the_field('source'); ?></strong>
+				</p>
 			<?php endif; ?>
 		<?php endif; ?>
 
