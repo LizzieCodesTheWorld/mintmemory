@@ -32,7 +32,7 @@ function theme_setup() {
 	}
 	add_action( 'init', 'register_my_menus' );
 
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -74,10 +74,13 @@ function hackeryou_scripts() {
 // bxslider.
   wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array( 'jquery' ), null, true );
 
+  // Smooth Scroll.
+    wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.min.js', array( 'jquery' ), null, true );
+
   wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins', 'bxslider' ), //dependencies
+    array( 'jquery', 'plugins', 'bxslider', 'smooth-scroll' ), //dependencies
     null, // version number
     true //load in footer
   );
@@ -297,7 +300,7 @@ add_action( 'widgets_init', 'child_register_sidebar' );
 
 //PREVENT NON ADMIN USERS SEEING WP-ADMIN BAR
 add_action('after_setup_theme', 'remove_admin_bar');
- 
+
 function remove_admin_bar() {
 if (!current_user_can('administrator') && !is_admin()) {
   show_admin_bar(false);

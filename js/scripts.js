@@ -29,26 +29,28 @@ $(function(){
 		$( link ).removeClass('none');
 	});
 
-	// BX SLIDER
-      $('.bxslider').bxSlider({
-      	pager: false,
-      	nextText: 'Next Video >',
-      	prevText: '< Previous Video',
-      	infiniteLoop: false,
-      	hideControlOnEnd: true
-      });
+	var scroll = new SmoothScroll('a[href^="#accordion_');
 
-      // Homepage Hero Carousel.
-      $('.carousel').bxSlider({
-        mode: 'fade',
-        auto: true,
-        pager: false,
-        infiniteLoop: true,
-        hideControlOnEnd: true,
-        slideWidth: 1600,
-        controls: false,
-        speed: 500
-      });
+	// BX SLIDER
+	$('.bxslider').bxSlider({
+		pager: false,
+		nextText: 'Next Video >',
+		prevText: '< Previous Video',
+		infiniteLoop: false,
+		hideControlOnEnd: true
+	});
+
+	// Homepage Hero Carousel.
+	$('.carousel').bxSlider({
+		mode: 'fade',
+		auto: true,
+		pager: false,
+		infiniteLoop: true,
+		hideControlOnEnd: true,
+		slideWidth: 1600,
+		controls: false,
+		speed: 500
+	});
 
 	 // MOBILE MENU
 	$('#hamburger').click(function(){
