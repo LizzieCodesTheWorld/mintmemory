@@ -884,6 +884,10 @@ LOGIN
 		width:100%;
 	}
 
+	.gform_wrapper label.gfield_label {
+		font-size: 16px;
+	}
+
 	// Page 1.
 	#gform_page_1_1 {
 
@@ -916,19 +920,31 @@ LOGIN
 			font-size: 18px;
 		}
 
+		.gfield_label {
+			line-height: 2.4;
+		}
+
 		// Name.
 		#field_1_14 {
 			margin: 10px 0 0;
 
 			label {
-				margin-top: 8px;
+				line-height: 2.7;
+				margin-top: 11px;
 				width: 28%;
 			}
 		}
 
 		.field_sublabel_below .ginput_complex.ginput_container label {
-			line-height: 1.2;
+			// line-height: 1.2;
 			margin: 0!important;
+		}
+
+		#input_1_14_3_container,
+		#input_1_14_6_container {
+			label {
+				line-height: 1.2;
+			}
 		}
 
 		ul {
@@ -936,18 +952,20 @@ LOGIN
 		}
 
 		li:not(:first-of-type) {
-			line-height: 2.4;
+			// line-height: 2.4;
 		}
 
 		.gfield_html {
-			line-height: 1.2;
+			// line-height: 1.2!important;
 		}
 
 		#field_1_21,
 		#field_1_23 {
-			line-height: 1.2;
+
 			label {
-				margin-top: 8px;
+				font-size: 14px;
+				line-height: 1.2!important;
+				margin: 14px 0;
 			}
 		}
 
@@ -1002,7 +1020,7 @@ LOGIN
 	}
 
 	.gform_wrapper form ul.left_label li ul.gfield_checkbox li {
-		margin-top: 10px;
+		margin-top: 5px;
 	}
 
 	.gform_page_footer {
