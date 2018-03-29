@@ -57,7 +57,7 @@ function hackeryou_scripts() {
 	wp_deregister_script('jquery');
   wp_enqueue_script(
   	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js",
   	false, //dependencies
   	null, //version number
   	true //load in footer
@@ -70,8 +70,9 @@ function hackeryou_scripts() {
     null, // version number
     true //load in footer
   );
-//bxslider
-  wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), null, true );
+
+// bxslider.
+  wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array( 'jquery' ), null, true );
 
   wp_enqueue_script(
     'scripts', //handle
@@ -81,9 +82,8 @@ function hackeryou_scripts() {
     true //load in footer
   );
 
-  // STYLES
-
-  wp_enqueue_style('bxslider-style', get_template_directory_uri() . './jquery.bxslider.min.css' );
+  // STYLES.
+  wp_enqueue_style( 'bxslider-style', get_template_directory_uri() . '/jquery.bxslider.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts' );

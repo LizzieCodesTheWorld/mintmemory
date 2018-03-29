@@ -38,29 +38,17 @@ $(function(){
       	hideControlOnEnd: true
       });
 
-     slider = $('.carousel').bxSlider({
-     		pager: false,
- 	    	infiniteLoop: true,
- 	    	// hideControlOnEnd: true,
- 	    	mode: 'fade',
- 	    	controls: false
-     	    	// speed: 500
-     	    	// ticker: true
-     });
-
- //     slider.startAuto();
-	// // var slider =
- // //    $('.carousel').bxSlider({
- // //    	pager: false,
- // //    	infiniteLoop: true,
- // //    	hideControlOnEnd: true,
- // //    	mode: 'fade',
- // //    	controls: false,
- // //    	speed: 100,
- // //    	ticker: true
- // //    });
-
- //    slider.startAuto();
+      // Homepage Hero Carousel.
+      $('.carousel').bxSlider({
+        mode: 'fade',
+        auto: true,
+        pager: false,
+        infiniteLoop: true,
+        hideControlOnEnd: true,
+        slideWidth: 1600,
+        controls: false,
+        speed: 500
+      });
 
 	 // MOBILE MENU
 	$('#hamburger').click(function(){
