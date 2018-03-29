@@ -288,12 +288,12 @@ function get_post_parent($post) {
 //REGISTER SIDEBAR
 function child_register_sidebar(){
     register_sidebar(array(
-        'name' => 'Login',
-        'id' => 'login',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4 class="widgettitle">',
-        'after_title' => '</h4>',
+        'name'           => 'Login',
+        'id'             => 'login',
+        'before_widget'  => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'   => '</div>',
+        'before_title'   => '<h4 class="widgettitle">',
+        'after_title'    => '</h4>',
     ));
 }
 add_action( 'widgets_init', 'child_register_sidebar' );
@@ -315,7 +315,7 @@ function add_login_to_nav( $loggon, $args ) {
 	if(is_user_logged_in()) {
 	    $loggon .=  '<a href="' . $logout . '" class="login-button">logout <i class="fa fa-sign-in"></i> </a>';
 	} else {
-	    $loggon .= '<a href="/login/" class="login-button">login <i class="fa fa-sign-in"></i> </a>';
+	    $loggon .= '<a href="' . home_url('/login/') . '" class="login-button">login <i class="fa fa-sign-in"></i> </a>';
 	}
     return $loggon;
 }
