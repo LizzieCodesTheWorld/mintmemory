@@ -891,7 +891,11 @@ LOGIN
 	// Page 1.
 	#gform_page_1_1 {
 
-		ul li:not(:first-of-type) {
+		label.gfield_label {
+			margin: 8px 0;
+		}
+
+		ul li {
 			line-height: 3;
 		}
 
@@ -909,6 +913,13 @@ LOGIN
 
 			input {
 				width: 70%;
+			}
+		}
+
+		#input_1_4_1_container,
+		#input_1_4_2_container {
+			label {
+				line-height: 1.2;
 			}
 		}
 	} // #gform_page_1_1
