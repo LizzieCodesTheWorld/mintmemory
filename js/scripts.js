@@ -63,6 +63,7 @@ $(function(){
 			$('ul.menu').css('display', 'flex');
 		} else {
 			$('ul.menu').css('display', 'none');
+			$('#hamburger').removeClass('open');
 		}
 	});
 });
