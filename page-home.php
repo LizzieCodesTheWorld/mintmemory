@@ -7,7 +7,7 @@
 
         <?php if( have_rows('hero_images') ): ?>
 
-            <?php while( have_rows('hero_images') ): the_row(); 
+            <?php while( have_rows('hero_images') ): the_row();
 
                 // vars
                 $image = get_sub_field('hero_image');
@@ -20,15 +20,15 @@
                             <h2><?php the_field('title'); ?></h2>
                             <h3><?php the_field('sub_title'); ?></h3>
                             <a href="<?php the_field('hero_button_url'); ?>" class="button-white"><?php the_field('hero_button_text'); ?></a>
-                        </div>
-                    </div>
-                </div>
+                        </div><!--hero-content-->
+                    </div><!--container-->
+                </div><!--.home-hero-->
 
             <?php endwhile; ?>
 
         <?php endif; ?>
 </div>
- 
+
 
 <div class="main no-padding">
 
@@ -42,7 +42,7 @@
 
     		<ul>
 
-    		<?php while( have_rows('four_column_content') ): the_row(); 
+    		<?php while( have_rows('four_column_content') ): the_row();
 
     			// vars
     			$image = get_sub_field('image');
@@ -82,7 +82,7 @@
     			<div class="box__text-content">
                     <div>
                         <h4><?php the_field('patients_title'); ?></h4>
-                        <?php the_field('patients_content', false, false); ?> 
+                        <?php the_field('patients_content', false, false); ?>
                     </div>
                     <div>
                         <a href="<?php the_field('patients_button_link'); ?>"><?php the_field('patients_button_text'); ?></a>

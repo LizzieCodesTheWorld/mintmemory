@@ -32,7 +32,7 @@ function theme_setup() {
 	}
 	add_action( 'init', 'register_my_menus' );
 
-	
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -57,7 +57,7 @@ function hackeryou_scripts() {
 	wp_deregister_script('jquery');
   wp_enqueue_script(
   	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js",
   	false, //dependencies
   	null, //version number
   	true //load in footer
@@ -70,20 +70,23 @@ function hackeryou_scripts() {
     null, // version number
     true //load in footer
   );
-//bxslider
-  wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), null, true );
+
+// bxslider.
+  wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array( 'jquery' ), null, true );
+
+  // Smooth Scroll.
+    wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.min.js', array( 'jquery' ), null, true );
 
   wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins', 'bxslider' ), //dependencies
+    array( 'jquery', 'plugins', 'bxslider', 'smooth-scroll' ), //dependencies
     null, // version number
     true //load in footer
   );
 
-  // STYLES
-
-  wp_enqueue_style('bxslider-style', get_template_directory_uri() . './jquery.bxslider.min.css' );
+  // STYLES.
+  wp_enqueue_style( 'bxslider-style', get_template_directory_uri() . '/jquery.bxslider.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts' );
@@ -285,19 +288,19 @@ function get_post_parent($post) {
 //REGISTER SIDEBAR
 function child_register_sidebar(){
     register_sidebar(array(
-        'name' => 'Login',
-        'id' => 'login',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4 class="widgettitle">',
-        'after_title' => '</h4>',
+        'name'           => 'Login',
+        'id'             => 'login',
+        'before_widget'  => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'   => '</div>',
+        'before_title'   => '<h4 class="widgettitle">',
+        'after_title'    => '</h4>',
     ));
 }
 add_action( 'widgets_init', 'child_register_sidebar' );
 
-//PREVENT NON ADMIN USERS SEEING WP-ADMIN BAR
+// Prevent non-admin users from seeing wp-admin bar.
 add_action('after_setup_theme', 'remove_admin_bar');
- 
+
 function remove_admin_bar() {
 if (!current_user_can('administrator') && !is_admin()) {
   show_admin_bar(false);
@@ -307,13 +310,12 @@ if (!current_user_can('administrator') && !is_admin()) {
 
 function add_login_to_nav( $loggon, $args ) {
 
-	$logout = wp_logout_url( "/login/" );
+	$logout = wp_logout_url( home_url('/login/') );
 
 	if(is_user_logged_in()) {
 	    $loggon .=  '<a href="' . $logout . '" class="login-button">logout <i class="fa fa-sign-in"></i> </a>';
-	    // $loggon .= 'hello';
 	} else {
-	    $loggon .= '<a href="/login/" class="login-button">login <i class="fa fa-sign-in"></i> </a>';
+	    $loggon .= '<a href="' . home_url('/login/') . '" class="login-button">login <i class="fa fa-sign-in"></i> </a>';
 	}
     return $loggon;
 }

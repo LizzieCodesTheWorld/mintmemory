@@ -29,38 +29,28 @@ $(function(){
 		$( link ).removeClass('none');
 	});
 
+	var scroll = new SmoothScroll('a[href^="#accordion_');
+
 	// BX SLIDER
-      $('.bxslider').bxSlider({
-      	pager: false,
-      	nextText: 'Next Video >',
-      	prevText: '< Previous Video',
-      	infiniteLoop: false,
-      	hideControlOnEnd: true
-      });
+	$('.bxslider').bxSlider({
+		pager: false,
+		nextText: 'Next Video >',
+		prevText: '< Previous Video',
+		infiniteLoop: false,
+		hideControlOnEnd: true
+	});
 
-     slider = $('.carousel').bxSlider({
-     		pager: false,
- 	    	infiniteLoop: true,
- 	    	// hideControlOnEnd: true,
- 	    	mode: 'fade',
- 	    	controls: false
-     	    	// speed: 500
-     	    	// ticker: true
-     });
-
- //     slider.startAuto();
-	// // var slider =
- // //    $('.carousel').bxSlider({
- // //    	pager: false,
- // //    	infiniteLoop: true,
- // //    	hideControlOnEnd: true,
- // //    	mode: 'fade',
- // //    	controls: false,
- // //    	speed: 100,
- // //    	ticker: true
- // //    });
-
- //    slider.startAuto();
+	// Homepage Hero Carousel.
+	$('.carousel').bxSlider({
+		mode: 'fade',
+		auto: true,
+		pager: false,
+		infiniteLoop: true,
+		hideControlOnEnd: true,
+		slideWidth: 1600,
+		controls: false,
+		speed: 500
+	});
 
 	 // MOBILE MENU
 	$('#hamburger').click(function(){
@@ -73,6 +63,7 @@ $(function(){
 			$('ul.menu').css('display', 'flex');
 		} else {
 			$('ul.menu').css('display', 'none');
+			$('#hamburger').removeClass('open');
 		}
 	});
 });

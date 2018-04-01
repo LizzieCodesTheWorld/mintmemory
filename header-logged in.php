@@ -18,12 +18,12 @@
 
 <!-- FULL WIDTH LOGGED IN -->
    <nav class="topNav mobileHide">
-      <?php if( is_user_logged_in() ): ?> 
-      
+      <?php if( is_user_logged_in() ): ?>
+
           <?php wp_nav_menu( array(
                 'container' => false,
                 'theme_location' => 'loggedin-menu',
-                'link_before' => '<div id="chevron" class="chevron down">' , 
+                'link_before' => '<div id="chevron" class="chevron down">' ,
                 'link_after' => '</div>'
               )); ?>
 
@@ -49,13 +49,13 @@
           <?php wp_nav_menu( array(
             'container' => false,
             'theme_location' => 'loggedout-menu',
-            'link_before' => '<div id="chevron" class="chevron down">' , 
+            'link_before' => '<div id="chevron" class="chevron down">' ,
             'link_after' => '</div>'
           )); ?>
           <a href="<?php echo get_page_link(169); ?>" class="loginOut">
               <img src="<?php the_field('lock_closed', 'option'); ?>" alt="">
               <span>Login / Register</span>
-          </a> 
+          </a>
       <?php endif; ?> <!-- end of is_user_logged_in -->
 
     </nav>
@@ -75,7 +75,7 @@
 
         <?php if( is_user_logged_in() ): ?>
 
-            
+
             <!-- if regular page -->
                 <?php if ( is_page_template( 'page.php' ) ): ?>
                     <a href="<?php echo wp_logout_url( get_permalink() ); ?>" class="loginOut">
@@ -97,29 +97,29 @@
                <a href="<?php echo get_page_link(169); ?>" class="loginOut">
                    <img src="<?php the_field('lock_closed', 'option'); ?>" alt="">
                    <span>Login / Register</span>
-               </a> 
+               </a>
 
              <?php endif; ?> <!-- end of is_user_logged_in -->
       </div>
 
 
 <!-- MOBILE LOGGED OUT -->
-      <?php if( is_user_logged_in() ): ?> 
-            <div class="mobileMenuItems none"> 
+      <?php if( is_user_logged_in() ): ?>
+            <div class="mobileMenuItems none">
                <?php wp_nav_menu( array(
-                     'container' => false,
+                     'container'      => false,
                      'theme_location' => 'loggedin-menu',
-                     'link_before' => '<div id="chevron" class="chevron down">' , 
-                     'link_after' => '</div>'
+                     'link_before'    => '<div id="chevron" class="chevron down">' ,
+                     'link_after'     => '</div>'
                    )); ?>
             </div>
        <?php else: ?>
-            <div class="mobileMenuItems none"> 
+            <div class="mobileMenuItems none">
                <?php wp_nav_menu( array(
-                 'container' => false,
+                 'container'      => false,
                  'theme_location' => 'loggedout-menu',
-                 'link_before' => '<div id="chevron" class="chevron down">' , 
-                 'link_after' => '</div>'
+                 'link_before'    => '<div id="chevron" class="chevron down">' ,
+                 'link_after'     => '</div>'
                )); ?>
             </div>
        <?php endif; ?> <!-- end of is_user_logged_in -->

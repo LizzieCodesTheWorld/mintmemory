@@ -27,10 +27,10 @@
       </a>
     </h1>
 
-  <?php 
+  <?php
      $user_id = get_current_user_id();
      $key = 'User Type';
-     $type = get_user_meta(get_current_user_id(), $key = 'User Type'); 
+     $type = get_user_meta(get_current_user_id(), $key = 'User Type');
   ?>
 
 
@@ -39,29 +39,29 @@
     <?php if($type[0] == 'Trainee') : ?>
       <!-- <h2>trainee</h2> -->
         <?php wp_nav_menu( array(
-          'container' => false,
+          'container'      => false,
           'theme_location' => 'loggedintrainee-menu',
-          'link_after' => '<div id="chevron" class="chevron down"></div>'
-        )); ?> 
+          'link_after'     => '<div id="chevron" class="chevron down"></div>'
+        )); ?>
     <?php else : ?>
       <!-- <h2>clinician</h2> -->
       <?php wp_nav_menu( array(
-        'container' => false,
+        'container'      => false,
         'theme_location' => 'loggedinclinician-menu',
-        'link_after' => '<div id="chevron" class="chevron down"></div>'
+        'link_after'     => '<div id="chevron" class="chevron down"></div>'
       )); ?>
-    <?php endif; ?> 
+    <?php endif; ?>
 
 <?php else : ?>
 
   <?php wp_nav_menu( array(
-    'container' => false,
+    'container'      => false,
     'theme_location' => 'loggedout-menu',
-    'link_after' => '<div id="chevron" class="chevron down"></div>'
+    'link_after'     => '<div id="chevron" class="chevron down"></div>'
   )); ?>
 
-<?php endif; ?> 
-      
+<?php endif; ?>
+
 
 <!-- <?php if(is_user_logged_in()) : ?>
    <a href=" <?php echo wp_logout_url( '/login/' ); ?> " class="login-button">logout <i class="fa fa-key"></i> </a>
