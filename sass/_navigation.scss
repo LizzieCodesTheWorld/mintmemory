@@ -1,6 +1,9 @@
 .logo {
 	width:250px;
 	margin-top: 10px;
+	@include breakpoint(phone) {
+		width:200px;
+	}
 }
 
 .fa-bars {
@@ -25,6 +28,9 @@ ul.menu {
 	li {
 		margin:0 20px;
 		list-style:none;
+		@include breakpoint(standard) {
+			margin: 0;
+		}
 		a {
 			font-weight: 800;
 			font-size: 14px;
@@ -37,6 +43,8 @@ ul.menu {
 
 ul.menu  {
 	display: flex;
+	justify-content:flex-end;
+	width:90%;
 	align-items:center;
 	@include breakpoint(standard) {
 		display:none;
@@ -74,7 +82,7 @@ ul.menu  {
 			border-bottom:3px solid #8AC985;
 		}
 		@include breakpoint(standard) {
-			padding: 10px 0;
+			padding: 10px 20px;
 			border-bottom:1px solid #ccc;
 			// normal hover
 			&:hover {

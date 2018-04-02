@@ -14,13 +14,22 @@
       <div class="container">
         <?php the_content(); ?>
       </div>
+      <div class="resource-navigation container">
+        <?php previous_post_link(); ?> 
+        <?php if(get_previous_post() && get_next_post()) : ?>
+          | 
+        <?php endif; ?>
+        <?php next_post_link(); ?>
+      </div>
       <hr>
       <div class="disclaimer">
         <div class="container">
           <?php the_field('disclaimer'); ?>
         </div>
       </div>
+
       <?php get_template_part('content-accordion'); ?>
+
     <?php else : ?>
       
         <div class="container">

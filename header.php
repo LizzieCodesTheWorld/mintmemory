@@ -20,7 +20,13 @@
 <body <?php body_class(); ?>>
 
 <header>
+
+<?php if(is_user_logged_in()) : ?>
+  <div class="container logged-in">
+<?php else : ?>
   <div class="container">
+ <?php endif; ?> 
+
     <h1>
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
         <img src="<?php bloginfo('template_url'); ?>/images/MINTLogo_RightColour.png" alt="home" class="logo">
