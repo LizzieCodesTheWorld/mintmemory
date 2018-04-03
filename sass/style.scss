@@ -183,14 +183,18 @@ HOME PAGE Styling
 */
 
 .home-hero {
-	height:500px;
+	height: 600px;
 	margin-top: 96px; // height of header.
 	padding: 6% 0;
 	overflow:visible!important;
 	z-index: 0!important;
 
+	@include breakpoint('640') {
+		height: 740px;
+	}
+
 	.bx-viewport {
-		min-height: 600px;
+		height: 600px;
 		overflow:visible!important;
 	}
 
