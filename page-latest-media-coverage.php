@@ -62,10 +62,10 @@
                   <?php while ( $custom_query_excludes->have_posts() ) : $custom_query_excludes ->the_post(); ?>
 
                       <?php
-                      $date = get_the_date( 'l F j, Y' );
-                      $source = get_field('source');
-                      $link = get_the_permalink();
-                      $souce_link = get_field('source_link');
+                        $date = get_the_date( 'l F j, Y' );
+                        $source = get_field('source');
+                        $link = get_the_permalink();
+                        $souce_link = get_field('source_link');
                       ?>
 
                         <a href="<?php echo $link; ?>">

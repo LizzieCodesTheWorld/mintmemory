@@ -23,8 +23,6 @@ Default Styling
 */
 
 html {
-	font-size: 62.5%;
-	// margin-top: -32px;
 	height: 100%;
 	box-sizing: border-box;
 }
@@ -57,24 +55,20 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 	font-family: 'Raleway', sans-serif;
 }
 
-.admin-bar {
-	margin-top: -32px;
-	@include breakpoint(wpadminsmall) {
-		margin-top: -46px;
-	}
-}
-
 .container {
 	margin: 0 auto;
 	max-width: 1250px;
-
-	@include breakpoint(mediumMonitor) {
-		margin: 0 auto;
-		padding:0 5%;
-	}
+	padding:0 5%;
 	@include breakpoint(phone) {
 		margin: 0 auto;
 		padding:0 2.5%;
+	}
+	&.logged-in {
+		max-width:1350px;
+		padding:0 2.5%;
+		@include breakpoint(standard) {
+			padding:0 5%;
+		}
 	}
 }
 
@@ -153,6 +147,9 @@ select {
 
 .main.no-padding {
 	padding: 50px 0 0;
+	@include breakpoint(phone) {
+		padding: 30px 0 0;
+	}
 }
 
 .main.no-hero {
@@ -171,10 +168,26 @@ select {
   // @include word-wrap()
 }
 
+.admin-bar {
+	margin-top: -32px;
+	@include breakpoint(wpadminsmall) {
+		margin-top: -46px;
+	}
+}
+
+
 #wpadminbar {
 	@media (max-width: 600px)  {
 		position:fixed!important;
 	};
+}
+
+.screen-reader-text {
+    position: absolute !important;
+    height: 1px; width: 1px; 
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
 }
 /*
 ====================================
@@ -361,6 +374,9 @@ FULL PAGE TEMPLATE Styling
 	padding: 50px 0;
 	@include breakpoint("560") {
 		padding: 30px 0;
+	}
+	@include breakpoint(phone) {
+		margin-top: 80px;
 	}
 	.hero-content {
 		color:white;
@@ -612,28 +628,41 @@ TRAINEE RESOURCES (LOGGED IN) Styling
 */
 
 .trainee-resources {
-	// slider
-	.bx-wrapper {
-		margin-bottom: 100px;
-	}
-	.bx-viewport, .bx-wrapper, .bx-slider {
-		height:600px;
-	}
+	// // slider
+	// .bx-wrapper {
+	// 	margin-bottom: 100px;
+	// }
+	// .bx-viewport, .bx-wrapper, .bx-slider {
+	// 	height:600px;
+	// }
 	iframe {
 		width:100%;
 		height:600px;
+		@include breakpoint(standard) {
+			height:400px;
+		}
+		@include breakpoint(phone) {
+			height:250px;
+		}
 	}
-	.bx-controls-direction {
-		display:flex;
-		justify-content: space-between;
+	// .bx-controls-direction {
+	// 	display:flex;
+	// 	justify-content: space-between;
+	// }
+	// .disabled {
+	// 	opacity:0;
+	// }
+	.resource-navigation {
+		text-align: center;
+		margin-bottom: 20px;
 	}
-	.disabled {
-		opacity:0;
-	}
-	// disclaimer
 	.disclaimer {
 		padding: 50px 0;
+		@include breakpoint(phone) {
+			padding: 30px 0;
+		}
 	}
+
 }
 
 /*
@@ -911,6 +940,10 @@ LOGIN
 .main.login {
 	background: #F4F3F2;
 	padding: 50px 0;
+}
+
+#gform_1 > div.validation_error {
+	text-align: left;
 }
 
 // Registration form.

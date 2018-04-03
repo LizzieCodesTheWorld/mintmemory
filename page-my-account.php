@@ -40,7 +40,34 @@
                               <?php if($type[0] == 'Clinician'): ?>
                                 <a href="/clinicians/clinician-resources/">Clinician Resources</a>
                               <?php else: ?>
-                                <a href="/clinicians/trainee-resources/">Trainee Resources</a>
+                               <!--  <a href="/clinicians/trainee-resources/">Trainee Resources</a> -->
+                                
+                                <!-- // WP_Query arguments -->
+                                <?php $args = array (
+                                  'post_type' => 'trainee-resource',
+                                  'posts_per_page' => 10
+                                );
+
+                                // The Query
+                                $services = new WP_Query( $args );
+
+                                // The Loop
+                                if ( $services->have_posts() ) {
+                                  while ( $services->have_posts() ) {
+                                    $services->the_post(); ?>
+                                    <!-- // do something -->
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                  <?php }
+                                } else {
+                                  // no posts found
+                                }
+
+                                // Restore original Post Data
+                                wp_reset_postdata();
+                                ?>
+
+
+
                               <?php endif; ?>
                         </div>
                     </div>
