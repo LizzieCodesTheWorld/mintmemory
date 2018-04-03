@@ -25,7 +25,7 @@
   <div class="container logged-in">
 <?php else : ?>
   <div class="container">
- <?php endif; ?> 
+ <?php endif; ?>
 
     <h1>
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
@@ -46,13 +46,13 @@
         <?php wp_nav_menu( array(
           'container'      => false,
           'theme_location' => 'loggedintrainee-menu',
-          'link_after'     => '<div id="chevron" class="chevron down"></div>'
+          'link_after'     => '<div class="chevron down"></div>'
         )); ?>
     <?php else : ?>
         <?php wp_nav_menu( array(
           'container'      => false,
           'theme_location' => 'loggedinclinician-menu',
-          'link_after'     => '<div id="chevron" class="chevron down"></div>'
+          'link_after'     => '<div class="chevron down"></div>'
         )); ?>
     <?php endif; ?>
 
