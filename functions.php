@@ -313,9 +313,9 @@ function add_login_to_nav( $loggon, $args ) {
 	$logout = wp_logout_url( home_url('/login/') );
 
 	if(is_user_logged_in()) {
-	    $loggon .=  '<a href="' . $logout . '" class="login-button">logout <i class="fa fa-sign-in"></i> </a>';
+	    $loggon .=  '<li><a href="' . $logout . '" class="login-button">logout <i class="fa fa-sign-in"></i> </a></li>';
 	} else {
-	    $loggon .= '<a href="' . home_url('/login/') . '" class="login-button">login <i class="fa fa-sign-in"></i> </a>';
+	    $loggon .= '<li><a href="' . home_url('/login/') . '" class="login-button">login <i class="fa fa-sign-in"></i> </a></li>';
 	}
     return $loggon;
 }
