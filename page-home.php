@@ -59,11 +59,6 @@
     		</ul>
 
     	<?php endif; ?>
-        		<div>
-        			<img src="<?php the_field('column_image'); ?>" alt="">
-        			<h3><?php the_field('column_title'); ?></h3>
-        			<p><?php the_field('column_content'); ?></p>
-        		</div>
     		</div>
         </section>
 
