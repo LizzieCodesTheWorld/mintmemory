@@ -36,44 +36,31 @@
 
     	<section class="four-columns">
 
-    	  <div class="container">
+    	   <div class="container">
 
     	<?php if( have_rows('four_column_content') ): ?>
 
     		<ul>
-
     		<?php while( have_rows('four_column_content') ): the_row();
 
-    			// vars
+    			// Variables.
     			$image = get_sub_field('image');
     			$title = get_sub_field('title');
     			$content = get_sub_field('content');
-    			// $link = get_sub_field('link');
-
     			?>
 
     			<li class="column">
-
     				<img src="<?php echo $image; ?>" alt="" />
     				<h2><?php echo $title; ?></h2>
-    			    <?php echo $content; ?>
-
+                    <?php echo $content; ?>
     			</li>
 
     		<?php endwhile; ?>
-
     		</ul>
 
     	<?php endif; ?>
-
-
-    		<div>
-    			<img src="<?php the_field('column_image'); ?>" alt="">
-    			<h4><?php the_field('column_title'); ?></h4>
-    			<p><?php the_field('column_content'); ?></p>
     		</div>
-    		</div>
-    	</section>
+        </section>
 
     	<section class="grey three-columns">
     	  <div class="container">
@@ -81,7 +68,7 @@
     			<img src="<?php the_field('patients_image'); ?>" alt="">
     			<div class="box__text-content">
                     <div>
-                        <h4><?php the_field('patients_title'); ?></h4>
+                        <h3><?php the_field('patients_title'); ?></h3>
                         <?php the_field('patients_content', false, false); ?>
                     </div>
                     <div>
@@ -93,7 +80,7 @@
     			<img src="<?php the_field('clinicians_image'); ?>" alt="">
     			<div class="box__text-content">
                     <div>
-                        <h4><?php the_field('clinicians_title'); ?></h4>
+                        <h3><?php the_field('clinicians_title'); ?></h3>
                         <?php the_field('clinicians_content', false, false); ?>
                     </div>
                     <div>
@@ -105,7 +92,7 @@
     			<img src="<?php the_field('find_image'); ?>" alt="">
     			<div class="box__text-content">
                     <div>
-                        <h4><?php the_field('find_title'); ?></h4>
+                        <h3><?php the_field('find_title'); ?></h3>
                         <?php the_field('find_content', false, false); ?>
                     </div>
                     <div>

@@ -67,10 +67,15 @@
 		}
 	}
 
+	// Wrapper spacing.
+	.bx-wrapper {
+		margin-bottom: 0;
+	}
+
 	// bx slider
 	.bxslider {
 		.slide {
-			background-size: cover !important; 
+			background-size: cover !important;
 			background-position: center !important;
 			&:nth-child(2) {
 				.button {
