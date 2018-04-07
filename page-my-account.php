@@ -44,8 +44,10 @@
                                 
                                 <!-- // WP_Query arguments -->
                                 <?php $args = array (
-                                  'post_type' => 'trainee-resource',
-                                  'posts_per_page' => 10
+                                  'post_type'       => 'trainee-resource',
+                                  'posts_per_page'  => 100,
+                                  'order'           => 'ASC'
+
                                 );
 
                                 // The Query

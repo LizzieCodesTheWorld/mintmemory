@@ -62,6 +62,7 @@ ul.menu  {
 	}
 	@include breakpoint(phone) {
 		right:0;
+		top: 80px;
 		width:100%;
 	}
 	li.menu-open {

@@ -39,7 +39,6 @@
      $type = get_user_meta(get_current_user_id(), $key = 'User Type');
   ?>
 
-
 <?php if(is_user_logged_in()) : ?>
 
     <?php if($type[0] == 'Trainee') : ?>
@@ -49,11 +48,19 @@
           'link_after'     => '<div class="chevron down"></div>'
         )); ?>
     <?php else : ?>
-        <?php wp_nav_menu( array(
+
+<!--         <?php wp_nav_menu( array(
           'container'      => false,
           'theme_location' => 'loggedinclinician-menu',
           'link_after'     => '<div class="chevron down"></div>'
-        )); ?>
+        )); ?> -->
+
+      <?php wp_nav_menu( array(
+        'container'      => false,
+        'theme_location' => 'loggedinclinician-menu',
+        'link_after'     => '<div id="chevron" class="chevron down"></div>'
+      )); ?>
+
     <?php endif; ?>
 
 <?php else : ?>
@@ -66,20 +73,12 @@
 
 <?php endif; ?>
 
-<!-- <?php if(is_user_logged_in()) : ?>
-   <a href=" <?php echo wp_logout_url( '/login/' ); ?> " class="login-button">logout <i class="fa fa-key"></i> </a>
-<?php else : ?>
-  <a href="/login/" class="login-button">login <i class="fa fa-key"></i> </a>
-<?php endif; ?> -->
-
-<!-- <i class="fa fa-bars"></i> -->
-
-<div id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+  <div id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
   </div> <!-- /.container -->
 </header><!--/.header-->

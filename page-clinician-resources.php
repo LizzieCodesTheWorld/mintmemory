@@ -22,7 +22,7 @@
       
         <div class="container">
 
-            <h2>Sorry you do not have access to these resources - please <a href="/login/">login / register </a></h2>
+          <h2>Sorry you do not have access to these resources - please <a href="/contact/">contact us</a> for information on how to update your account to a Clinician account. </h2>
               
         </div> <!-- /.container -->
 

@@ -10,7 +10,7 @@
 ?>
   <div class="main no-padding trainee-resources">
 
-    <?php if($logged_in && $type[0] == 'Trainee') : ?>
+    <?php if($logged_in) : ?>
       <div class="container">
         <?php the_content(); ?>
       </div>
@@ -34,7 +34,7 @@
       
         <div class="container">
 
-            <h2>Sorry you do not have access to these resources - please <a href="/login/">login / register </a></h2>
+            <h2>Sorry you do not have access to these resources - please contact us for information on how to update your account. </h2>
               
         </div> <!-- /.container -->
 

@@ -49,7 +49,7 @@ $(function(){
 		hideControlOnEnd: true,
 		slideWidth: 1600,
 		controls: false,
-		speed: 500
+		speed: 200
 	});
 
 	 // MOBILE MENU
