@@ -5,7 +5,16 @@ $(function(){
 	$('.menu-item-has-children > a').click(function(event){
 		// Prevent top nav links.
 		event.preventDefault();
-		$(this).children('.chevron.down').toggleClass('up');
+
+		// If it already has a toggled chevron, remove class, otherwise add it.
+		if($(this).children('.chevron.down').hasClass('up')) {
+			$(this).children('.chevron.down').removeClass('up');
+		} else {
+			$(this).children('.chevron.down').addClass('up');
+		}
+
+		// Remove class from other toggled chevrons but not the one clicked.
+		$('.menu-item-has-children > a').not(this).children('.chevron.down').removeClass('up');
 
 		// Close open menus.
 		$(this).parent().siblings('.menu-item-has-children').find('.sub-menu').hide();
