@@ -184,7 +184,7 @@ select {
 
 .screen-reader-text {
     position: absolute !important;
-    height: 1px; width: 1px; 
+    height: 1px; width: 1px;
     overflow: hidden;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
@@ -208,7 +208,7 @@ HOME PAGE Styling
 
 	.bx-viewport {
 		height: 600px;
-		overflow:visible!important;
+		overflow: visible!important;
 	}
 
 	.hero-content {
@@ -264,7 +264,7 @@ HOME PAGE Styling
 
 		li {
 			list-style: none;
-			min-width: 297px;
+			// min-width: 297px;
 			width: 22%;
 
 			@include breakpoint(tabletsmall) {
