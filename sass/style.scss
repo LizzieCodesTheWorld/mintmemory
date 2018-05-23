@@ -290,10 +290,10 @@ HOME PAGE Styling
 
 			h2 {
 				font-size: 2rem;
-				height:80px;
-				margin:0 auto 20px;
+				height: 80px;
+				margin: 0 auto 20px;
 				text-align: center;
-				width:80%;
+				width: 80%;
 			}
 		} // li
 	} // ul
@@ -883,10 +883,9 @@ ABOUT US
 	display: flex;
 	justify-content:space-between;
 	align-items:center;
-	margin: 50px 0;
+	margin: 30px 0;
 
 	@include breakpoint(tabletsmallest) {
-		margin: 30px 0;
 		flex-direction:column;
 	}
 	.image-wrapper {
