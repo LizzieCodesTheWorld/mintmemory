@@ -125,7 +125,11 @@ input[type=button]  {
 }
 
 .none {
-	display:none;
+	display: none;
+
+	&.fa {
+		display: none;
+	}
 }
 
 input {
@@ -579,6 +583,10 @@ div[id^='accordion_'] {
 	@include word-wrap();
 }
 
+.accordion-item:last-of-type {
+	padding-bottom: 20px;
+}
+
 /*
 ====================================
 END: RESEARCH PAGE Styling
@@ -592,7 +600,7 @@ CLINICIAN RESOURCES (LOGGED IN) Styling
 */
 
 .form-accordion-container {
-	margin-bottom: 50px;
+	// margin-bottom: 50px;
 }
 
 .accordion-content {
@@ -1418,7 +1426,7 @@ LOCATIONS
 	margin-bottom: 0!important;
 
 	> div > label {
-		width: 130px;
+		width: 165px;
 	}
 }
 
@@ -1447,17 +1455,24 @@ LOCATIONS
 	color: #fff!important;
 	font-weight: 800!important;
 	font-size: 1.4rem!important;
-	text-transform: uppercase!important;
 	padding: 10px 25px!important;
 	-webkit-transition: .3s;
 	-o-transition: .3s;
 	transition: .3s;
 	border-radius: 3px!important;
 	border: none!important;
+	line-height: 1.2!important;
+	text-transform: uppercase!important;
+}
+
+input[type="submit"]#wpsl-search-btn {
+	text-transform: uppercase!important;
 }
 
 #wpsl-search-wrap div label {
+	font-weight: 700;
 	line-height: 40px!important;
+	text-transform: uppercase;
 }
 
 #wpsl-search-wrap input[type='text'] {
