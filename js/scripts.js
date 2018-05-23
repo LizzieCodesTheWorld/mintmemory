@@ -58,7 +58,7 @@ $(function(){
 		hideControlOnEnd: true,
 		slideWidth: 1600,
 		controls: false,
-		speed: 200
+		speed: 2200
 	});
 
 	 // MOBILE MENU
