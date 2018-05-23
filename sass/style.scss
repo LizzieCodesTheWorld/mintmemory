@@ -1406,24 +1406,24 @@ LOCATIONS
 
 #wpsl-wrap {
 	background: #f4f3f3;
-	// padding:20px;
-	margin-top: 50px;
 	border: 1px solid #44413f;
 	border-radius:3px;
 	margin-bottom: 70px!important;
+	margin-top: 50px;
 }
 
 .wpsl-input {
 	display:flex;
 	align-items:center;
 	margin-bottom: 0!important;
+
 	> div > label {
-		width:120px;
+		width: 130px;
 	}
 }
 
 .wpsl-search {
-	padding:0!important;
+	padding: 0!important;
 	margin-bottom: 0!important;
 }
 
@@ -1433,9 +1433,9 @@ LOCATIONS
 }
 
 #wpsl-gmap {
-	border-left:1px solid grey;
+	border-left: 1px solid grey;
 	margin: 0!important;
-	height:100%;
+	height: 100%;
 }
 
 #wpsl-wrap #wpsl-result-list li {
@@ -1454,6 +1454,14 @@ LOCATIONS
 	transition: .3s;
 	border-radius: 3px!important;
 	border: none!important;
+}
+
+#wpsl-search-wrap div label {
+	line-height: 40px!important;
+}
+
+#wpsl-search-wrap input[type='text'] {
+	min-width: 475px;
 }
 
 /*
