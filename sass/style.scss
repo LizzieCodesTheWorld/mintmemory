@@ -294,9 +294,15 @@ HOME PAGE Styling
 				text-align: center;
 				width:80%;
 			}
+		} // li
+	} // ul
+
+	.home & {
+		ul li p {
+			text-align: center;
 		}
 	}
-}
+} // .four-columns
 
 .three-columns {
 	background:  #F4F3F2;
