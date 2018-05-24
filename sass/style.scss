@@ -45,9 +45,7 @@ hr {
 
 body {
 	color: #333;
-	// min-height: 100%;
 	position: relative;
-	// padding-bottom: 96px;
 	font-family: 'Assistant', sans-serif;
 }
 
@@ -101,6 +99,12 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 	color: red;
 	font-family: 'Raleway', sans-serif;
 	padding:10px 15px;
+}
+
+// Update account labels.
+.gform_wrapper ul.gform_fields:not(.top_label) .gfield_label,
+.gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label {
+	text-transform: uppercase;
 }
 
 #gform_next_button_1_12,
@@ -1013,6 +1017,7 @@ LOGIN
 		#input_1_4_2_container {
 			label {
 				line-height: 1.2;
+				text-align: left;
 			}
 		}
 	} // #gform_page_1_1
@@ -1021,7 +1026,7 @@ LOGIN
 	#gform_page_1_2 {
 
 		a {
-			font-size: 18px;
+			font-size: 16px;
 		}
 
 		.gfield_label {
@@ -1035,7 +1040,12 @@ LOGIN
 			label {
 				line-height: 2.7;
 				margin-top: 11px;
-				width: 28%;
+				width: 48%;
+			}
+
+			div.ginput_complex.ginput_container.gf_name_has_2 {
+				margin-left: 49.5%;
+				width: calc(50% + 15px);
 			}
 		}
 
@@ -1052,6 +1062,23 @@ LOGIN
 
 		ul {
 			text-align: right;
+		}
+
+		// Terms + Conditions.
+		#field_1_19 {
+				.gfield_label {
+					padding-right: 0;
+					margin-top: 3px;
+					width: 33%;
+				}
+		}
+
+		#label_1_19_1 {
+			font-size: 14px;
+		}
+
+		.gchoice_1_19_1 input {
+			margin-top: 10px;
 		}
 
 		#field_1_21,
