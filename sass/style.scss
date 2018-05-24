@@ -287,6 +287,10 @@ HOME PAGE Styling
 
 			&:nth-child(2) h2 {
 				margin: -20px auto 40px;
+
+				@include breakpoint("620") {
+					margin: 0 auto 20px;
+				}
 			}
 
 			img {
@@ -309,6 +313,23 @@ HOME PAGE Styling
 	.home & {
 		ul li p {
 			text-align: center;
+		}
+	}
+
+	.bx-wrapper {
+		margin: 0 auto;
+	}
+
+	// Four column carousel on mobile.
+	.bx-wrapper .bx-default-pager {
+		color: #27b489!important;
+
+		.bx-pager-link {
+			border: 4px solid #27b489 !important;
+
+			&.active {
+				background: #27b489!important;
+			}
 		}
 	}
 } // .four-columns

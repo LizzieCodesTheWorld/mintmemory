@@ -61,6 +61,25 @@ $(function(){
 		speed: 2200
 	});
 
+	// Homepage Four Column Carousel (on mobile labnadscape or lower.)
+	function carouselMobile() {
+		if($(window).width() <= 385){
+			$('.four-column-carousel').bxSlider({
+				mode: 'horizontal',
+				infiniteLoop: true,
+				slideWidth: 350,
+				speed: 400
+			});
+		}
+	}
+	// Call on load.
+	carouselMobile();
+
+	// Check for resize & make carousel if resized enough.
+	$(window).resize(function(){
+		carouselMobile();
+	});
+
 	 // MOBILE MENU
 	$('#hamburger').click(function(){
 		$(this).toggleClass('open');

@@ -40,7 +40,7 @@
 
     	<?php if( have_rows('four_column_content') ): ?>
 
-    		<ul>
+    		<ul class="four-column-carousel">
     		<?php while( have_rows('four_column_content') ): the_row();
 
     			// Variables.
