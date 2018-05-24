@@ -379,6 +379,12 @@ function custom_post_type() {
 }
 add_action( 'init', 'custom_post_type', 0 );
 
+// Allows redirection, even if theme starts to send output to the browser.
+add_action('init', 'do_output_buffer');
+function do_output_buffer() {
+	ob_start();
+}
+
 // Show posts of 'post', 'page' and 'movie' post types on home page
 // function add_my_post_types_to_query( $query ) {
 //   if ( $query->is_main_query() )
@@ -386,4 +392,3 @@ add_action( 'init', 'custom_post_type', 0 );
 //   return $query;
 // }
 // add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
-

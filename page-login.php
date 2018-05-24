@@ -1,4 +1,10 @@
-<?php get_header();  ?>
+<?php $url = home_url() . '/my-account/'; ?>
+
+<?php if( is_user_logged_in() ) :
+	wp_safe_redirect( $url, 301 ); exit;
+endif; ?>
+
+<?php get_header(); ?>
 
 <div class="main login">
   <div class="container">
