@@ -230,6 +230,10 @@ HOME PAGE Styling
 			width: 100%;
 		}
 
+		@media screen and (min-width: 1800px) {
+			margin: 0 auto;
+		}
+
 		h2 {
 			color: #fff;
 			font-size: 4.8rem;
