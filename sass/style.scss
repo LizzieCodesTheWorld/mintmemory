@@ -46,9 +46,7 @@ hr {
 
 body {
 	color: #333;
-	// min-height: 100%;
 	position: relative;
-	// padding-bottom: 96px;
 	font-family: 'Assistant', sans-serif;
 }
 
@@ -98,9 +96,16 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 }
 
 .button-white {
-	padding:10px 15px;
 	background: #fff;
 	color: red;
+	font-family: 'Raleway', sans-serif;
+	padding:10px 15px;
+}
+
+// Update account labels.
+.gform_wrapper ul.gform_fields:not(.top_label) .gfield_label,
+.gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label {
+	text-transform: uppercase;
 }
 
 #gform_next_button_1_12,
@@ -125,7 +130,11 @@ input[type=button]  {
 }
 
 .none {
-	display:none;
+	display: none;
+
+	&.fa {
+		display: none;
+	}
 }
 
 input {
@@ -185,7 +194,7 @@ select {
 
 .screen-reader-text {
     position: absolute !important;
-    height: 1px; width: 1px; 
+    height: 1px; width: 1px;
     overflow: hidden;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
@@ -209,7 +218,7 @@ HOME PAGE Styling
 
 	.bx-viewport {
 		height: 600px;
-		overflow:visible!important;
+		overflow: visible!important;
 	}
 
 	.hero-content {
@@ -220,6 +229,10 @@ HOME PAGE Styling
 
 		@include breakpoint(standardNarrow) {
 			width: 100%;
+		}
+
+		@media screen and (min-width: 1800px) {
+			margin: 0 auto;
 		}
 
 		h2 {
@@ -269,7 +282,7 @@ HOME PAGE Styling
 
 		li {
 			list-style: none;
-			min-width: 297px;
+			// min-width: 297px;
 			width: 22%;
 
 			@include breakpoint(tabletsmall) {
@@ -283,6 +296,10 @@ HOME PAGE Styling
 
 			&:nth-child(2) h2 {
 				margin: -20px auto 40px;
+
+				@include breakpoint("620") {
+					margin: 0 auto 20px;
+				}
 			}
 
 			img {
@@ -294,14 +311,37 @@ HOME PAGE Styling
 
 			h2 {
 				font-size: 2rem;
-				height:80px;
-				margin:0 auto 20px;
+				height: 80px;
+				margin: 0 auto 20px;
 				text-align: center;
-				width:80%;
+				width: 80%;
+			}
+		} // li
+	} // ul
+
+	.home & {
+		ul li p {
+			text-align: center;
+		}
+	}
+
+	.bx-wrapper {
+		margin: 0 auto;
+	}
+
+	// Four column carousel on mobile.
+	.bx-wrapper .bx-default-pager {
+		color: #27b489!important;
+
+		.bx-pager-link {
+			border: 4px solid #27b489 !important;
+
+			&.active {
+				background: #27b489!important;
 			}
 		}
 	}
-}
+} // .four-columns
 
 .three-columns {
 	background:  #F4F3F2;
@@ -349,6 +389,7 @@ HOME PAGE Styling
 					border-radius: 3px;
 					color: #fff;
 					display: inline-block;
+					font-family: 'Raleway', sans-serif;
 					font-size: 1.4rem;
 					font-weight: 800;
 					padding: 15px 15px;
@@ -576,6 +617,10 @@ div[id^='accordion_'] {
 	@include word-wrap();
 }
 
+.accordion-item:last-of-type {
+	padding-bottom: 20px;
+}
+
 /*
 ====================================
 END: RESEARCH PAGE Styling
@@ -589,7 +634,7 @@ CLINICIAN RESOURCES (LOGGED IN) Styling
 */
 
 .form-accordion-container {
-	margin-bottom: 50px;
+// 	margin-bottom: 50px;
 	h1 {
 		margin-bottom: 30px;
 	}
@@ -895,10 +940,9 @@ ABOUT US
 	display: flex;
 	justify-content:space-between;
 	align-items:center;
-	margin: 50px 0;
+	margin: 30px 0;
 
 	@include breakpoint(tabletsmallest) {
-		margin: 30px 0;
 		flex-direction:column;
 	}
 	.image-wrapper {
@@ -1018,6 +1062,7 @@ LOGIN
 		#input_1_4_2_container {
 			label {
 				line-height: 1.2;
+				text-align: left;
 			}
 		}
 	} // #gform_page_1_1
@@ -1026,7 +1071,7 @@ LOGIN
 	#gform_page_1_2 {
 
 		a {
-			font-size: 18px;
+			font-size: 16px;
 		}
 
 		.gfield_label {
@@ -1040,7 +1085,12 @@ LOGIN
 			label {
 				line-height: 2.7;
 				margin-top: 11px;
-				width: 28%;
+				width: 48%;
+			}
+
+			div.ginput_complex.ginput_container.gf_name_has_2 {
+				margin-left: 49.5%;
+				width: calc(50% + 15px);
 			}
 		}
 
@@ -1057,6 +1107,23 @@ LOGIN
 
 		ul {
 			text-align: right;
+		}
+
+		// Terms + Conditions.
+		#field_1_19 {
+				.gfield_label {
+					padding-right: 0;
+					margin-top: 3px;
+					width: 33%;
+				}
+		}
+
+		#label_1_19_1 {
+			font-size: 14px;
+		}
+
+		.gchoice_1_19_1 input {
+			margin-top: 10px;
 		}
 
 		#field_1_21,
@@ -1428,24 +1495,24 @@ LOCATIONS
 
 #wpsl-wrap {
 	background: #f4f3f3;
-	// padding:20px;
-	margin-top: 50px;
 	border: 1px solid #44413f;
 	border-radius:3px;
 	margin-bottom: 70px!important;
+	margin-top: 50px;
 }
 
 .wpsl-input {
 	display:flex;
 	align-items:center;
 	margin-bottom: 0!important;
+
 	> div > label {
-		width:120px;
+		width: 165px;
 	}
 }
 
 .wpsl-search {
-	padding:0!important;
+	padding: 0!important;
 	margin-bottom: 0!important;
 }
 
@@ -1455,9 +1522,9 @@ LOCATIONS
 }
 
 #wpsl-gmap {
-	border-left:1px solid grey;
+	border-left: 1px solid grey;
 	margin: 0!important;
-	height:100%;
+	height: 100%;
 }
 
 #wpsl-wrap #wpsl-result-list li {
@@ -1469,13 +1536,28 @@ LOCATIONS
 	color: #fff!important;
 	font-weight: 800!important;
 	font-size: 1.4rem!important;
-	text-transform: uppercase!important;
 	padding: 10px 25px!important;
 	-webkit-transition: .3s;
 	-o-transition: .3s;
 	transition: .3s;
 	border-radius: 3px!important;
 	border: none!important;
+	line-height: 1.2!important;
+	text-transform: uppercase!important;
+}
+
+input[type="submit"]#wpsl-search-btn {
+	text-transform: uppercase!important;
+}
+
+#wpsl-search-wrap div label {
+	font-weight: 700;
+	line-height: 40px!important;
+	text-transform: uppercase;
+}
+
+#wpsl-search-wrap input[type='text'] {
+	min-width: 475px;
 }
 
 /*

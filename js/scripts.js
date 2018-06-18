@@ -5,7 +5,16 @@ $(function(){
 	$('.menu-item-has-children > a').click(function(event){
 		// Prevent top nav links.
 		event.preventDefault();
-		$(this).children('.chevron.down').toggleClass('up');
+
+		// If it already has a toggled chevron, remove class, otherwise add it.
+		if($(this).children('.chevron.down').hasClass('up')) {
+			$(this).children('.chevron.down').removeClass('up');
+		} else {
+			$(this).children('.chevron.down').addClass('up');
+		}
+
+		// Remove class from other toggled chevrons but not the one clicked.
+		$('.menu-item-has-children > a').not(this).children('.chevron.down').removeClass('up');
 
 		// Close open menus.
 		$(this).parent().siblings('.menu-item-has-children').find('.sub-menu').hide();
@@ -52,6 +61,38 @@ $(function(){
 	// 	mode: 'fade'
 	// });
 
+
+	// Homepage Hero Carousel.
+	$('.carousel').bxSlider({
+		mode: 'fade',
+		auto: true,
+		pager: false,
+		infiniteLoop: true,
+		hideControlOnEnd: true,
+		slideWidth: 1600,
+		controls: false,
+		speed: 2200
+	});
+
+	// Homepage Four Column Carousel (on mobile labnadscape or lower.)
+	function carouselMobile() {
+		if($(window).width() <= 385){
+			$('.four-column-carousel').bxSlider({
+				mode: 'horizontal',
+				infiniteLoop: true,
+				slideWidth: 350,
+				speed: 400
+			});
+		}
+	}
+	// Call on load.
+	carouselMobile();
+
+	// Check for resize & make carousel if resized enough.
+	$(window).resize(function(){
+		carouselMobile();
+  });
+  
 	var mySwiper = new Swiper('.swiper-container', {
 	    speed: 400,
 	    spaceBetween: 100,

@@ -387,6 +387,13 @@ function custom_post_type() {
 }
 add_action( 'init', 'custom_post_type', 0 );
 
+
+// Allows redirection, even if theme starts to send output to the browser.
+add_action('init', 'do_output_buffer');
+function do_output_buffer() {
+	ob_start();
+}
+
 // ADD SUPERSCRIPT BUTTON TO VISUAL EDITOR
 function my_mce_buttons_2($buttons) {	
 	/**
@@ -398,5 +405,4 @@ function my_mce_buttons_2($buttons) {
 	return $buttons;
 }
 add_filter('mce_buttons_2', 'my_mce_buttons_2');
-
 
