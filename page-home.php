@@ -3,31 +3,33 @@
 <?php // Start the loop ?>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<div class="carousel">
-
-        <?php if( have_rows('hero_images') ): ?>
-
-            <?php while( have_rows('hero_images') ): the_row();
-
-                // vars
-                $image = get_sub_field('hero_image');
-
-                ?>
-
-                <div class="home-hero" style="background-image: url(<?php echo $image; ?>);background-size: cover; background-position: center;">
-                    <div class="container">
-                        <div class="hero-content">
-                            <h2><?php the_field('title'); ?></h2>
-                            <h3><?php the_field('sub_title'); ?></h3>
-                            <a href="<?php the_field('hero_button_url'); ?>" class="button-white"><?php the_field('hero_button_text'); ?></a>
-                        </div><!--hero-content-->
-                    </div><!--container-->
-                </div><!--.home-hero-->
-
-            <?php endwhile; ?>
-
-        <?php endif; ?>
+            <?php if( have_rows('hero_images') ): ?>
+    
+<div class="carousel swiper-container">
+    <div class=" swiper-wrapper">
+    
+                <?php while( have_rows('hero_images') ): the_row();
+    
+                    // vars
+                    $image = get_sub_field('hero_image');
+    
+                    ?>
+    
+                    <div class="home-hero swiper-slide" style="background-image: url(<?php echo $image; ?>);background-size: cover; background-position: center;">
+                        <div class="container">
+                            <div class="hero-content">
+                                <h2><?php the_field('title'); ?></h2>
+                                <h3><?php the_field('sub_title'); ?></h3>
+                                <a href="<?php the_field('hero_button_url'); ?>" class="button-white"><?php the_field('hero_button_text'); ?></a>
+                            </div><!--hero-content-->
+                        </div><!--container-->
+                    </div><!--.home-hero-->
+    
+                <?php endwhile; ?>
+    </div>
 </div>
+    
+            <?php endif; ?>
 
 
 <div class="main no-padding">

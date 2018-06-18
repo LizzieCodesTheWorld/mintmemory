@@ -40,14 +40,27 @@ $(function(){
 
 	var scroll = new SmoothScroll('a[href^="#accordion_');
 
-	// BX SLIDER
-	$('.bxslider').bxSlider({
-		pager: false,
-		nextText: 'Next Video >',
-		prevText: '< Previous Video',
-		infiniteLoop: false,
-		hideControlOnEnd: true
-	});
+	// // BX SLIDER
+	// $('.bxslider').bxSlider({
+	// 	pager: false,
+	// 	nextText: 'Next Video >',
+	// 	prevText: '< Previous Video',
+	// 	infiniteLoop: false,
+	// 	hideControlOnEnd: true
+	// });
+
+	// // Homepage Hero Carousel.
+	// $('.carousel').bxSlider({
+	// 	auto: true,
+	// 	pager: false,
+	// 	infiniteLoop: true,
+	// 	hideControlOnEnd: true,
+	// 	slideWidth: 1600,
+	// 	controls: false,
+	// 	speed: 200,
+	// 	mode: 'fade'
+	// });
+
 
 	// Homepage Hero Carousel.
 	$('.carousel').bxSlider({
@@ -78,6 +91,14 @@ $(function(){
 	// Check for resize & make carousel if resized enough.
 	$(window).resize(function(){
 		carouselMobile();
+  });
+  
+	var mySwiper = new Swiper('.swiper-container', {
+	    speed: 400,
+	    spaceBetween: 100,
+	    init: true,
+	    effect: "fade",
+	    autoplay: true
 	});
 
 	 // MOBILE MENU

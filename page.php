@@ -32,7 +32,7 @@
 	        				<p><?php echo $source; ?></p>
 
 	        				<?php if( $link ): ?>
-	        					<a href="<?php echo $link; ?>">
+	        					<a href="<?php echo $link; ?>" target="_blank">
 	        				<?php endif; ?>
 
 	        					<?php echo $link_text; ?>
