@@ -31,25 +31,33 @@ $(function(){
 
 	var scroll = new SmoothScroll('a[href^="#accordion_');
 
-	// BX SLIDER
-	$('.bxslider').bxSlider({
-		pager: false,
-		nextText: 'Next Video >',
-		prevText: '< Previous Video',
-		infiniteLoop: false,
-		hideControlOnEnd: true
-	});
+	// // BX SLIDER
+	// $('.bxslider').bxSlider({
+	// 	pager: false,
+	// 	nextText: 'Next Video >',
+	// 	prevText: '< Previous Video',
+	// 	infiniteLoop: false,
+	// 	hideControlOnEnd: true
+	// });
 
-	// Homepage Hero Carousel.
-	$('.carousel').bxSlider({
-		mode: 'fade',
-		auto: true,
-		pager: false,
-		infiniteLoop: true,
-		hideControlOnEnd: true,
-		slideWidth: 1600,
-		controls: false,
-		speed: 200
+	// // Homepage Hero Carousel.
+	// $('.carousel').bxSlider({
+	// 	auto: true,
+	// 	pager: false,
+	// 	infiniteLoop: true,
+	// 	hideControlOnEnd: true,
+	// 	slideWidth: 1600,
+	// 	controls: false,
+	// 	speed: 200,
+	// 	mode: 'fade'
+	// });
+
+	var mySwiper = new Swiper('.swiper-container', {
+	    speed: 400,
+	    spaceBetween: 100,
+	    init: true,
+	    effect: "fade",
+	    autoplay: true
 	});
 
 	 // MOBILE MENU

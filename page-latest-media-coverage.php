@@ -29,7 +29,13 @@
 
                           <a href="<?php echo $link; ?>">
                               <div class="news-item">
-                                  <div class="image-wrapper"><?php the_post_thumbnail('full'); ?></div>
+                                  <div class="image-wrapper">
+                                  <?php if (has_post_thumbnail()): ?>
+                                    <?php echo the_post_thumbnail('full'); ?>
+                                  <?php else: ?>
+                                    <div class="placeholder"></div>
+                                  <?php endif; ?>
+                                  </div>
                                   <div>
                                       <p><?php echo $date; ?><strong> / <?php echo $source; ?></strong></p>
                                       <h2><?php the_title(); ?></h2>
@@ -70,7 +76,12 @@
 
                         <a href="<?php echo $link; ?>">
                             <div class="news-item">
-                                <div><?php the_post_thumbnail('full');; ?>
+                                <div>
+                                  <?php if (has_post_thumbnail()): ?>
+                                    <?php echo the_post_thumbnail('full'); ?>
+                                  <?php else: ?>
+                                    <img src="http://via.placeholder.com/350x200" alt="">
+                                  <?php endif; ?>
                                 </div>
                                 <div>
                                     <p><?php echo $date; ?> <strong>/ <?php echo $source; ?></strong></p>

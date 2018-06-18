@@ -27,15 +27,14 @@
                           <h2>Current Account details</h2>
                           <p><strong>Name: </strong><?php echo $firstname[0]; ?> <?php echo $lastname[0]; ?></p>
                           <p><strong>User Type: </strong><?php echo $type[0]; ?></p>
-                          <p><strong>Email: </strong><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+                          <p><strong>Email: </strong><?php echo $email; ?></p>
                         </div>
-                        <div class="update-account-details">    
-                            <h2>Update your account details here:</h2>  
+                        <div class="update-account-details">     
                             <?php the_field('update_info_form'); ?>
                         </div>
                         <div class="resources-links">
                         <hr>
-                          <h2>Resources</h2>
+                          <h2>Resources for You</h2>
                               <a href="/how-to-refer/">How to Refer</a>
                               <?php if($type[0] == 'Clinician'): ?>
                                 <a href="/clinicians/clinician-resources/">Clinician Resources</a>

@@ -71,6 +71,14 @@ function hackeryou_scripts() {
     true //load in footer
   );
 
+  wp_enqueue_script(
+    'swiper', //handle
+    get_template_directory_uri() . '/js/swiper.min.js', //source
+    array( 'jquery'), //dependencies
+    null, // version number
+    true //load in footer
+  );
+
 // bxslider.
   wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array( 'jquery' ), null, true );
 
@@ -80,7 +88,7 @@ function hackeryou_scripts() {
   wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins', 'bxslider', 'smooth-scroll' ), //dependencies
+    array( 'jquery', 'plugins', 'swiper', 'smooth-scroll' ), //dependencies
     null, // version number
     true //load in footer
   );
@@ -379,11 +387,16 @@ function custom_post_type() {
 }
 add_action( 'init', 'custom_post_type', 0 );
 
-// Show posts of 'post', 'page' and 'movie' post types on home page
-// function add_my_post_types_to_query( $query ) {
-//   if ( $query->is_main_query() )
-//     $query->set( 'post_type', array( 'post', 'page', 'movie' ) );
-//   return $query;
-// }
-// add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+// ADD SUPERSCRIPT BUTTON TO VISUAL EDITOR
+function my_mce_buttons_2($buttons) {	
+	/**
+	 * Add in a core button that's disabled by default
+	 */
+	$buttons[] = 'sup';
+	$buttons[] = 'sub';
+
+	return $buttons;
+}
+add_filter('mce_buttons_2', 'my_mce_buttons_2');
+
 

@@ -83,17 +83,20 @@ ul.menu  {
 			border-bottom:3px solid #8AC985;
 		}
 		@include breakpoint(standard) {
+			border-left:4px solid white;
 			padding: 10px 20px;
 			border-bottom:1px solid #ccc;
 			// normal hover
 			&:hover {
+				border-left-color:#8AC985;
 				border-bottom:1px solid #ccc;
 			}
 			// last menu item hover
 			&:last-child {
 				border-bottom: none;
+				border-left: 0;
+				padding: 0;
 				&:hover {
-					border-left:2px solid #8AC985;
 					border-bottom:none;
 				}
 			}
@@ -121,14 +124,14 @@ ul.menu  {
 			border-bottom: 1px solid #E6E6E6;
 			padding: 10px 0;
 			margin: 0 10px;
+			&:hover a{
+				color: #0b8c60;
+			}
 			&:last-child {
 				border-bottom: none;
-				}
+			}
 			a {
 				text-transform: initial!important;
-					&:hover {
-						color: #0b8c60;
-					}
 				}
 			}
 		}
