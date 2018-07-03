@@ -40,49 +40,23 @@ $(function(){
 
 	var scroll = new SmoothScroll('a[href^="#accordion_');
 
-	// // BX SLIDER
-	// $('.bxslider').bxSlider({
-	// 	pager: false,
-	// 	nextText: 'Next Video >',
-	// 	prevText: '< Previous Video',
-	// 	infiniteLoop: false,
-	// 	hideControlOnEnd: true
-	// });
-
-	// // Homepage Hero Carousel.
-	// $('.carousel').bxSlider({
-	// 	auto: true,
-	// 	pager: false,
-	// 	infiniteLoop: true,
-	// 	hideControlOnEnd: true,
-	// 	slideWidth: 1600,
-	// 	controls: false,
-	// 	speed: 200,
-	// 	mode: 'fade'
-	// });
-
-
-	// Homepage Hero Carousel.
-	$('.carousel').bxSlider({
-		mode: 'fade',
-		auto: true,
-		pager: false,
+	var columnSwiper = $('.four-column-carousel').bxSlider({
+		mode: 'horizontal',
 		infiniteLoop: true,
-		hideControlOnEnd: true,
-		slideWidth: 1600,
+		slideWidth: 350,
 		controls: false,
-		speed: 2200
+		// maxSlides: 3,
+		shrinkItems: true,
+		// minSlides:1,
+		speed: 400
 	});
 
 	// Homepage Four Column Carousel (on mobile labnadscape or lower.)
 	function carouselMobile() {
 		if($(window).width() <= 385){
-			$('.four-column-carousel').bxSlider({
-				mode: 'horizontal',
-				infiniteLoop: true,
-				slideWidth: 350,
-				speed: 400
-			});
+			columnSwiper.reloadSlider();
+		} else {
+			columnSwiper.destroySlider();
 		}
 	}
 	// Call on load.
@@ -91,7 +65,7 @@ $(function(){
 	// Check for resize & make carousel if resized enough.
 	$(window).resize(function(){
 		carouselMobile();
-  });
+  	});
   
 	var mySwiper = new Swiper('.swiper-container', {
 	    speed: 400,
@@ -100,6 +74,8 @@ $(function(){
 	    effect: "fade",
 	    autoplay: true
 	});
+
+    $(".hero-content").css("visibility", "visible");
 
 	 // MOBILE MENU
 	$('#hamburger').click(function(){

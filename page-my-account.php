@@ -36,6 +36,7 @@
                         <hr>
                           <h2>Resources for You</h2>
                               <a href="/how-to-refer/">How to Refer</a>
+                              <a href="http://mint.local/wp-content/uploads/2018/06/MINT-Memory-Clinic-Referral-Form-1.pdf">Referral Form [PDF]</a>
                               <?php if($type[0] == 'Clinician'): ?>
                                 <a href="/clinicians/clinician-resources/">Clinician Resources</a>
                               <?php else: ?>

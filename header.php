@@ -29,19 +29,19 @@
 
     <h1>
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <img src="<?php bloginfo('template_url'); ?>/images/MINTLogo_RightColour.png" alt="home" class="logo">
+        <img src="<?php bloginfo('template_url'); ?>/images/MINTLogo_NonWeb_LeftColour.SVG" alt="home" class="logo">
       </a>
     </h1>
 
-  <?php
-     $user_id = get_current_user_id();
-     $key = 'User Type';
-     $type = get_user_meta(get_current_user_id(), $key = 'User Type');
-  ?>
 
 <?php if(is_user_logged_in()) : ?>
 
-    <?php if($type[0] == 'Trainee') : ?>
+    <?php
+       $user_id = get_current_user_id();
+       $type = get_user_meta($user_id, $key = "User Type");
+    ?>
+
+    <?php if($type[0] === 'Trainee') : ?>
         <?php wp_nav_menu( array(
           'container'      => false,
           'theme_location' => 'loggedintrainee-menu',
@@ -49,17 +49,11 @@
         )); ?>
     <?php else : ?>
 
-<!--         <?php wp_nav_menu( array(
+       <?php wp_nav_menu( array(
           'container'      => false,
           'theme_location' => 'loggedinclinician-menu',
           'link_after'     => '<div class="chevron down"></div>'
-        )); ?> -->
-
-      <?php wp_nav_menu( array(
-        'container'      => false,
-        'theme_location' => 'loggedinclinician-menu',
-        'link_after'     => '<div id="chevron" class="chevron down"></div>'
-      )); ?>
+        )); ?> 
 
     <?php endif; ?>
 

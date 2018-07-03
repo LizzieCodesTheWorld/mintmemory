@@ -206,14 +206,14 @@ HOME PAGE Styling
 */
 
 .home-hero {
-	height: 600px;
+	// height: 600px;
 	margin-top: 89px; // height of header.
 	padding: 6% 0;
 	overflow:visible!important;
 	z-index: 0!important;
 
 	@include breakpoint('640') {
-		height: 740px;
+		// height: 740px;
 	}
 
 	.bx-viewport {
@@ -223,16 +223,36 @@ HOME PAGE Styling
 
 	.hero-content {
 		background: rgba(28,160,113,0.7);
-		padding: 2.5% 7% 3%;
-		max-width: 800px;
-		width: 60%;
-
-		@include breakpoint(standardNarrow) {
-			width: 100%;
+		padding: 2.5% 5% 3%;
+		display:flex;
+		max-width: 1250px;
+		width:65%;
+		position: relative;
+		visibility:hidden;
+		&:before {
+			content: "";
+		    position: absolute;
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    -webkit-flex-grow: 1;
+		    flex-grow: 1;
+		    top: 0;
+		    right: 100%;
+		    bottom: 0;
+		    left: -100%;
+		    background: rgba(28,160,113,0.7);
+			 @include breakpoint(tabletsmallest) {
+			 	display:none;
+			 }
 		}
 
-		@media screen and (min-width: 1800px) {
-			margin: 0 auto;
+		@include breakpoint(standardNarrow) {
+			padding: 2.5% 5% 3%;
+		}
+
+		@include breakpoint(tabletsmallest) {
+			width: initial;
 		}
 
 		h2 {
@@ -240,6 +260,9 @@ HOME PAGE Styling
 			font-size: 4.8rem;
 			font-weight: 700;
 			margin-bottom: 20px;
+			@include breakpoint("560") {
+				font-size: 3.6rem;
+			}
 		}
 		h3 > div {
 			color: #fff;
@@ -268,7 +291,7 @@ HOME PAGE Styling
 }
 
 .four-columns {
-	margin: 50px 0;
+	margin: 0 0 100px;
 
 	ul {
 		display:flex;
@@ -805,10 +828,6 @@ CONTACT US Styling
 		margin-top: 8px;
 	}
 
-	#field_2_6 {
-		float: right;
-	}
-
 	.gform_footer.left_label {
 		text-align: right;
 	}
@@ -1009,6 +1028,9 @@ LOGIN
 
 #gform_1 > div.validation_error {
 	text-align: left;
+}
+#gform_login_widget-3 > nav > a:nth-child(1) {
+	font-weight: 800;
 }
 
 // Registration form.
@@ -1217,6 +1239,9 @@ LOGIN
 	}
 	br {
 		display: none;
+	}
+	label {
+		text-transform: uppercase;
 	}
 	.widgettitle, h3.gform_title {
 		font-size: 42px!important;
@@ -1592,9 +1617,12 @@ SINGLE BLOG PAGE
 		iframe {
 			min-height: 400px;
 		}
+		hr {
+			margin-bottom: 30px;
+		}
 	}
 	.attachment-full {
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 	}
 	aside {
 		width:25%;

@@ -18,11 +18,13 @@
                     <div class="home-hero swiper-slide" style="background-image: url(<?php echo $image; ?>);background-size: cover; background-position: center;">
                         <div class="container">
                             <div class="hero-content">
-                                <h2><?php the_field('title'); ?></h2>
-                                <h3><?php the_field('sub_title'); ?></h3>
-                                <a href="<?php the_field('hero_button_url'); ?>" class="button-white"><?php the_field('hero_button_text'); ?></a>
+                                <div>
+                                    <h2><?php the_field('title'); ?></h2>
+                                    <h3><?php the_field('sub_title'); ?></h3>
+                                    <a href="<?php the_field('hero_button_url'); ?>" class="button-white"><?php the_field('hero_button_text'); ?></a>
+                                </div>
                             </div><!--hero-content-->
-                        </div><!--container-->
+                         </div><!--container-->
                     </div><!--.home-hero-->
     
                 <?php endwhile; ?>

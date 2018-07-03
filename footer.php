@@ -2,7 +2,7 @@
 
 	<div class="container">
 	    <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-	        <img src="<?php bloginfo('template_url'); ?>/images/MINTLogo_RightWhite.png" alt="home" class="logo">
+	        <img src="<?php bloginfo('template_url'); ?>/images/MINTLogo_NonWeb_LeftWhite.SVG" alt="home" class="logo">
       </a>
 
 	  <div>

@@ -364,6 +364,7 @@ function custom_post_type() {
 		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
 	);
 	$args = array(
+		'rewrite' 				=> array( 'with_front' => false ),
 		'label'                 => __( 'Trainee Resource', 'text_domain' ),
 		'description'           => __( 'Trainee Resource Description', 'text_domain' ),
 		'labels'                => $labels,
@@ -395,14 +396,14 @@ function do_output_buffer() {
 }
 
 // ADD SUPERSCRIPT BUTTON TO VISUAL EDITOR
-function my_mce_buttons_2($buttons) {	
+function my_mce_buttons_2( $buttons ) {	
 	/**
 	 * Add in a core button that's disabled by default
 	 */
-	$buttons[] = 'sup';
-	$buttons[] = 'sub';
+	$buttons[] = 'superscript';
+	$buttons[] = 'subscript';
 
 	return $buttons;
 }
-add_filter('mce_buttons_2', 'my_mce_buttons_2');
+add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );
 

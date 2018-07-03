@@ -18,7 +18,9 @@
 
 					<div class="accordion-item" id="accordion_<?php echo esc_attr( $i ); ?>">
 							<div class="accordion-title border-bottom">
-									<h2><?php echo esc_html( $title ); ?></h2>
+									<?php if($title): ?>
+										<h2><?php echo esc_html( $title ); ?></h2>
+									<?php endif; ?>
 									<div> <!-- open and close -->
 											<i class="fa fa-chevron-down"></i>
 											<i class="fa fa-chevron-up none"></i>
