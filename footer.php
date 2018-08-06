@@ -6,11 +6,12 @@
       </a>
 
 	  <div>
-	  	<p>&copy; <?php echo date('Y'); ?> The Centre for Family Medicine Memory Clinic </p>
-	  	<a href="/terms-of-use/">Terms of Use / </a><a href="/privacy-policy-information/">Privacy policy information</a>
+	  	<p>Copyright &copy; <?php echo date('Y'); ?> Linda Lee. All Rights Reserved. </p>
+	  	<a href="mint/terms-of-use/">Terms of Use / </a><a href="mint/privacy-policy-information/">Privacy policy information</a>
 	  </div>
 	</div> <!-- /.container -->
 </footer>
+
 
 <script>
 /* Google Analytics! */

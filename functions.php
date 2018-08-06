@@ -82,6 +82,10 @@ function hackeryou_scripts() {
 // bxslider.
   wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array( 'jquery' ), null, true );
 
+ if (is_front_page()) {
+     wp_enqueue_script( 'bx-slider.js', get_template_directory_uri() . '/js/bx-slider.js', array( 'jquery' ), null, true );
+ }
+
   // Smooth Scroll.
     wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.min.js', array( 'jquery' ), null, true );
 
@@ -364,7 +368,8 @@ function custom_post_type() {
 		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
 	);
 	$args = array(
-		'rewrite' 				=> array( 'with_front' => false ),
+		// 'rewrite' 				=> array( 'with_front' => false ),
+		'rewrite' 				=> array('slug' => 'trainee-resource','with_front' => false),
 		'label'                 => __( 'Trainee Resource', 'text_domain' ),
 		'description'           => __( 'Trainee Resource Description', 'text_domain' ),
 		'labels'                => $labels,

@@ -36,6 +36,7 @@ html {
 
 img {
 	max-width: 100%;
+	user-select:none;
 }
 
 hr {
@@ -54,6 +55,12 @@ label, button, h1,h2, h3,h4, h5, h6, input {
 	font-family: 'Raleway', sans-serif;
 }
 
+header .container {
+	max-width: 1300px;
+	&.logged-in {
+		max-width:1400px;
+	}
+}
 .container {
 	margin: 0 auto;
 	max-width: 1250px;
@@ -334,19 +341,19 @@ HOME PAGE Styling
 
 			h2 {
 				font-size: 2rem;
-				height: 80px;
+				// height: 80px;
 				margin: 0 auto 20px;
 				text-align: center;
 				width: 80%;
+				p {
+					color: #333;
+				}
+			}
+			p {
+				color: #808080;
 			}
 		} // li
 	} // ul
-
-	.home & {
-		ul li p {
-			text-align: center;
-		}
-	}
 
 	.bx-wrapper {
 		margin: 0 auto;
@@ -370,7 +377,7 @@ HOME PAGE Styling
 	background:  #F4F3F2;
 	padding: 50px 0;
 	width: 100%;
-
+	
 	.container {
 		display: flex;
 		justify-content: space-between;
@@ -383,6 +390,10 @@ HOME PAGE Styling
 		img {
 			min-height: 250px;
 			object-fit: cover;
+		}
+		
+		p {
+			color: #808080;
 		}
 
 		.box {
@@ -399,7 +410,9 @@ HOME PAGE Styling
 			@include breakpoint("620") {
 				width: 100%;
 			}
-
+			h3 {
+				margin-bottom: 20px;
+			}
 			&__text-content {
 				padding:30px;
 				min-height:255px;
@@ -959,7 +972,7 @@ ABOUT US
 	display: flex;
 	justify-content:space-between;
 	align-items:center;
-	margin: 30px 0;
+	margin: 0 0 30px 0;
 
 	@include breakpoint(tabletsmallest) {
 		flex-direction:column;
@@ -982,7 +995,7 @@ ABOUT US
 
 // ABOUT US HERO SPECIFIC Styling
 .page-id-371 .hero strong {
-	font-size: 2.8rem;
+	font-size: 2rem;
 }
 
 .text-section {
@@ -1101,7 +1114,7 @@ LOGIN
 		}
 
 		// Name.
-		#field_1_14 {
+		#field_1_14, #field_1_19 {
 			margin: 10px 0 0;
 
 			label {
@@ -1131,13 +1144,20 @@ LOGIN
 			text-align: right;
 		}
 
+		
+
 		// Terms + Conditions.
 		#field_1_19 {
-				.gfield_label {
-					padding-right: 0;
+			width:100%;
+				> .gfield_label {
+					padding-right: 16px;
 					margin-top: 3px;
-					width: 33%;
+					width: 48%;
 				}
+		}
+
+		.ginput_container .ginput_container_checkbox {
+
 		}
 
 		#label_1_19_1 {
@@ -1149,6 +1169,7 @@ LOGIN
 		}
 
 		#field_1_21,
+		#field_1_19,
 		#field_1_23 {
 
 			label {
@@ -1164,7 +1185,7 @@ LOGIN
 
 		.left_label select.large,
 		.left_label input.large {
-			width: 50%;
+			// width: 50%;
 		}
 
 		ul.gform_fields li.gfield {
@@ -1223,6 +1244,15 @@ LOGIN
 		margin: 0 20px 0 0!important;
 	}
 }
+
+#input_3_7 {
+	width:100%!important;
+}
+
+#gform_fields_2 textarea, #gform_fields_2 input {
+	width:100%!important;
+}
+
 // Login.
 #gform_login_widget-3 {
 	background: white;
@@ -1532,7 +1562,7 @@ LOCATIONS
 	margin-bottom: 0!important;
 
 	> div > label {
-		width: 165px;
+		width: 135px;
 	}
 }
 
@@ -1584,6 +1614,18 @@ input[type="submit"]#wpsl-search-btn {
 #wpsl-search-wrap input[type='text'] {
 	min-width: 475px;
 }
+
+// hide invisible recaptcha badge
+.grecaptcha-badge {
+	display:none;
+}
+
+// @media only screen and (min-width: 641px) {
+// 	.gform_wrapper ul.gform_fields:not(.top_label) .clear-multi, html:not([dir=rtl]) .gform_wrapper ul.gform_fields:not(.top_label) .gfield_description, html:not([dir=rtl]) .gform_wrapper ul.gform_fields:not(.top_label) .ginput_container:not(.ginput_container_time):not(.ginput_container_date) {
+// 	    margin-left: 0%!important;
+// 	    width: 100%!important;
+// 	}
+// }
 
 /*
 ====================================

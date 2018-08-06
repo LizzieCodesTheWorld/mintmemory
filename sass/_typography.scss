@@ -175,9 +175,16 @@ h4 {
 p {
 	margin-bottom: 20px;
 	font-size: 1.8rem; //design = 1.4
+	&:last-child {
+		margin-bottom: 0;
+	}
 	a {
 		font-size: 1.8rem;
 	}
+}
+
+sup a, sub a{
+	font-size:1.4rem
 }
 
 

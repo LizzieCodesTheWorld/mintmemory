@@ -1,5 +1,11 @@
 $(function(){
+	var columnSwiper;
 	console.log("It's working");
+
+	// prevent dragging and right clicking on images
+	$("img").mousedown(function(){
+		return false;
+	});
 
 	// DROPDOWN MENU
 	$('.menu-item-has-children > a').click(function(event){
@@ -39,35 +45,8 @@ $(function(){
 	});
 
 	var scroll = new SmoothScroll('a[href^="#accordion_');
-
-	var columnSwiper = $('.four-column-carousel').bxSlider({
-		mode: 'horizontal',
-		infiniteLoop: true,
-		slideWidth: 350,
-		controls: false,
-		// maxSlides: 3,
-		shrinkItems: true,
-		// minSlides:1,
-		speed: 400
-	});
-
-	// Homepage Four Column Carousel (on mobile labnadscape or lower.)
-	function carouselMobile() {
-		if($(window).width() <= 385){
-			columnSwiper.reloadSlider();
-		} else {
-			columnSwiper.destroySlider();
-		}
-	}
-	// Call on load.
-	carouselMobile();
-
-	// Check for resize & make carousel if resized enough.
-	$(window).resize(function(){
-		carouselMobile();
-  	});
   
-	var mySwiper = new Swiper('.swiper-container', {
+	var heroSwiper = new Swiper('.swiper-container', {
 	    speed: 400,
 	    spaceBetween: 100,
 	    init: true,
